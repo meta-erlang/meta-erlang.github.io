@@ -1,6 +1,6 @@
 In this guide we are using the plain meta-erlang layer to build an httpd webserver called [Yaws](http://yaws.hyber.org/).
 
-The recipe [yaws_2.0.7.bb](https://github.com/joaohf/meta-erlang/blob/master/recipes-httpd/yaws/yaws_2.0.7.bb) builds the Yaws using a crosscompile approach both to erlang and C. Yaws uses the autoconf build environment making the whole process straightforward when creating the recipe.
+The recipe [yaws_2.0.7.bb](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-httpd/yaws/yaws_2.0.7.bb) builds the Yaws using a crosscompile approach both to erlang and C. Yaws uses the autoconf build environment making the whole process straightforward when creating the recipe.
 
 As a final result, we are able to run a standalone Yams using qemu. In fact, Yaws recipe is only useful when working with standalone mode (see Yaws website). Yaws also supports an embedded mode but usually that should be integrate with an high order application.
 

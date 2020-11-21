@@ -1,6 +1,6 @@
 In this guide we are using the plain meta-erlang layer to build an [mqtt](http://mqtt.org/) broker called [EMQ](https://www.emqx.io/).
 
-The recipe [emqx_git.bb](https://github.com/joaohf/meta-erlang/blob/master/recipes-connectivity/emqx/emqx_git.bb) builds the emqx using a crosscompile approach both to erlang and C. As emqx has a dependency called `bcrypt` which is a [NIF](http://erlang.org/doc/tutorial/nif.html) driver. To address the crosscompile, some [patches](https://github.com/joaohf/meta-erlang/blob/master/recipes-connectivity/emqx/files) were necessary.  
+The recipe [emqx_git.bb](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-connectivity/emqx/emqx_git.bb) builds the emqx using a crosscompile approach both to erlang and C. As emqx has a dependency called `bcrypt` which is a [NIF](http://erlang.org/doc/tutorial/nif.html) driver. To address the crosscompile, some [patches](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-connectivity/emqx/files) were necessary.  
 
 As a final result, we are able to run an embedded emqx using qemu.
 

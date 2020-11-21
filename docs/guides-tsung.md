@@ -1,6 +1,6 @@
 In this guide we are using the plain meta-erlang layer to include a distributed test tool called [tsung](http://tsung.erlang-projects.org/).
 
-The recipe [tsung_1.7.0.bb](https://github.com/joaohf/meta-erlang/blob/master/recipes-tests/tsung/tsung_1.7.0.bb) builds the tsung tool using a crosscompile approach.
+The recipe [tsung_1.7.0.bb](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-tests/tsung/tsung_1.7.0.bb) builds the tsung tool using a crosscompile approach.
 
 As a final result, we are able to run the command `tsung`.
 

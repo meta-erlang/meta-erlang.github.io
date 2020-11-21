@@ -1,6 +1,6 @@
 In this guide we are using the plain meta-erlang layer to build the [couchdb](https://couchdb.apache.org/.
 
-The recipe [couchdb.inc](https://github.com/joaohf/meta-erlang/blob/master/recipes-database/couchdb/couchdb.inc) builds the couchdb using a crosscompile approach. couchdb prefers to work with a full erlang release instead of use the Erlang packages installed on the final image.
+The recipe [couchdb.inc](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-database/couchdb/couchdb.inc) builds the couchdb using a crosscompile approach. couchdb prefers to work with a full erlang release instead of use the Erlang packages installed on the final image.
 
 As a final result, we are able to run an embedded couchdb using qemu.
 

@@ -1,4 +1,4 @@
-In this guide we are using the plain meta-erlang layer to build the [riak](http://www.riak.info). The recipe [riak.inc](https://github.com/joaohf/meta-erlang/blob/master/recipes-database/riak/riak.inc) builds the riak using a crosscompile approach.
+In this guide we are using the plain meta-erlang layer to build the [riak](http://www.riak.info). The recipe [riak.inc](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-database/riak/riak.inc) builds the riak using a crosscompile approach.
 
 As a final result, we will be able to run an embedded riak using qemu.
 

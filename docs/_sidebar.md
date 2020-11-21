@@ -1,11 +1,17 @@
 <!-- docs/_sidebar.md -->
 
+- [Introduction](README)
+  
 - Guides
 
   - [Quickstart](guides-quickstart)
-  - [My application](guides-my-application)
+  - [Bitbake classes](guides-bitbake-classes)
+  - [Application Release](guides-my-application)
   - [Recipes](guides-a-tiny-recipe)
-  - [Axon layer](guides-axon-layer)
+  - [Application Development](guides-development)
+
+- Applications
+  
   - [EMQ](guides-emqx)
   - [Ejabberd](guides-ejabberd)
   - [Yaws](guides-yaws)
@@ -13,7 +19,10 @@
   - [Couchdb](guides-couchdb)
   - [Riak](guides-riak)
   - [epmd](guides-epmd)
-  - [Hot swap code](guides-how-swap-code)
+  
+- Distro
+
+  - [Axon layer](guides-axon-layer)
 
 - Contributing
 

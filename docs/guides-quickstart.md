@@ -1,4 +1,10 @@
-This quickstart guide uses the same steps stated at [Yocto Project Quick Build](https://www.yoctoproject.org/docs/2.6.1/brief-yoctoprojectqs/brief-yoctoprojectqs.html) with additional steps to get an erlang runtime up and runtine in the target device.
+This quickstart guide uses the same steps stated at [Yocto Project Quick Build](https://docs.yoctoproject.org/brief-yoctoprojectqs/brief-yoctoprojectqs.html) with additional steps to get an erlang runtime up and running on the target device.
+
+Clone _meta-erlang_:
+
+```bash
+git clone https://github.com/meta-erlang/meta-erlang.git
+```
 
 Clone _poky_:
 
@@ -12,22 +18,16 @@ Move to _poky_ directory:
 cd poky
 ```
 
-Check out the branch _yocto-2.6.1_:
+Check out the branch _dunfell_:
 
 ```bash
-git checkout tags/yocto-2.6.1 -b my-yocto-2.6.1
-```
-
-Clone _meta-erlang_:
-
-```bash
-git clone https://github.com/joaohf/meta-erlang.git
+git checkout dunfell -b dunfell
 ```
 
 Initialize the build environment:
 
 ```bash
-source oe-init-build-env
+source oe-init-build-env ../build
 ```
 
 Add _meta-erlang_ to _conf/layer.conf_:

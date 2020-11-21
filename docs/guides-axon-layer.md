@@ -1,4 +1,4 @@
-In this guide we are using a layer called [meta-axon](https://github.com/joaohf/meta-axon) to hold:
+In this guide we are going to use a layer called [meta-axon](https://github.com/joaohf/meta-axon) to hold:
 
 - the [axon](https://github.com/joaohf/meta-axon/blob/master/recipes-extended/axon/axon_git.bb) recipe application
 - the [axon scenic](https://github.com/joaohf/meta-axon/blob/master/recipes-extended/axon/axon-scenic_git.bb) recipe application
@@ -11,13 +11,14 @@ The idea is to show two examples about how to run erlang and elixir applications
 In order to test the axon layer and build images, the first step is clone the layer repository:
 
 ```bash
-git clone https://github.com/joaohf/meta-erlang.git
+cd $HOME
+git clone https://github.com/joaohf/meta-axon.git
 ```
 
 Then, go to the previous build environment directory and add meta-axon to 'conf/bblayers.conf':
 
 ```bash
-bitbake-layers add-layer [path to clonned meta-axon directory]
+bitbake-layers add-layer $HOME/meta-axon
 ```
 
 Now its time to build the images and runqemu to check the results:
