@@ -7,7 +7,7 @@ The meta-erlang layers includes the possibility to generate development toolchai
 
 One could easily generates a specific SDK with all tools and libraries needed. For example: if your project needs Erlang 22.1.8 and Elixir 1.10, you can generate a SDK having these two dependencies. Then all the developers can share and use the same SDK during the development phase.
 
-In order to use specific a Erlang and Elixir versions, configure the following variables in the file [conf/local.conf or in the distro configuration file](https://docs.yoctoproject.org/ref-manual/terms.html?highlight=local%20conf#term-Configuration-File):
+In order to use a specific Erlang and Elixir versions, configure the following variables in the file [conf/local.conf or in the distro configuration file](https://docs.yoctoproject.org/ref-manual/terms.html?highlight=local%20conf#term-Configuration-File):
 
 ```
 PREFERRED_VERSION_erlang = "23.0.4"
