@@ -7,6 +7,18 @@ The meta-erlang layers includes the possibility to generate development toolchai
 
 One could easily generates a specific SDK with all tools and libraries needed. For example: if your project needs Erlang 22.1.8 and Elixir 1.10, you can generate a SDK having these two dependencies. Then all the developers can share and use the same SDK during the development phase.
 
+In order to use specific a Erlang and Elixir versions, configure the following variables in the file [conf/local.conf or in the distro configuration file](https://docs.yoctoproject.org/ref-manual/terms.html?highlight=local%20conf#term-Configuration-File):
+
+```
+PREFERRED_VERSION_erlang = "23.0.4"
+PREFERRED_VERSION_erlang-native = "23.0.4"
+PREFERRED_VERSION_nativesdk-erlang = "23.0.4"
+
+PREFERRED_VERSION_elixir = "1.11.2"
+PREFERRED_VERSION_elixir-native = "1.11.2"
+PREFERRED_VERSION_nativesdk-elixir = "1.11.2"
+```
+
 Maybe your team have special version of Erlang or Elixir with some in-house patches, using a SDK created by YP is a good approach to follow. You will have total control from the build until development SDK installation.
 
 Also the SDK have all the dependencies to cross compile applications for target hardware. So the developer has just one installation to perform in order to access all the tools.
@@ -21,10 +33,10 @@ The recipe [meta-erlang-toolchain](https://github.com/meta-erlang/meta-erlang/tr
 Using the [Standard SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-using-the-standard-sdk) is simple as:
 
 ```bash
-bitbake meta-erlang-toolchain -c populate_sdk
+bitbake meta-erlang-toolchain
 ```
 
-After finishing the SDK generation command, check the YP [TMPDIR](https://docs.yoctoproject.org/ref-manual/ref-variables.html#term-TMPDIR). A new file has been created like this: _poky-glibc-x86_64-meta-erlang-toolchain-armv7vet2hf-neon-qemuarm-toolchain-3.1.3.sh_. The file name depends on many factors like machine configuration and YP version.
+After finishing the SDK generation command, check the YP [TMPDIR](https://docs.yoctoproject.org/ref-manual/ref-variables.html#term-TMPDIR). A new file has been created like this: _poky-glibc-x86\_64-meta-erlang-toolchain-armv7vet2hf-neon-qemuarm-toolchain-3.1.3.sh_. The file name depends on many factors like machine configuration and YP version.
 
 The next step is run the toolchain installation script, like this:
 
