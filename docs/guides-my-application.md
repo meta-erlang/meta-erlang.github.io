@@ -4,60 +4,7 @@ The layer meta-erlang provides additional bitbake classes to handle this process
 
 ## Erlang
 
-### rebar config script
-
-The follow example shows the _rebar.config.script_ that checks the presence of `system_libs` and `include_erts` arguments from `relx` and replace them with the value of REBAR3_TARGET_INCLUDE_ERTS and REBAR3_TARGET_SYSTEM_LIBS environment variable:
-
-```erlang
-ReplaceRelx =
-fun(Key, Path, Config) ->
-    case lists:keyfind(relx, 1, Config) of
-        false ->
-            Config;
-        {relx, Relx} ->
-            case lists:keyfind(Key, 1, Relx) of
-                false ->
-                    Config;                
-                {Key, true} ->
-                    NewPath = {Key, Path},
-                    NewRelx = lists:keyreplace(Key, 1, Relx, NewPath),                                   
-                    lists:keystore(relx, 1, Config, {relx, NewRelx});
-                {Key, _} ->
-                    Config
-            end
-    end
-end,
-
-ReplaceIncludeErts =
-fun(Path, Config) ->
-    ReplaceRelx(include_erts, Path, Config)
-end,
-
-ReplaceSystemLibs =
-fun(Path, Config) ->
-    ReplaceRelx(system_libs, Path, Config)
-end,
-
-EnvTargetIncludeErts = os:getenv("REBAR3_TARGET_INCLUDE_ERTS"),
-EnvTargetSystemLibs = os:getenv("REBAR3_TARGET_SYSTEM_LIBS"),
-
-Check = {EnvTargetIncludeErts, EnvTargetSystemLibs},
-case Check of
-    {false, false} ->
-        CONFIG;
-    {IncludeErts, false} ->
-        ReplaceIncludeErts(IncludeErts, CONFIG);
-    {false, SystemLibs} ->
-        ReplaceSystemLibs(SystemLibs, CONFIG);
-    {IncludeErts, SystemLibs} ->
-        CONFIG1 = ReplaceIncludeErts(IncludeErts, CONFIG),
-        ReplaceSystemLibs(SystemLibs, CONFIG1)
-end.
-```
-
-That way the `rebar3.bbclass` exports all needed variables and the `rebar.config.script` uses them. rebar can read these environment variables in order to find all the information and release the application together with a copy of an ERTS that works on the target hardware.
-
-### rebar config
+### preparing the rebar.config file
 
 A basic rebar3 config looks like this:
 
@@ -98,7 +45,27 @@ In the above config, the `relx` must have the `include_erts` and `system_libs` s
 }.
 ```
 
-So, the rebar.config.script, defined in the above session, will check and use the correct `include_erts` and `system_libs` values for relx.
+### inheriting rebar3 class
+
+The meta-erlang class _rebar3_ provides everything needed in order to generate a cross compiled Erlang release. The rebar3 class uses the `rebar3 tar` command passing the following arguments:
+
+* `rebar as ${REBAR_PROFILE} tar`
+* `--system_libs ${REBAR3_TARGET_SYSTEM_LIBS}`
+* `--include-erts ${REBAR3_TARGET_INCLUDE_ERTS}`
+* `-n ${REBAR3_RELEASE_NAME}`
+
+While _REBAR3\_TARGET\_SYSTEM\_LIBS_ and _REBAR3\_TARGET\_INCLUDE\_ERTS_ are detected automatically pointing to the correct target paths; the variables _REBAR\_PROFILE_ and _REBAR3\_RELEASE\_NAME_ must be defined in the application recipe like this:
+
+```bitbake
+inherit rebar3
+
+REBAR_PRODULE = "prod"
+REBAR3_RELEASE_NAME = "my-application"
+```
+
+Calling `rebar3 tar` command is necessary to avoid less changes in the application rebar.config file. So, rebar3 (which delegates to relx) will use the correct target paths.
+
+!> Remember: rebar3 supports independent release configurations.
 
 ## Elixir
 
