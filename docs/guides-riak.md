@@ -6,7 +6,16 @@ Follow the quickstart guide to get a basic working environment and then:
 
  * Add erlang preferred version 22.x in _conf/local.conf_ (check the full list of Erlang supported versions here [Riak KV 3.0 Release Notes](https://github.com/basho/riak/blob/develop-3.0/RELEASE-NOTES.md#riak-kv-30-release-notes))
 ```bash
-echo 'PREFERRED_VERSION_erlang = "22%"
+echo 'PREFERRED_VERSION_erlang = "22%" >> conf/local.conf
+echo 'PREFERRED_VERSION_erlang-native = "22%" >> conf/local.conf
+```
+ * Add rebar3-native preferred version 3.13 in _conf/local.conf_ file
+```bash
+echo 'PREFERRED_VERSION_rebar3-native = "3.13%" >> conf/local.conf
+```
+ * Append `pam` to DISTRO_FEATURES in _conf/local.conf_ file:
+```bash
+echo 'DISTRO_FEATURES += " pam"'
 ```
  * Add `riak` package to `IMAGE_INSTAL` in _conf/local.conf_
 ```bash
