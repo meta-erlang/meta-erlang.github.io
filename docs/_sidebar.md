@@ -19,6 +19,7 @@
   - [Couchdb](guides-couchdb)
   - [Riak](guides-riak)
   - [epmd](guides-epmd)
+  - [Wings3d](guides-wings)
   
 - Distro
 
