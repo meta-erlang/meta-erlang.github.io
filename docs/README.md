@@ -20,7 +20,8 @@ Some ideas:
 * Create a virtual appliance product with Erlang/Elixir embedded software on any Cloud service provider
 * Enables the possibility to install and run BEAM based application on embedded Hardwares
 * Fine tune configurations and options when building Linux distro for embedded or cloud usage
-* Test and develop patches for Erlang and Elixir targeting Linux.
+* Test and develop patches for Erlang and Elixir targeting Linux
+* Create your own build dependency tarball with having Erlang and Elixir ready to use.
 
 ## Recipes included in this layer
 
@@ -31,6 +32,7 @@ Some ideas:
 * Rabbitmq
 * Riak
 * Couchdb
+* Wings3d
 * epmd
 * Erlang
 * Elixir
