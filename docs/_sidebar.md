@@ -9,6 +9,7 @@
   - [Application Release](guides-my-application)
   - [Recipes](guides-a-tiny-recipe)
   - [Application Development](guides-development)
+  - [BEAM Tools](guides-beamtools)
 
 - Applications
   
