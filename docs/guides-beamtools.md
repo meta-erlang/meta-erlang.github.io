@@ -19,9 +19,9 @@ This tarball builds all the listed tools natively, wrapping them into a tarball 
 ready to be shared. The _beamtools_ does not provides any way to cross-compile code. The aim is to provide a
 custom set of BEAM tools able to be run on any Linux machine.
 
-### Building beamtools
+## Building beamtools
 
-The first step is to define which Erlang and Elixir versions the beamtools will have. This is done
+The first step is to define which Erlang and Elixir versions the beamtools will build. This is done
 configuring the following variables in the file [conf/local.conf or in the distro configuration file](https://docs.yoctoproject.org/ref-manual/terms.html?highlight=local%20conf#term-Configuration-File):
 
 ```
@@ -75,3 +75,21 @@ SDK has been successfully set up and is ready to be used.
 Each time you wish to use the SDK in a new shell session, you need to source the environment setup script e.g.
  $ . /home/joaohf/beamtools/3.4.1-erlang-24.1.7-elixir-1.12.3/environment-setup-x86_64-pokysdk-linux
 ```
+
+## Downloading a pre-built beamtools tarball
+
+It is also possible to download and run a pre-built beamtools installer yourself with the following steps:
+
+1. Locate and download the *.sh at https://github.com/meta-erlang/meta-erlang/releases
+2. Execute the installation script. Here is an example for the traditional installer:
+```bash
+    sh ~/Downloads/x86_64-beamtools-nativesdk-standalone-3.4.1-erlang-24.1.7-elixir-1.12.3.sh
+```
+    During execution, a prompt appears that allows you to choose the installation directory. For example, you could choose the following: /home/your-username/beamtools
+3. Source the tools environment setup script by using a command like the following:
+```bash
+    source /home/your_username/beamtools/environment-setup-x86_64-pokysdk-linux
+```
+
+After you have sourced the setup script, the tools are added to PATH and any other environment variables required to run the tools are initialized. 
+The results are working versions versions of rebar3, Erlang/OTP and Elixir.
