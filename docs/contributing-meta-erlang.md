@@ -32,5 +32,5 @@ cp recipes-devtools/elixir/elixir_1.8.2.bb recipes-devtools/elixir/elixir_1.9.0.
 
 Open the elixir_1.9.0.bb and change the following:
 
- * `SRCREV`: must point to the sha1 commit that represents the new elixir version
- * `SRC_URL`: change the version ('branch=') to the base elixir version branch. Example: 'v1.8'
+- `SRCREV`: must point to the sha1 commit that represents the new elixir version
+- `SRC_URL`: change the version ('branch=') to the base elixir version branch. Example: 'v1.8'

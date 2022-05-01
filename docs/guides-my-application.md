@@ -49,12 +49,12 @@ In the above config, the `relx` must have the `include_erts` and `system_libs` s
 
 The meta-erlang class _rebar3_ provides everything needed in order to generate a cross compiled Erlang release. The rebar3 class uses the `rebar3 tar` command passing the following arguments:
 
-* `rebar as ${REBAR_PROFILE} tar`
-* `--system_libs ${REBAR3_TARGET_SYSTEM_LIBS}`
-* `--include-erts ${REBAR3_TARGET_INCLUDE_ERTS}`
-* `-n ${REBAR3_RELEASE_NAME}`
+- `rebar as ${REBAR_PROFILE} tar`
+- `--system_libs ${REBAR3_TARGET_SYSTEM_LIBS}`
+- `--include-erts ${REBAR3_TARGET_INCLUDE_ERTS}`
+- `-n ${REBAR3_RELEASE_NAME}`
 
-While _REBAR3\_TARGET\_SYSTEM\_LIBS_ and _REBAR3\_TARGET\_INCLUDE\_ERTS_ are detected automatically pointing to the correct target paths; the variables _REBAR\_PROFILE_ and _REBAR3\_RELEASE\_NAME_ must be defined in the application recipe like this:
+While _REBAR3_TARGET_SYSTEM_LIBS_ and _REBAR3_TARGET_INCLUDE_ERTS_ are detected automatically pointing to the correct target paths; the variables _REBAR_PROFILE_ and _REBAR3_RELEASE_NAME_ must be defined in the application recipe like this:
 
 ```bitbake
 inherit rebar3
@@ -71,7 +71,7 @@ Calling `rebar3 tar` command is necessary to avoid less changes in the applicati
 
 ### release with distillery
 
-This approach uses [distillery](https://github.com/bitwalker/distillery) to handle the release generation. The usual config is documented [here]( https://hexdocs.pm/distillery/introduction/installation.html). An extra step is necessary to copy the crosscompile elixir and erlang libraries to the release package. The following code show the additional configuration:
+This approach uses [distillery](https://github.com/bitwalker/distillery) to handle the release generation. The usual config is documented [here](https://hexdocs.pm/distillery/introduction/installation.html). An extra step is necessary to copy the crosscompile elixir and erlang libraries to the release package. The following code show the additional configuration:
 
 ```erlang
 environment :prod do

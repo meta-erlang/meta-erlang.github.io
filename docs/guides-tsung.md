@@ -6,15 +6,20 @@ As a final result, we are able to run the command `tsung`.
 
 Follow the quickstart guide to get a basic working environment and then:
 
- * Add `tsung` and `tsung-doc` packages to `IMAGE_INSTAL` in _conf/local.conf_
+- Add `tsung` and `tsung-doc` packages to `IMAGE_INSTAL` in _conf/local.conf_
+
 ```bash
 echo 'IMAGE_INSTALL_append = " tsung tsung-doc"' >> conf/local.conf
 ```
- * Now its time to build the image:
+
+- Now its time to build the image:
+
 ```bash
 bitbake core-image-minimal
 ```
- * And check the results with qemu:
+
+- And check the results with qemu:
+
 ```bash
 runqemu core-image-minimal
 ```

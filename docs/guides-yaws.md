@@ -6,19 +6,26 @@ As a final result, we are able to run a standalone Yams using qemu. In fact, Yaw
 
 Follow the quickstart guide to get a basic working environment and then:
 
- * Add `yaws` package to `IMAGE_INSTAL` in _conf/local.conf_
+- Add `yaws` package to `IMAGE_INSTAL` in _conf/local.conf_
+
 ```bash
 echo 'IMAGE_INSTALL_append = " yaws"' >> conf/local.conf
 ```
- * There is a package called `yaws-examples` that adds code and examples. This is an optional step
+
+- There is a package called `yaws-examples` that adds code and examples. This is an optional step
+
 ```bash
 echo 'IMAGE_INSTALL_append = " yaws yaws-examples"' >> conf/local.conf
 ```
- * Now it's time to build the image:
+
+- Now it's time to build the image:
+
 ```bash
 bitbake core-image-minimal
 ```
- * And check the results with qemu:
+
+- And check the results with qemu:
+
 ```bash
 runqemu core-image-minimal
 ```
@@ -26,20 +33,23 @@ runqemu core-image-minimal
 To start `yaws`, there are two options:
 
 1. Using systemv or systemd script
+
 ```bash
 # systemv
 /etc/init.d/yaws
 # systemd
 systemctl start yaws
 ```
+
 2. Call the yaws help scripts to start the webserver:
+
 ```bash
 /usr/bin/yaws
 ```
 
 After that, from your host environment, you can access the webserver reaching one of the two endpoints available:
 
-* http://192.168.7.2:8000
-* https://192.168.7.2:8443
+- http://192.168.7.2:8000
+- https://192.168.7.2:8443
 
 Yaws, is a webserver totally functional and ready to create great applications. The [Yaws website](http://yaws.hyber.org/) has a lot of high quality information.

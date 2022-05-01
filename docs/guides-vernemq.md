@@ -6,21 +6,28 @@ As a final result, we are able to run an embedded vernemq using qemu.
 
 Follow the quickstart guide to get a basic working environment and then:
 
- * Add erlang preferred version 24.x in _conf/local.conf_
+- Add erlang preferred version 24.x in _conf/local.conf_
+
 ```bash
 echo 'PREFERRED_VERSION_erlang = "24.3.3"
 echo 'PREFERRED_VERSION_erlang-native = "24.3.3"
 echo 'PREFERRED_VERSION_nativesdk-erlang = "24.3.3"
 ```
- * Add `emqx` package to `IMAGE_INSTAL` in _conf/local.conf_
+
+- Add `emqx` package to `IMAGE_INSTAL` in _conf/local.conf_
+
 ```bash
 echo 'IMAGE_INSTALL_append = " vernemq"' >> conf/local.conf
 ```
- * Now its time to build the image:
+
+- Now its time to build the image:
+
 ```bash
 bitbake core-image-minimal
 ```
- * And check the results with qemu:
+
+- And check the results with qemu:
+
 ```bash
 runqemu core-image-minimal
 ```

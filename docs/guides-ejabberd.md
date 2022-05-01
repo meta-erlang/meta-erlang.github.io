@@ -6,19 +6,24 @@ As a final result, we are able to run an embedded ejabberd using qemu.
 
 Follow the quickstart guide to get a basic working environment and then:
 
- * Add `ejabberd` package to `IMAGE_INSTAL` in _conf/local.conf_
+- Add `ejabberd` package to `IMAGE_INSTAL` in _conf/local.conf_
+
 ```bash
 echo 'IMAGE_INSTALL_append = " ejabberd"' >> conf/local.conf
 ```
- * Now its time to build the image:
+
+- Now its time to build the image:
+
 ```bash
 bitbake core-image-minimal
 ```
- * And check the results with qemu:
+
+- And check the results with qemu:
+
 ```bash
 runqemu core-image-minimal
 ```
 
-Connect to the qemu instance and call the main ejabberd admin tool: ```ejabberdctl```.
+Connect to the qemu instance and call the main ejabberd admin tool: `ejabberdctl`.
 
 The default recipe creates a system user called _ejabberd_ by default.

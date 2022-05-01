@@ -1,4 +1,3 @@
-
 The most important step is create recipes for bitbake. meta-erlang exports two classes [rebar3.bbclass](https://github.com/meta-erlang/meta-erlang/blob/master/classes/rebar3.bbclass) and [mix.bbclass](https://github.com/meta-erlang/meta-erlang/blob/master/classes/mix.bbclass) which encapsulates most of the work when building Erlang and Elixir applications.
 
 In this guide we are going to cover how to use build tool plugins that help during the recipe creating phase.
@@ -15,7 +14,7 @@ Two plugins has been implemented in order to help the user to create his first r
 
 [rebar3_bitbake](https://hex.pm/packages/rebar3_bitbake) is a [rebar3 plugin](http://rebar3.org/docs/tutorials/building_plugins/) which reads the Erlang application file definition and creates a recipe based on all the data found in that application file.
 
-To start using the plugin, first we need to add rebar3_bitbake as a _project\_plugins_:
+To start using the plugin, first we need to add rebar3*bitbake as a \_project_plugins*:
 
 ```
 {project_plugins, [
@@ -44,7 +43,7 @@ def deps do
   ]
 end
 ```
- 
+
 Then, calling `mix bitbake` the mix_bitbake task will extract all data in order to create a bitbake recipe for the elixir application.
 
 ## Recipe examples

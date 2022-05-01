@@ -4,15 +4,20 @@ The recipe [epmd](https://github.com/meta-erlang/meta-erlang/blob/master/recipes
 
 Follow the quickstart guide to get a basic working environment and then:
 
- * Add `epmd` package to `IMAGE_INSTAL` in _conf/local.conf_
+- Add `epmd` package to `IMAGE_INSTAL` in _conf/local.conf_
+
 ```bash
 echo 'IMAGE_INSTALL_append = " epmd"' >> conf/local.conf
 ```
- * Now its time to build the image:
+
+- Now its time to build the image:
+
 ```bash
 bitbake core-image-minimal
 ```
- * And check the results with qemu:
+
+- And check the results with qemu:
+
 ```bash
 runqemu core-image-minimal
 ```
@@ -27,7 +32,7 @@ Then, start erl with distributed enabled like this:
 
 ```bash
 erl -sname test
-``` 
+```
 
 Check again using `ps` and there is still only one epmd daemon running. As the final check, lets ask epmd if its know any erlang node:
 

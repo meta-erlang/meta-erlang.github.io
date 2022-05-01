@@ -6,32 +6,42 @@ As a final result, we are able to run an embedded couchdb using qemu.
 
 Follow the quickstart guide to get a basic working environment and then:
 
- * Add erlang preferred version 22.x in _conf/local.conf_ (check the full list of Erlang supported versions here [Dependencies](https://docs.couchdb.org/en/stable/install/unix.html#dependencies))
+- Add erlang preferred version 22.x in _conf/local.conf_ (check the full list of Erlang supported versions here [Dependencies](https://docs.couchdb.org/en/stable/install/unix.html#dependencies))
+
 ```bash
 echo 'PREFERRED_VERSION_erlang = "22%"
 ```
- * Add `couchdb` package to `IMAGE_INSTAL` in _conf/local.conf_
+
+- Add `couchdb` package to `IMAGE_INSTAL` in _conf/local.conf_
+
 ```bash
 echo 'IMAGE_INSTALL_append = " couchdb"' >> conf/local.conf
 ```
- * Now its time to build the image:
+
+- Now its time to build the image:
+
 ```bash
 bitbake core-image-minimal
 ```
- * And check the results with qemu:
+
+- And check the results with qemu:
+
 ```bash
 runqemu core-image-minimal
 ```
 
 couchdb needs two additional manual configurations in the config file (_/opt/couchdb/etc/local.ini_).
 
- * The first one is to enable the dashboard remote access. Find the session `chttpd` and change the bind_address. Like this:
+- The first one is to enable the dashboard remote access. Find the session `chttpd` and change the bind_address. Like this:
+
 ```
 [chttpd]
-port = 5984 
+port = 5984
 bind_address = 0.0.0.0
 ```
- * The second one is necessary to add a administrator user to the couchdb instance. Like this:
+
+- The second one is necessary to add a administrator user to the couchdb instance. Like this:
+
 ```
 [admins]
 admin = mysecretpassword

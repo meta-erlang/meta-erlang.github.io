@@ -1,7 +1,6 @@
 <!-- docs/_sidebar.md -->
 
 - [Introduction](README)
-  
 - Guides
 
   - [Quickstart](guides-quickstart)
@@ -12,7 +11,7 @@
   - [BEAM Tools](guides-beamtools)
 
 - Applications
-  
+
   - [EMQ](guides-emqx)
   - [Ejabberd](guides-ejabberd)
   - [Yaws](guides-yaws)
@@ -23,7 +22,7 @@
   - [Wings3d](guides-wings)
   - [livebook](guides-livebook)
   - [VerneMQ](guides-vernemq)
-  
+
 - Distro
 
   - [Axon layer](guides-axon-layer)

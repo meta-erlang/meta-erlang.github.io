@@ -1,6 +1,3 @@
-
-
-
 ## SDK for Erlang and Elixir
 
 The meta-erlang layers includes the possibility to generate development toolchains enabling better and smooth experience for the developer.
@@ -27,7 +24,6 @@ The recipe [meta-erlang-toolchain](https://github.com/meta-erlang/meta-erlang/tr
 
 !> The follow two sections are based on [Yocto Project Application Development and the Extensible Software Development Kit (eSDK)](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html) for Yocto Project 3.1.3 LTS "Dunfell". To get an up-to-date documentation, please, visit the [Yocto Project Documentation](https://docs.yoctoproject.org/index.html)
 
-
 ### Standard SDK
 
 Using the [Standard SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-using-the-standard-sdk) is simple as:
@@ -36,7 +32,7 @@ Using the [Standard SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-
 bitbake meta-erlang-toolchain
 ```
 
-After finishing the SDK generation command, check the YP [TMPDIR](https://docs.yoctoproject.org/ref-manual/ref-variables.html#term-TMPDIR). A new file has been created like this: _poky-glibc-x86\_64-meta-erlang-toolchain-armv7vet2hf-neon-qemuarm-toolchain-3.1.3.sh_. The file name depends on many factors like machine configuration and YP version.
+After finishing the SDK generation command, check the YP [TMPDIR](https://docs.yoctoproject.org/ref-manual/ref-variables.html#term-TMPDIR). A new file has been created like this: _poky-glibc-x86_64-meta-erlang-toolchain-armv7vet2hf-neon-qemuarm-toolchain-3.1.3.sh_. The file name depends on many factors like machine configuration and YP version.
 
 The next step is run the toolchain installation script, like this:
 
@@ -46,9 +42,9 @@ Poky (Yocto Project Reference Distro) SDK installer version 3.1.3
 =================================================================
 Enter target directory for SDK (default: /opt/poky/3.1.3): /opt/poky/3.1.3
 You are about to install the SDK to "/opt/poky/3.1.3". Proceed [Y/n]?
-Extracting SDK.............................................done            
-Setting it up...done                                                       
-SDK has been successfully set up and is ready to be used.                   
+Extracting SDK.............................................done
+Setting it up...done
+SDK has been successfully set up and is ready to be used.
 Each time you wish to use the SDK in a new shell session, you need to source the environment setup script e.g.
  $ . /opt/poky/3.1.3/environment-setup-armv7vet2hf-neon-poky-linux-gnueabi
 ```
@@ -73,8 +69,8 @@ The _populate_sdk_ext_ works only with image recipes. After finishing the comman
 joaohf@porco:~/tmp/poky$ ~/work/opensource/build/tmp/deploy/sdk/poky-glibc-x86_64-core-image-minimal-armv7vet2hf-neon-qemuarm-toolchain-ext-3.1.3.sh
 Poky (Yocto Project Reference Distro) Extensible SDK installer version 3.1.3
 ============================================================================
-Enter target directory for SDK (default: ~/poky_sdk):       
-You are about to install the SDK to "/home/joaohf/poky_sdk". Proceed [Y/n]? 
+Enter target directory for SDK (default: ~/poky_sdk):
+You are about to install the SDK to "/home/joaohf/poky_sdk". Proceed [Y/n]?
 Extracting SDK..................................................done
 Setting it up...
 Extracting buildtools...
@@ -94,20 +90,19 @@ Source the environment setup script for each new shell session that you want to 
 
 !> Additional tools can also be included if needed, checkout the [Customizing the Extensible SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-appendix-customizing) documentation.
 
-
 ## Development session example
 
 This section shows an example about how to use the SDK during a development session and exploring how we can use the command [devtool](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#using-devtool-in-your-sdk-workflow) to help fixing a bug in an Erlang application.
 
 We are going to perform the following steps:
 
-* created a new bitbake recipe for an Erlang application
-* build the recipe
-* create an image and run it using QEMU
-* execute the Erlang application on QEMU
-* make a change in the application and use hot code swapping to change the application, that is, without stop the running application or restart the QEMU machine
-* clean up the target QEMU
-* finish up the recipe
+- created a new bitbake recipe for an Erlang application
+- build the recipe
+- create an image and run it using QEMU
+- execute the Erlang application on QEMU
+- make a change in the application and use hot code swapping to change the application, that is, without stop the running application or restart the QEMU machine
+- clean up the target QEMU
+- finish up the recipe
 
 One can use the same approach when working with a real hardware.
 
@@ -117,9 +112,9 @@ Let's start loading the SDK setup environment:
 
 ```bash
 $ cd ~/poky_sdk
-$ source environment-setup-armv7vet2hf-neon-poky-linux-gnueabi 
+$ source environment-setup-armv7vet2hf-neon-poky-linux-gnueabi
 SDK environment now set up; additionally you may now run devtool to perform development tasks.
-Run devtool --help for further details. 
+Run devtool --help for further details.
 ```
 
 For this experience we are going to use a small Erlang application called `elock`. Clone it and build using rebar3 build tool.
@@ -198,33 +193,33 @@ Awesome, everything works. Now we need to build an image which has a working Lin
 
 ```bash
 $ devtool build-image core-image-minimal
-NOTE: Starting bitbake server...                                                                                                                                                      
-NOTE: Reconnecting to bitbake server...                                                                                                                                               
-NOTE: Retrying server connection (#1)...                                                   
+NOTE: Starting bitbake server...
+NOTE: Reconnecting to bitbake server...
+NOTE: Retrying server connection (#1)...
 Loading cache: 100% |##################################################################################################################################################| Time: 0:00:00
-Loaded 3037 entries from dependency cache.                                                 
+Loaded 3037 entries from dependency cache.
 Parsing recipes: 100% |################################################################################################################################################| Time: 0:00:00
 Parsing of 1943 .bb files complete (1942 cached, 1 parsed). 3038 targets, 113 skipped, 0 masked, 0 errors.
 INFO: Building image core-image-minimal with the following additional packages: elock
 Loading cache: 100% |##################################################################################################################################################| Time: 0:00:04
 Loaded 3037 entries from dependency cache.
 Parsing recipes: 100% |################################################################################################################################################| Time: 0:00:00
-Parsing of 1943 .bb files complete (1941 cached, 2 parsed). 3038 targets, 113 skipped, 0 masked, 0 errors.                                                                            
+Parsing of 1943 .bb files complete (1941 cached, 2 parsed). 3038 targets, 113 skipped, 0 masked, 0 errors.
 NOTE: Resolving any missing task queue dependencies
 Initialising tasks: 100% |#############################################################################################################################################| Time: 0:00:05
-Sstate summary: Wanted 98 Found 1 Missed 97 Current 877 (1% match, 90% complete)                                                                                                      
+Sstate summary: Wanted 98 Found 1 Missed 97 Current 877 (1% match, 90% complete)
 NOTE: Executing Tasks
 NOTE: Tasks Summary: Attempted 2649 tasks of which 2423 didn't need to be rerun and all succeeded.
 INFO: Successfully built core-image-minimal. You can find output files in /home/joaohf/poky_sdk/tmp/deploy/images/qemuarm
 ```
 
-So far we build elock application as well the core-image-minimal. Now, it is time to running the image using qemu. 
+So far we build elock application as well the core-image-minimal. Now, it is time to running the image using qemu.
 
 Open a new shell session and source again the SDK environment variables. This is necessary because QEMU will block the terminal.
 
 ```bash
 $ cd ~/poky_sdk
-$ source environment-setup-armv7vet2hf-neon-poky-linux-gnueabi 
+$ source environment-setup-armv7vet2hf-neon-poky-linux-gnueabi
 ```
 
 And then, start the QEMU:
@@ -254,13 +249,13 @@ elock has been installed, however it is not started yet. In order to start it fo
 ```bash
 ssh root@192.168.7.2
 root@qemuarm:~# cd /usr/lib/elock/bin
-root@qemuarm:/usr/lib/elock/bin# ./elock                                                   
-Erlang/OTP 23 [erts-11.1.3] [source] [smp:1:1] [ds:1:1:10] [async-threads:1]               
-                                                                                           
-=WARNING REPORT==== 20-Nov-2020::20:14:43.909058 ===                                       
+root@qemuarm:/usr/lib/elock/bin# ./elock
+Erlang/OTP 23 [erts-11.1.3] [source] [smp:1:1] [ds:1:1:10] [async-threads:1]
+
+=WARNING REPORT==== 20-Nov-2020::20:14:43.909058 ===
 Setting Ranch options together with socket options is deprecated. Please use the new map syntax that allows specifying socket options separately from other options.
-                                                                                           
-Eshell V11.1.3  (abort with ^G)                                                            
+
+Eshell V11.1.3  (abort with ^G)
 1>
 ```
 
@@ -274,7 +269,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '[192.168.7.2]:4050' (RSA) to the list of known hosts.
 SSH server
 Enter password for "admin"
-password: 
+password:
 Enter command or `help`
 elock> get_code
 ---> {ok,<<"12345">>}
@@ -292,7 +287,7 @@ index fc0b10e..3f88dd4 100644
 +++ b/src/elock_statem.erl
 @@ -24,7 +24,7 @@ get_timeout() ->
  set_timeout(Tmo) -> ok.
- 
+
  get_code() ->
 -    {ok, <<"12345">>}.
 +    {ok, <<"77777">>}.
@@ -327,7 +322,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '[192.168.7.2]:4050' (RSA) to the list of known hosts.
 SSH server
 Enter password for "admin"
-password: 
+password:
 Enter command or `help`
 elock> get_code
 ---> {ok,<<"77777">>}

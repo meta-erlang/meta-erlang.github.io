@@ -23,12 +23,15 @@ bitbake-layers add-layer $HOME/meta-axon
 
 Now its time to build the images and runqemu to check the results:
 
- * Emebedded erlang application:
+- Emebedded erlang application:
+
 ```bash
 bitbake axon-image-minimal
 runqemu axon-image-minimal
 ```
- * Embedded elixir application with scenic:
+
+- Embedded elixir application with scenic:
+
 ```bash
 bitbake axon-image-x11
 runqemu axon-image-x11
@@ -37,5 +40,3 @@ runqemu axon-image-x11
 The follow screenshot shows a qemu session running axon scenic application:
 
 ![scenic inside qemu](_media/axon_scenic_qemu.png)
-
-
