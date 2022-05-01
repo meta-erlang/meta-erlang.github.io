@@ -25,6 +25,8 @@ Some ideas:
 
 ## Recipes included in this layer
 
+* livebook
+* VerneMQ
 * Tsung
 * Yaws
 * EMQX

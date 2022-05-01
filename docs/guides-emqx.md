@@ -8,7 +8,10 @@ Follow the quickstart guide to get a basic working environment and then:
 
  * Add erlang preferred version 22.x in _conf/local.conf_
 ```bash
-echo 'PREFERRED_VERSION_erlang = "22%"
+echo 'PREFERRED_VERSION_erlang = "22.3.4.22"'
+echo 'PREFERRED_VERSION_erlang-native = "22.3.4.22"'
+echo 'PREFERRED_VERSION_nativesdk-erlang = "22.3.4.22"'
+echo 'PREFERRED_VERSION_rebar3-native = "3.13.1"'
 ```
  * Add `emqx` package to `IMAGE_INSTAL` in _conf/local.conf_
 ```bash

@@ -21,6 +21,8 @@
   - [Riak](guides-riak)
   - [epmd](guides-epmd)
   - [Wings3d](guides-wings)
+  - [livebook](guides-livebook)
+  - [VerneMQ](guides-vernemq)
   
 - Distro
 
