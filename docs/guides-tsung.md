@@ -9,7 +9,7 @@ Follow the quickstart guide to get a basic working environment and then:
 - Add `tsung` and `tsung-doc` packages to `IMAGE_INSTAL` in _conf/local.conf_
 
 ```bash
-echo 'IMAGE_INSTALL_append = " tsung tsung-doc"' >> conf/local.conf
+echo 'IMAGE_INSTALL:append = " tsung tsung-doc"' >> conf/local.conf
 ```
 
 - Now its time to build the image:

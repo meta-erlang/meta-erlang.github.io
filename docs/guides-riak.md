@@ -26,7 +26,7 @@ echo 'DISTRO_FEATURES += " pam"'
 - Add `riak` package to `IMAGE_INSTAL` in _conf/local.conf_
 
 ```bash
-echo 'IMAGE_INSTALL_append = " riak"' >> conf/local.conf
+echo 'IMAGE_INSTALL:append = " riak"' >> conf/local.conf
 ```
 
 - Now its time to build the image:

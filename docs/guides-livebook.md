@@ -18,7 +18,7 @@ echo 'PREFERRED_VERSION_nativesdk-elixir = "1.13%"'
 - Add `emqx` package to `IMAGE_INSTAL` in _conf/local.conf_
 
 ```bash
-echo 'IMAGE_INSTALL_append = " livebook"' >> conf/local.conf
+echo 'IMAGE_INSTALL:append = " livebook"' >> conf/local.conf
 ```
 
 - Now its time to build the image:

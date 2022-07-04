@@ -94,9 +94,9 @@ PV = "0.1.0-git${SRCPV}"
 PR = "r0"
 
 DEPENDS = "glfw glew"
-RDEPENDS_${PN} += " glfw glew"
+RDEPENDS:${PN} += " glfw glew"
 
-CFLAGS_append = " -fPIC "
+CFLAGS:append = " -fPIC "
 
 SRC_URI = "\
     git://github.com/joaohf/axon-scenic;branch=master \

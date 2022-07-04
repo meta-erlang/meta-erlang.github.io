@@ -17,7 +17,7 @@ echo 'PREFERRED_VERSION_nativesdk-erlang = "24.3.3"
 - Add `emqx` package to `IMAGE_INSTAL` in _conf/local.conf_
 
 ```bash
-echo 'IMAGE_INSTALL_append = " vernemq"' >> conf/local.conf
+echo 'IMAGE_INSTALL:append = " vernemq"' >> conf/local.conf
 ```
 
 - Now its time to build the image:
