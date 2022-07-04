@@ -6,10 +6,16 @@ Clone _meta-erlang_:
 git clone https://github.com/meta-erlang/meta-erlang.git
 ```
 
-Clone _poky_:
+Clone _poky_ and checkout branch _kirkstone_:
 
 ```bash
-git clone git://git.yoctoproject.org/poky
+git clone --branch kirkstone git://git.yoctoproject.org/poky
+```
+
+Clone _meta-openembedded_ and checkout branch _kirkstone_:
+
+```bash
+git clone --branch kirkstone https://github.com/openembedded/meta-openembedded.git
 ```
 
 Move to _poky_ directory:
@@ -18,28 +24,23 @@ Move to _poky_ directory:
 cd poky
 ```
 
-Check out the branch _dunfell_:
-
-```bash
-git checkout dunfell -b dunfell
-```
-
 Initialize the build environment:
 
 ```bash
 source oe-init-build-env ../build
 ```
 
-Add _meta-erlang_ to _conf/layer.conf_:
+Add _meta-oe_ and _meta-erlang_ to _conf/layer.conf_:
 
 ```bash
+bitbake-layers add-layer ../meta-openembedded/meta-oe
 bitbake-layers add-layer ../meta-erlang
 ```
 
 Add `erlang` package to `IMAGE_INSTAL` in _conf/local.conf_
 
 ```bash
-echo 'IMAGE_INSTALL_append = " erlang"' >> conf/local.conf
+echo 'IMAGE_INSTALL:append = " erlang"' >> conf/local.conf
 ```
 
 Build the _core-image-minimal_:
