@@ -9,13 +9,13 @@ Follow the quickstart guide to get a basic working environment and then:
 - Add `yaws` package to `IMAGE_INSTAL` in _conf/local.conf_
 
 ```bash
-echo 'IMAGE_INSTALL_append = " yaws"' >> conf/local.conf
+echo 'IMAGE_INSTALL:append = " yaws"' >> conf/local.conf
 ```
 
 - There is a package called `yaws-examples` that adds code and examples. This is an optional step
 
 ```bash
-echo 'IMAGE_INSTALL_append = " yaws yaws-examples"' >> conf/local.conf
+echo 'IMAGE_INSTALL:append = " yaws yaws-examples"' >> conf/local.conf
 ```
 
 - Now it's time to build the image:

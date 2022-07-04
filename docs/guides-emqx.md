@@ -18,7 +18,7 @@ echo 'PREFERRED_VERSION_rebar3-native = "3.13.1"'
 - Add `emqx` package to `IMAGE_INSTAL` in _conf/local.conf_
 
 ```bash
-echo 'IMAGE_INSTALL_append = " emqx"' >> conf/local.conf
+echo 'IMAGE_INSTALL:append = " emqx"' >> conf/local.conf
 ```
 
 - Now its time to build the image:

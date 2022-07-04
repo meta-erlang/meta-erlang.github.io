@@ -15,7 +15,7 @@ echo 'PREFERRED_VERSION_erlang = "22%"
 - Add `couchdb` package to `IMAGE_INSTAL` in _conf/local.conf_
 
 ```bash
-echo 'IMAGE_INSTALL_append = " couchdb"' >> conf/local.conf
+echo 'IMAGE_INSTALL:append = " couchdb"' >> conf/local.conf
 ```
 
 - Now its time to build the image:
