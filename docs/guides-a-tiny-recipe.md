@@ -1,20 +1,35 @@
-The most important step is create recipes for bitbake. meta-erlang exports two classes [rebar3.bbclass](https://github.com/meta-erlang/meta-erlang/blob/master/classes/rebar3.bbclass) and [mix.bbclass](https://github.com/meta-erlang/meta-erlang/blob/master/classes/mix.bbclass) which encapsulates most of the work when building Erlang and Elixir applications.
+The most important step is create recipes for bitbake. meta-erlang exports two
+classes
+[rebar3.bbclass](https://github.com/meta-erlang/meta-erlang/blob/master/classes/rebar3.bbclass)
+and
+[mix.bbclass](https://github.com/meta-erlang/meta-erlang/blob/master/classes/mix.bbclass)
+which encapsulates most of the work when building Erlang and Elixir
+applications.
 
-In this guide we are going to cover how to use build tool plugins that help during the recipe creating phase.
+In this guide we are going to cover how to use build tool plugins that help
+during the recipe creating phase.
 
-The use of build plugins is optional and might help until you get used about how to create bitbake recipes efficiently.
+The use of build plugins is optional and might help until you get used about how
+to create bitbake recipes efficiently.
 
 ## Build tool plugins
 
-Two plugins has been implemented in order to help the user to create his first recipe.
+Two plugins has been implemented in order to help the user to create his first
+recipe.
 
-!> Be aware that mix_bitbake and rebar3_bitbake are simple build tools plugins aimed to help the initial bootstrap. If you are looking for a development workflow, take a look at [Application Development](guides-development) guide.
+!> Be aware that mix_bitbake and rebar3_bitbake are simple build tools plugins
+aimed to help the initial bootstrap. If you are looking for a development
+workflow, take a look at [Application Development](guides-development) guide.
 
 ### Erlang: rebar3_bitbake
 
-[rebar3_bitbake](https://hex.pm/packages/rebar3_bitbake) is a [rebar3 plugin](http://rebar3.org/docs/tutorials/building_plugins/) which reads the Erlang application file definition and creates a recipe based on all the data found in that application file.
+[rebar3_bitbake](https://hex.pm/packages/rebar3_bitbake) is a
+[rebar3 plugin](http://rebar3.org/docs/tutorials/building_plugins/) which reads
+the Erlang application file definition and creates a recipe based on all the
+data found in that application file.
 
-To start using the plugin, first we need to add rebar3*bitbake as a \_project_plugins*:
+To start using the plugin, first we need to add rebar3*bitbake as a
+\_project_plugins*:
 
 ```
 {project_plugins, [
@@ -22,19 +37,25 @@ To start using the plugin, first we need to add rebar3*bitbake as a \_project_pl
 ]}.
 ```
 
-After that, rebar3 exports the command _bitbake_. Then, to create a recipe based on the current application (suppose the application is called `demo`) run the bitbake command like this:
+After that, rebar3 exports the command _bitbake_. Then, to create a recipe based
+on the current application (suppose the application is called `demo`) run the
+bitbake command like this:
 
 ```
 rebar3 bitbake
 ```
 
-A new file called _demo-x.y.z.bb_, where x.y.z is the version of the `demo` application, should be created.
+A new file called _demo-x.y.z.bb_, where x.y.z is the version of the `demo`
+application, should be created.
 
-Now, it is time to copy _demo-x.y.z.bb_ to your YP/OE distro or application layer.
+Now, it is time to copy _demo-x.y.z.bb_ to your YP/OE distro or application
+layer.
 
 ### Elixir: mix_bitbake
 
-The [mix_bitbake](https://hex.pm/packages/mix_bitbake) mix task follows the same approach as rebar3_bitbake does. First we need to include it in mix.exs file as a development dependency, like this:
+The [mix_bitbake](https://hex.pm/packages/mix_bitbake) mix task follows the same
+approach as rebar3_bitbake does. First we need to include it in mix.exs file as
+a development dependency, like this:
 
 ```elixir
 def deps do
@@ -44,11 +65,13 @@ def deps do
 end
 ```
 
-Then, calling `mix bitbake` the mix_bitbake task will extract all data in order to create a bitbake recipe for the elixir application.
+Then, calling `mix bitbake` the mix_bitbake task will extract all data in order
+to create a bitbake recipe for the elixir application.
 
 ## Recipe examples
 
-The following sections show recipes from [meta-axon layer](https://github.com/joaohf/meta-axon/tree/master/recipes-extended/axon)
+The following sections show recipes from
+[meta-axon layer](https://github.com/joaohf/meta-axon/tree/master/recipes-extended/axon)
 
 ### Erlang
 
@@ -74,9 +97,11 @@ inherit rebar3
 REBAR3_PROFILE = "prod"
 ```
 
-rebar3 builds the application using the `prod` profile that was previously set by `REBAR3_PROFILE` variable.
+rebar3 builds the application using the `prod` profile that was previously set
+by `REBAR3_PROFILE` variable.
 
-!> The REBAR_PROFILE is an important variable to configure the [rebar profile](https://www.rebar3.org/docs/profiles).
+!> The REBAR_PROFILE is an important variable to configure the
+[rebar profile](https://www.rebar3.org/docs/profiles).
 
 ### Elixir
 

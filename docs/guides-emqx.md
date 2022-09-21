@@ -1,6 +1,14 @@
-In this guide we are using the plain meta-erlang layer to build an [mqtt](http://mqtt.org/) broker called [EMQ](https://www.emqx.io/).
+In this guide we are using the plain meta-erlang layer to build an
+[mqtt](http://mqtt.org/) broker called [EMQ](https://www.emqx.io/).
 
-The recipe [emqx_git.bb](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-connectivity/emqx/emqx_git.bb) builds the emqx using a crosscompile approach both to erlang and C. As emqx has a dependency called `bcrypt` which is a [NIF](http://erlang.org/doc/tutorial/nif.html) driver. To address the crosscompile, some [patches](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-connectivity/emqx/files) were necessary.
+The recipe
+[emqx_git.bb](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-connectivity/emqx/emqx_git.bb)
+builds the emqx using a crosscompile approach both to erlang and C. As emqx has
+a dependency called `bcrypt` which is a
+[NIF](http://erlang.org/doc/tutorial/nif.html) driver. To address the
+crosscompile, some
+[patches](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-connectivity/emqx/files)
+were necessary.
 
 As a final result, we are able to run an embedded emqx using qemu.
 
@@ -33,10 +41,12 @@ bitbake core-image-minimal
 runqemu core-image-minimal
 ```
 
-The follow screenshot shows a qemu session running emqx application: `/usr/lib/emqx/bin/emqx console`:
+The follow screenshot shows a qemu session running emqx application:
+`/usr/lib/emqx/bin/emqx console`:
 
 ![emqx console qemu](_media/emqx_qemu.png)
 
-And the next screenshot shows the EMQ dashboard, when accessing it by http://192.168.7.2:18083:
+And the next screenshot shows the EMQ dashboard, when accessing it by
+http://192.168.7.2:18083:
 
 ![emqx dashboard](_media/emqx_dashboard.png)

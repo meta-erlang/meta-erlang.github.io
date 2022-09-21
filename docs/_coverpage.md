@@ -6,5 +6,4 @@
 
 <!-- insert asciinema or other gif here -->
 
-[GitHub](https://github.com/meta-erlang/meta-erlang)
-[Get Started](README)
+[GitHub](https://github.com/meta-erlang/meta-erlang) [Get Started](README)

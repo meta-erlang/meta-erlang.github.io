@@ -2,13 +2,16 @@
 
 We're using:
 
-- [Node.js](https://www.nodejs.org) `v10.15.0` to support the other required tools
+- [Node.js](https://www.nodejs.org) `v10.15.0` to support the other required
+  tools
 - [docsify](https://docsify.js.org/#/) to create our documentation site
 - [prettier](https://prettier.io/) to format our markdown files
 
 ### Install Dependencies
 
-We are trying to **avoid polluting** the core repo with tooling for this documentation site. As such, it would be great if you could install these development tools **globally** so we don't need to commit them to this project.
+We are trying to **avoid polluting** the core repo with tooling for this
+documentation site. As such, it would be great if you could install these
+development tools **globally** so we don't need to commit them to this project.
 
 ```shell
 npm i docsify-cli prettier -g
@@ -34,7 +37,8 @@ prettier --write "docs/**/*.md"
 
 It would be great to provide translations for other languages.
 
-Docsify makes adding new languages quite easy. Look in `docs/index.html` for commented out `zh-cn` examples.
+Docsify makes adding new languages quite easy. Look in `docs/index.html` for
+commented out `zh-cn` examples.
 
 ### Adding a new Translation
 
@@ -53,4 +57,8 @@ Docsify makes adding new languages quite easy. Look in `docs/index.html` for com
 5. add a link to the new translation in `_navbar.md`.
 6. run `prettier` before committing.
 
-For more information, see the [Configuration](https://docsify.js.org/#/configuration) docsify docs, the [Custom navbar](https://docsify.js.org/#/custom-navbar) docsify docs, and have a look at their own `index.html`'s [search section](https://github.com/docsifyjs/docsify/blob/6ac7bace213145cb655e9a5e9e209384db08e5f9/docs/index.html#L48).
+For more information, see the
+[Configuration](https://docsify.js.org/#/configuration) docsify docs, the
+[Custom navbar](https://docsify.js.org/#/custom-navbar) docsify docs, and have a
+look at their own `index.html`'s
+[search section](https://github.com/docsifyjs/docsify/blob/6ac7bace213145cb655e9a5e9e209384db08e5f9/docs/index.html#L48).

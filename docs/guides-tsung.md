@@ -1,6 +1,9 @@
-In this guide we are using the plain meta-erlang layer to include a distributed test tool called [tsung](http://tsung.erlang-projects.org/).
+In this guide we are using the plain meta-erlang layer to include a distributed
+test tool called [tsung](http://tsung.erlang-projects.org/).
 
-The recipe [tsung_1.7.0.bb](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-tests/tsung/tsung_1.7.0.bb) builds the tsung tool using a crosscompile approach.
+The recipe
+[tsung_1.7.0.bb](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-tests/tsung/tsung_1.7.0.bb)
+builds the tsung tool using a crosscompile approach.
 
 As a final result, we are able to run the command `tsung`.
 
@@ -24,10 +27,13 @@ bitbake core-image-minimal
 runqemu core-image-minimal
 ```
 
-The package tsung-doc provides a set of working examples which can be used as a base. The below command will start tsung using a basic scenario:
+The package tsung-doc provides a set of working examples which can be used as a
+base. The below command will start tsung using a basic scenario:
 
 ```bash
 tsung -f /usr/share/doc/tsung/examples/http_simple.xml start
 ```
 
-Tsung has a pretty [decent documentation](http://tsung.erlang-projects.org/user_manual/) showing how to configure more advanced scenarios.
+Tsung has a pretty
+[decent documentation](http://tsung.erlang-projects.org/user_manual/) showing
+how to configure more advanced scenarios.
