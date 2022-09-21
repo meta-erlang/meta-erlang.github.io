@@ -7,6 +7,7 @@
   - [Bitbake classes](guides-bitbake-classes)
   - [Application Release](guides-my-application)
   - [Recipes](guides-a-tiny-recipe)
+  - [Hello World examples](guides-hello-world)
   - [Application Development](guides-development)
   - [BEAM Tools](guides-beamtools)
 
