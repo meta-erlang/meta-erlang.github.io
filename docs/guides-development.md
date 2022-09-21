@@ -1,10 +1,16 @@
 ## SDK for Erlang and Elixir
 
-The meta-erlang layers includes the possibility to generate development toolchains enabling better and smooth experience for the developer.
+The meta-erlang layers includes the possibility to generate development
+toolchains enabling better and smooth experience for the developer.
 
-One could easily generates a specific SDK with all tools and libraries needed. For example: if your project needs Erlang 22.1.8 and Elixir 1.10, you can generate a SDK having these two dependencies. Then all the developers can share and use the same SDK during the development phase.
+One could easily generates a specific SDK with all tools and libraries needed.
+For example: if your project needs Erlang 22.1.8 and Elixir 1.10, you can
+generate a SDK having these two dependencies. Then all the developers can share
+and use the same SDK during the development phase.
 
-In order to use a specific Erlang and Elixir versions, configure the following variables in the file [conf/local.conf or in the distro configuration file](https://docs.yoctoproject.org/ref-manual/terms.html?highlight=local%20conf#term-Configuration-File):
+In order to use a specific Erlang and Elixir versions, configure the following
+variables in the file
+[conf/local.conf or in the distro configuration file](https://docs.yoctoproject.org/ref-manual/terms.html?highlight=local%20conf#term-Configuration-File):
 
 ```
 PREFERRED_VERSION_erlang = "23.0.4"
@@ -16,23 +22,41 @@ PREFERRED_VERSION_elixir-native = "1.11.2"
 PREFERRED_VERSION_nativesdk-elixir = "1.11.2"
 ```
 
-Maybe your team have special version of Erlang or Elixir with some in-house patches, using a SDK created by YP is a good approach to follow. You will have total control from the build until development SDK installation.
+Maybe your team have special version of Erlang or Elixir with some in-house
+patches, using a SDK created by YP is a good approach to follow. You will have
+total control from the build until development SDK installation.
 
-Also the SDK have all the dependencies to cross compile applications for target hardware. So the developer has just one installation to perform in order to access all the tools.
+Also the SDK have all the dependencies to cross compile applications for target
+hardware. So the developer has just one installation to perform in order to
+access all the tools.
 
-The recipe [meta-erlang-toolchain](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-core/meta/meta-erlang-toolchain.bb) is the main entry point when creating a generic toolchain with Erlang and Elixir. And comes with Erlang, Elixir development modules as well rebar3 build tool.
+The recipe
+[meta-erlang-toolchain](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-core/meta/meta-erlang-toolchain.bb)
+is the main entry point when creating a generic toolchain with Erlang and
+Elixir. And comes with Erlang, Elixir development modules as well rebar3 build
+tool.
 
-!> The follow two sections are based on [Yocto Project Application Development and the Extensible Software Development Kit (eSDK)](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html) for Yocto Project 3.1.3 LTS "Dunfell". To get an up-to-date documentation, please, visit the [Yocto Project Documentation](https://docs.yoctoproject.org/index.html)
+!> The follow two sections are based on
+[Yocto Project Application Development and the Extensible Software Development Kit (eSDK)](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html)
+for Yocto Project 3.1.3 LTS "Dunfell". To get an up-to-date documentation,
+please, visit the
+[Yocto Project Documentation](https://docs.yoctoproject.org/index.html)
 
 ### Standard SDK
 
-Using the [Standard SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-using-the-standard-sdk) is simple as:
+Using the
+[Standard SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-using-the-standard-sdk)
+is simple as:
 
 ```bash
 bitbake meta-erlang-toolchain
 ```
 
-After finishing the SDK generation command, check the YP [TMPDIR](https://docs.yoctoproject.org/ref-manual/ref-variables.html#term-TMPDIR). A new file has been created like this: _poky-glibc-x86_64-meta-erlang-toolchain-armv7vet2hf-neon-qemuarm-toolchain-3.1.3.sh_. The file name depends on many factors like machine configuration and YP version.
+After finishing the SDK generation command, check the YP
+[TMPDIR](https://docs.yoctoproject.org/ref-manual/ref-variables.html#term-TMPDIR).
+A new file has been created like this:
+_poky-glibc-x86_64-meta-erlang-toolchain-armv7vet2hf-neon-qemuarm-toolchain-3.1.3.sh_.
+The file name depends on many factors like machine configuration and YP version.
 
 The next step is run the toolchain installation script, like this:
 
@@ -49,13 +73,20 @@ Each time you wish to use the SDK in a new shell session, you need to source the
  $ . /opt/poky/3.1.3/environment-setup-armv7vet2hf-neon-poky-linux-gnueabi
 ```
 
-As the last sentence says, just source the file _environment-setup-armv7vet2hf-neon-poky-linux-gnueabi_ and we ready to use Erlang and Elixir.
+As the last sentence says, just source the file
+_environment-setup-armv7vet2hf-neon-poky-linux-gnueabi_ and we ready to use
+Erlang and Elixir.
 
-!> If you need to customize the toolchain, i.e: add or remove tools, YP supports [customize the Standard SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-appendix-customizing-standard).
+!> If you need to customize the toolchain, i.e: add or remove tools, YP supports
+[customize the Standard SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-appendix-customizing-standard).
 
 ### Extensible SDK
 
-[Extensible SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-extensible) is the newly way in order to create SDK with YP. It includes the [devtool](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#using-devtool-in-your-sdk-workflow) tool to help the development workflow when working with new recipes or testing with the target hardware.
+[Extensible SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-extensible)
+is the newly way in order to create SDK with YP. It includes the
+[devtool](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#using-devtool-in-your-sdk-workflow)
+tool to help the development workflow when working with new recipes or testing
+with the target hardware.
 
 The instructions for generating an eSDK is as follow:
 
@@ -63,7 +94,8 @@ The instructions for generating an eSDK is as follow:
 bitbake core-image-minimal -c populate_sdk_ext
 ```
 
-The _populate_sdk_ext_ works only with image recipes. After finishing the command, it is time to install the SDK like this:
+The _populate_sdk_ext_ works only with image recipes. After finishing the
+command, it is time to install the SDK like this:
 
 ```
 joaohf@porco:~/tmp/poky$ ~/work/opensource/build/tmp/deploy/sdk/poky-glibc-x86_64-core-image-minimal-armv7vet2hf-neon-qemuarm-toolchain-ext-3.1.3.sh
@@ -86,13 +118,19 @@ Each time you wish to use the SDK in a new shell session, you need to source the
  $ . /home/joaohf/poky_sdk/environment-setup-armv7vet2hf-neon-poky-linux-gnueabi
 ```
 
-Source the environment setup script for each new shell session that you want to use the SDK.
+Source the environment setup script for each new shell session that you want to
+use the SDK.
 
-!> Additional tools can also be included if needed, checkout the [Customizing the Extensible SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-appendix-customizing) documentation.
+!> Additional tools can also be included if needed, checkout the
+[Customizing the Extensible SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-appendix-customizing)
+documentation.
 
 ## Development session example
 
-This section shows an example about how to use the SDK during a development session and exploring how we can use the command [devtool](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#using-devtool-in-your-sdk-workflow) to help fixing a bug in an Erlang application.
+This section shows an example about how to use the SDK during a development
+session and exploring how we can use the command
+[devtool](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#using-devtool-in-your-sdk-workflow)
+to help fixing a bug in an Erlang application.
 
 We are going to perform the following steps:
 
@@ -100,13 +138,17 @@ We are going to perform the following steps:
 - build the recipe
 - create an image and run it using QEMU
 - execute the Erlang application on QEMU
-- make a change in the application and use hot code swapping to change the application, that is, without stop the running application or restart the QEMU machine
+- make a change in the application and use hot code swapping to change the
+  application, that is, without stop the running application or restart the QEMU
+  machine
 - clean up the target QEMU
 - finish up the recipe
 
 One can use the same approach when working with a real hardware.
 
-!> This session is far from be generic steps in order to develop, build, test and deploy Erlang/Elixir projects using Yocto Project. The purpose here is just to demonstrate one of multiple workflows.
+!> This session is far from be generic steps in order to develop, build, test
+and deploy Erlang/Elixir projects using Yocto Project. The purpose here is just
+to demonstrate one of multiple workflows.
 
 Let's start loading the SDK setup environment:
 
@@ -117,7 +159,8 @@ SDK environment now set up; additionally you may now run devtool to perform deve
 Run devtool --help for further details.
 ```
 
-For this experience we are going to use a small Erlang application called `elock`. Clone it and build using rebar3 build tool.
+For this experience we are going to use a small Erlang application called
+`elock`. Clone it and build using rebar3 build tool.
 
 ```bash
 $ git clone https://github.com/joaohf/elock
@@ -125,9 +168,12 @@ $ cd elock
 $ rebar3 compile
 ```
 
-Alright, the SDK is working as expected. The rebar3 tool is included into the SDK as well all the Erlang development requirements. The next step is create an elock bitbake recipe.
+Alright, the SDK is working as expected. The rebar3 tool is included into the
+SDK as well all the Erlang development requirements. The next step is create an
+elock bitbake recipe.
 
-Still in the elock folder, call the `devtool add` in order to create a standard bitbake recipe:
+Still in the elock folder, call the `devtool add` in order to create a standard
+bitbake recipe:
 
 ```bash
 $ devtool add elock .
@@ -144,14 +190,20 @@ INFO: Using source tree as build directory since that would be the default for t
 INFO: Recipe /home/joaohf/poky_sdk/workspace/recipes/elock/elock_git.bb has been automatically created; further editing may be required to make it fully functional
 ```
 
-devtool created a new recipe call elock_git.bb. This recipe does not work because Yocto Project doesn't know how to read an Erlang/Elixir project and generate a proper bitbake recipe. So we need to use a rebar3 plugin called [rebar3_bitbake](https://hex.pm/packages/rebar3_bitbake) which knows how to create a proper recipe:
+devtool created a new recipe call elock_git.bb. This recipe does not work
+because Yocto Project doesn't know how to read an Erlang/Elixir project and
+generate a proper bitbake recipe. So we need to use a rebar3 plugin called
+[rebar3_bitbake](https://hex.pm/packages/rebar3_bitbake) which knows how to
+create a proper recipe:
 
 ```bash
 $ rebar3 bitbake
 $ cp elock_0.1.0.bb /home/joaohf/poky_sdk/workspace/recipes/elock/elock_git.bb
 ```
 
-Now, elock recipe is ready. As the last step before the build, let's fix the recipe version because we want to build and release the version 0.1.0. So, still using devtool to change the recipe name do:
+Now, elock recipe is ready. As the last step before the build, let's fix the
+recipe version because we want to build and release the version 0.1.0. So, still
+using devtool to change the recipe name do:
 
 ```bash
 $ devtool rename -V 0.1.0 elock
@@ -189,7 +241,8 @@ NOTE: elock: compiling from external source tree /home/joaohf/work/projetos/eloc
 NOTE: Tasks Summary: Attempted 613 tasks of which 608 didn't need to be rerun and all succeeded.
 ```
 
-Awesome, everything works. Now we need to build an image which has a working Linux distro made with Yocto Project:
+Awesome, everything works. Now we need to build an image which has a working
+Linux distro made with Yocto Project:
 
 ```bash
 $ devtool build-image core-image-minimal
@@ -213,9 +266,11 @@ NOTE: Tasks Summary: Attempted 2649 tasks of which 2423 didn't need to be rerun 
 INFO: Successfully built core-image-minimal. You can find output files in /home/joaohf/poky_sdk/tmp/deploy/images/qemuarm
 ```
 
-So far we build elock application as well the core-image-minimal. Now, it is time to running the image using qemu.
+So far we build elock application as well the core-image-minimal. Now, it is
+time to running the image using qemu.
 
-Open a new shell session and source again the SDK environment variables. This is necessary because QEMU will block the terminal.
+Open a new shell session and source again the SDK environment variables. This is
+necessary because QEMU will block the terminal.
 
 ```bash
 $ cd ~/poky_sdk
@@ -228,9 +283,12 @@ And then, start the QEMU:
 $ devtool runqemu core-image-minimal
 ```
 
-QEMU will start its booting process and we can connect over ssh to the IP address 192.168.7.2 using _root_ as ssh user.
+QEMU will start its booting process and we can connect over ssh to the IP
+address 192.168.7.2 using _root_ as ssh user.
 
-But our main aim now is to install the elock application into the QEMU instance. The core-image-minimal does not have the elock installed. So, let's install it right now calling devtool and the deploy-target subcommand, like this:
+But our main aim now is to install the elock application into the QEMU instance.
+The core-image-minimal does not have the elock installed. So, let's install it
+right now calling devtool and the deploy-target subcommand, like this:
 
 ```bash
 $ devtool deploy-target elock root@192.168.7.2
@@ -244,7 +302,9 @@ Parsing of 1943 .bb files complete (1942 cached, 1 parsed). 3038 targets, 113 sk
 INFO: Successfully deployed /home/joaohf/poky_sdk/tmp/work/armv7vet2hf-neon-poky-linux-gnueabi/elock/0.1.0-r0/image
 ```
 
-elock has been installed, however it is not started yet. In order to start it for the first time, open a new terminal, connect over ssh and start elock application:
+elock has been installed, however it is not started yet. In order to start it
+for the first time, open a new terminal, connect over ssh and start elock
+application:
 
 ```bash
 ssh root@192.168.7.2
@@ -259,7 +319,8 @@ Eshell V11.1.3  (abort with ^G)
 1>
 ```
 
-Ok, elock is up and running. Back to the development terminal and let's test if elock is working:
+Ok, elock is up and running. Back to the development terminal and let's test if
+elock is working:
 
 ```bash
 $ ssh -p 4050 admin@192.168.7.2
@@ -276,7 +337,9 @@ elock> get_code
 elock> exit
 ```
 
-Nice, it works! But, we want to change the default code from _12345_ to _7777_. What we are going to do is fix the default code, redeploy and verify if the hot swap code worked as expected:
+Nice, it works! But, we want to change the default code from _12345_ to _7777_.
+What we are going to do is fix the default code, redeploy and verify if the hot
+swap code worked as expected:
 
 Change the elock application like this:
 
@@ -299,20 +362,23 @@ Build the recipe with the changes made.
 $ devtool build elock
 ```
 
-And deploy elock. The deploy-target subcommand will take care about copying the files to the target directory.
+And deploy elock. The deploy-target subcommand will take care about copying the
+files to the target directory.
 
 ```bash
 $ devtool deploy-target elock root@192.168.7.2
 ```
 
-Switch to the ssh session and load the elock_statem code using `code:load_file/1`. This is the most basic way to perform hot code swapping.
+Switch to the ssh session and load the elock_statem code using
+`code:load_file/1`. This is the most basic way to perform hot code swapping.
 
 ```bash
 code:load_file(elock_statem).
 {module,elock_statem}
 ```
 
-Now, it is time to connect again over ssh 4050 port and check if the new pass code takes effect:
+Now, it is time to connect again over ssh 4050 port and check if the new pass
+code takes effect:
 
 ```bash
 $ ssh -p 4050 admin@192.168.7.2
@@ -328,18 +394,26 @@ elock> get_code
 ---> {ok,<<"77777">>}
 ```
 
-It works! We are very very happy with all these changes. Time to clean up the target hardware, that is, remove the elock files (this is not strict necessary, but just to show that it is possible):
+It works! We are very very happy with all these changes. Time to clean up the
+target hardware, that is, remove the elock files (this is not strict necessary,
+but just to show that it is possible):
 
 ```bash
 $ devtool undeploy-target elock root@192.168.7.2
 ```
 
-Now, the last step is to finish up all the recipe changes. The subcommand _finish_ creates any patches corresponding to commits in the local repository, moves the new recipe to a specific layer and resets the recipe moving it from the workspace to the layer.
+Now, the last step is to finish up all the recipe changes. The subcommand
+_finish_ creates any patches corresponding to commits in the local repository,
+moves the new recipe to a specific layer and resets the recipe moving it from
+the workspace to the layer.
 
 ```bash
 $ devtool finish -f elock meta-axon
 ```
 
-Finally, just check the final recipe results: _~/poky_sdk/layers/poky/meta-axon/recipes-elock/elock/elock_0.1.0.bb_
+Finally, just check the final recipe results:
+_~/poky_sdk/layers/poky/meta-axon/recipes-elock/elock/elock_0.1.0.bb_
 
-All done. We've created a recipe, change the Erlang application, deployed it on the target hardware, applied a fix using hot code swapping without stopping the application, checked the fix and finished up the recipe changes.
+All done. We've created a recipe, change the Erlang application, deployed it on
+the target hardware, applied a fix using hot code swapping without stopping the
+application, checked the fix and finished up the recipe changes.

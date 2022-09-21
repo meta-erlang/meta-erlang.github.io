@@ -1,6 +1,9 @@
-[livebook](https://livebook.dev/) is an tool made with Elixir to write interactive and collaborative code notebooks in Elixir.
-The meta-erlang layers provides the [recipe livebook](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-devtools/livebook)
-which install livebook in any image. livebook is a good tool for system instrospect and exploration.
+[livebook](https://livebook.dev/) is an tool made with Elixir to write
+interactive and collaborative code notebooks in Elixir. The meta-erlang layers
+provides the
+[recipe livebook](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-devtools/livebook)
+which install livebook in any image. livebook is a good tool for system
+instrospect and exploration.
 
 Follow the quickstart guide to get a basic working environment and then:
 
@@ -34,8 +37,9 @@ runqemu core-image-minimal
 ```
 
 The default livebook recipe exposes the 8080/tcp port. Custom layers could adapt
-the [livebook configuration file](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-devtools/livebook/files/livebook.config) to
-add more configuration values.
+the
+[livebook configuration file](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-devtools/livebook/files/livebook.config)
+to add more configuration values.
 
-As the livebook recipe does a livebook elixir release, it might be necessary to change the livebook.config according
-to your environment.
+As the livebook recipe does a livebook elixir release, it might be necessary to
+change the livebook.config according to your environment.

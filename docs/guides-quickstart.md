@@ -1,4 +1,7 @@
-This quickstart guide uses the same steps stated at [Yocto Project Quick Build](https://docs.yoctoproject.org/brief-yoctoprojectqs/brief-yoctoprojectqs.html) with additional steps to get an erlang runtime up and running on the target device.
+This quickstart guide uses the same steps stated at
+[Yocto Project Quick Build](https://docs.yoctoproject.org/brief-yoctoprojectqs/brief-yoctoprojectqs.html)
+with additional steps to get an erlang runtime up and running on the target
+device.
 
 Clone _meta-erlang_:
 
@@ -66,4 +69,5 @@ Eshell V10.1 (abort with ^G)
 [{processor,{logical,0}}]
 ```
 
-The other sections of this guide shows additional steps to create your own erlang application and run inside a custom image.
+The other sections of this guide shows additional steps to create your own
+erlang application and run inside a custom image.

@@ -1,6 +1,10 @@
-In this guide we are using the plain meta-erlang layer to build a [VerneMQ](hhttps://vernemq.com/) MQTT broker.
+In this guide we are using the plain meta-erlang layer to build a
+[VerneMQ](hhttps://vernemq.com/) MQTT broker.
 
-The recipe [vernemq_1.12.5.bb](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-connectivity/vernemq/vernemq_1.12.5.bb) builds the vernemq using a crosscompile approach both to erlang and C. A couple of patches exist in order to fix cross compilation issues in vernemq project.
+The recipe
+[vernemq_1.12.5.bb](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-connectivity/vernemq/vernemq_1.12.5.bb)
+builds the vernemq using a crosscompile approach both to erlang and C. A couple
+of patches exist in order to fix cross compilation issues in vernemq project.
 
 As a final result, we are able to run an embedded vernemq using qemu.
 
@@ -32,14 +36,16 @@ bitbake core-image-minimal
 runqemu core-image-minimal
 ```
 
-By default vernemq starts automatically and can be control using systemctl, like that:
+By default vernemq starts automatically and can be control using systemctl, like
+that:
 
 ```bash
 systemctl start vernemq
 ```
 
-As vernemq provides its own command line control scripts, it is possible to interact with the vmq-adm and vernemq scripts.
-But it is necessary to switch to the correct user, like the following:
+As vernemq provides its own command line control scripts, it is possible to
+interact with the vmq-adm and vernemq scripts. But it is necessary to switch to
+the correct user, like the following:
 
 ```bash
 su -s /bin/sh -l vernemq
