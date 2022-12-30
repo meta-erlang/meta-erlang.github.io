@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>meta-erlang Blog</title>
+        <link>https://meta-erlang.github.io/blog</link>
+        <description>meta-erlang Blog</description>
+        <lastBuildDate>Fri, 30 Dec 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Welcome]]></title>
+            <link>https://meta-erlang.github.io/blog/welcome</link>
+            <guid>welcome</guid>
+            <pubDate>Fri, 30 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[This new website is based on Docusaurus documentation framework. The previous site]]></description>
+            <content:encoded><![CDATA[<p>This new website is based on <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer">Docusaurus</a> documentation framework. The previous site
+was using <a href="https://docsify.js.org/#/" target="_blank" rel="noopener noreferrer">docsify</a>, which is also great. But Docusaurus address others concerns when
+writing documentation for open source project.</p><p>So, the site has a new frontend page and a blog session where we want to add latest meta-erlang release highlights.
+The documentation session is pretty much the same plus some improvements on <a href="https://meta-erlang.github.io/docs/" target="_blank" rel="noopener noreferrer">Introduction</a> chapter.</p>]]></content:encoded>
+            <category>meta-erlang</category>
+            <category>news</category>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://meta-erlang.github.io/blog</id>
+    <title>meta-erlang Blog</title>
+    <updated>2022-12-30T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://meta-erlang.github.io/blog"/>
+    <subtitle>meta-erlang Blog</subtitle>
+    <icon>https://meta-erlang.github.io/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome]]></title>
+        <id>welcome</id>
+        <link href="https://meta-erlang.github.io/blog/welcome"/>
+        <updated>2022-12-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This new website is based on Docusaurus documentation framework. The previous site]]></summary>
+        <content type="html"><![CDATA[<p>This new website is based on <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer">Docusaurus</a> documentation framework. The previous site
+was using <a href="https://docsify.js.org/#/" target="_blank" rel="noopener noreferrer">docsify</a>, which is also great. But Docusaurus address others concerns when
+writing documentation for open source project.</p><p>So, the site has a new frontend page and a blog session where we want to add latest meta-erlang release highlights.
+The documentation session is pretty much the same plus some improvements on <a href="https://meta-erlang.github.io/docs/" target="_blank" rel="noopener noreferrer">Introduction</a> chapter.</p>]]></content>
+        <author>
+            <name>João Henrique Ferreira de Freitas</name>
+            <uri>https://github.com/joaohf</uri>
+        </author>
+        <category label="meta-erlang" term="meta-erlang"/>
+        <category label="news" term="news"/>
+    </entry>
+</feed>
