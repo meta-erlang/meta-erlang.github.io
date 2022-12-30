@@ -1,3 +1,12 @@
+---
+sidebar_position: 2
+sidebar_label: Quickstart
+sidebar_class_name: green
+description: Getting start with meta-erlang.
+---
+
+# Quickstart
+
 This quickstart guide uses the same steps stated at
 [Yocto Project Quick Build](https://docs.yoctoproject.org/brief-yoctoprojectqs/brief-yoctoprojectqs.html)
 with additional steps to get an erlang runtime up and running on the target

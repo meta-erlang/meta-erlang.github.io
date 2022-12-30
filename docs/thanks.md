@@ -1,9 +1,11 @@
-## Documentation
+---
+sidebar_position: 7
+sidebar_label: Thanks
+sidebar_class_name: green
+description: Thanks
+---
 
-Borrowed the general template and structure from
-[asdf-vm](https://github.com/asdf-vm/asdf/tree/master/docs)
-
-## Contributors
+# Thanks
 
 See the
 [list of contributors](https://github.com/joaohf/meta-erlang/graphs/contributors)
