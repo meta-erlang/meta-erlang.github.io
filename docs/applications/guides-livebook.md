@@ -27,7 +27,7 @@ echo 'PREFERRED_VERSION_elixir-native = "1.13%"'
 echo 'PREFERRED_VERSION_nativesdk-elixir = "1.13%"'
 ```
 
-- Add `emqx` package to `IMAGE_INSTAL` in _conf/local.conf_
+- Add `livebook` package to `IMAGE_INSTAL` in _conf/local.conf_
 
 ```bash
 echo 'IMAGE_INSTALL:append = " livebook"' >> conf/local.conf
