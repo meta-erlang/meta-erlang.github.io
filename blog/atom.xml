@@ -24,4 +24,22 @@ The documentation session is pretty much the same plus some improvements on <a h
         <category label="meta-erlang" term="meta-erlang"/>
         <category label="news" term="news"/>
     </entry>
+    <entry>
+        <title type="html"><![CDATA[New Erlang releases 24.3.4.8, 25.1.2.1, 25.2.1]]></title>
+        <id>/2022/01/22/index</id>
+        <link href="https://meta-erlang.github.io/blog/2022/01/22/index"/>
+        <updated>2022-01-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We've added support for the following new Erlang/OTP releases:]]></summary>
+        <content type="html"><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>dunfell</td><td>24.3.4.8</td></tr><tr><td>kirkstone</td><td>24.3.4.8, 25.1.2.1, 25.2.1</td></tr><tr><td>langdale</td><td>24.3.4.8, 25.1.2.1, 25.2.1</td></tr></tbody></table><p>Fixed bugs:</p><ul><li><a href="https://github.com/meta-erlang/meta-erlang/issues/205" target="_blank" rel="noopener noreferrer">QA Issue buildpaths (reproducible builds) when building with langdale</a>, a specific
+patch has been integrated in order to avoid building flags into the final beam.smp binary.</li></ul><p>To be decided:</p><ul><li>Yocto Langdale release has enabled reproducible build checks. Erlang/OTP from 25 and later implements special flags
+to fix reproducible issues. But Erlang/OTP 24 does not have these special flags as a consequence langdale Erlang/OTP 24 builds
+warns about: <em>packages contains reference to TMPDIR <!-- -->[buildpaths]</em>. There are two paths that we could get. One is to drop Erlang/OTP 24 support
+OR disable QA buildpaths checking.</li></ul>]]></content>
+        <author>
+            <name>João Henrique Ferreira de Freitas</name>
+            <uri>https://github.com/joaohf</uri>
+        </author>
+        <category label="meta-erlang" term="meta-erlang"/>
+        <category label="news" term="news"/>
+    </entry>
 </feed>

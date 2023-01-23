@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmeta_erlang_github_io=self.webpackChunkmeta_erlang_github_io||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/blog/welcome"},{"title":"New Erlang releases 24.3.4.8, 25.1.2.1, 25.2.1","permalink":"/blog/2022/01/22/index"}]}')}}]);

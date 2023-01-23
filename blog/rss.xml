@@ -21,5 +21,19 @@ The documentation session is pretty much the same plus some improvements on <a h
             <category>meta-erlang</category>
             <category>news</category>
         </item>
+        <item>
+            <title><![CDATA[New Erlang releases 24.3.4.8, 25.1.2.1, 25.2.1]]></title>
+            <link>https://meta-erlang.github.io/blog/2022/01/22/index</link>
+            <guid>/2022/01/22/index</guid>
+            <pubDate>Sat, 22 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[We've added support for the following new Erlang/OTP releases:]]></description>
+            <content:encoded><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>dunfell</td><td>24.3.4.8</td></tr><tr><td>kirkstone</td><td>24.3.4.8, 25.1.2.1, 25.2.1</td></tr><tr><td>langdale</td><td>24.3.4.8, 25.1.2.1, 25.2.1</td></tr></tbody></table><p>Fixed bugs:</p><ul><li><a href="https://github.com/meta-erlang/meta-erlang/issues/205" target="_blank" rel="noopener noreferrer">QA Issue buildpaths (reproducible builds) when building with langdale</a>, a specific
+patch has been integrated in order to avoid building flags into the final beam.smp binary.</li></ul><p>To be decided:</p><ul><li>Yocto Langdale release has enabled reproducible build checks. Erlang/OTP from 25 and later implements special flags
+to fix reproducible issues. But Erlang/OTP 24 does not have these special flags as a consequence langdale Erlang/OTP 24 builds
+warns about: <em>packages contains reference to TMPDIR <!-- -->[buildpaths]</em>. There are two paths that we could get. One is to drop Erlang/OTP 24 support
+OR disable QA buildpaths checking.</li></ul>]]></content:encoded>
+            <category>meta-erlang</category>
+            <category>news</category>
+        </item>
     </channel>
 </rss>
