@@ -133,6 +133,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      metadata: [{name: 'keywords', content: 'erlang, elixir, yocto'}],
     }),
 };
 
