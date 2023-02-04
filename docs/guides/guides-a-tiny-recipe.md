@@ -26,7 +26,8 @@ recipe.
 
 !> Be aware that mix_bitbake and rebar3_bitbake are simple build tools plugins
 aimed to help the initial bootstrap. If you are looking for a development
-workflow, take a look at [Application Development](guides/guides-development.md) guide.
+workflow, take a look at [Application Development](guides/guides-development.md)
+guide.
 
 ### Erlang: rebar3_bitbake
 
