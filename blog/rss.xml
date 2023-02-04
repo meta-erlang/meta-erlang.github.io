@@ -4,34 +4,110 @@
         <title>meta-erlang Blog</title>
         <link>https://meta-erlang.github.io/blog</link>
         <description>meta-erlang Blog</description>
-        <lastBuildDate>Fri, 30 Dec 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 04 Feb 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[Welcome]]></title>
-            <link>https://meta-erlang.github.io/blog/welcome</link>
-            <guid>welcome</guid>
-            <pubDate>Fri, 30 Dec 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[This new website is based on Docusaurus documentation framework. The previous site]]></description>
-            <content:encoded><![CDATA[<p>This new website is based on <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer">Docusaurus</a> documentation framework. The previous site
-was using <a href="https://docsify.js.org/#/" target="_blank" rel="noopener noreferrer">docsify</a>, which is also great. But Docusaurus address others concerns when
-writing documentation for open source project.</p><p>So, the site has a new frontend page and a blog session where we want to add latest meta-erlang release highlights.
-The documentation session is pretty much the same plus some improvements on <a href="https://meta-erlang.github.io/docs/" target="_blank" rel="noopener noreferrer">Introduction</a> chapter.</p>]]></content:encoded>
+            <title><![CDATA[meta-erlang on cloud II, build your own application]]></title>
+            <link>https://meta-erlang.github.io/blog/2023/02/04/index</link>
+            <guid>https://meta-erlang.github.io/blog/2023/02/04/index</guid>
+            <pubDate>Sat, 04 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[<!---]]></description>
+            <content:encoded><![CDATA[<p><a href="https://aws.amazon.com/blogs/industries/building-an-automotive-embedded-linux-image-for-edge-using-arm-graviton-yocto-project-soafee/" target="_blank" rel="noopener noreferrer">Building an Automotive Embedded Linux Image for Edge and Cloud Using Arm-based Graviton Instances, Yocto Project, and SOAFEE</a></p><p><a href="https://github.com/aws4embeddedlinux/meta-aws-ewaol" target="_blank" rel="noopener noreferrer">The meta-aws-ewaol repository</a></p><p><a href="https://armkeil.blob.core.windows.net/developer/Files/pdf/white-paper/arm-aws-edge-environmental-parity-wp.pdf" target="_blank" rel="noopener noreferrer">Accelerating Software-Defined Vehicles through Cloud-To-Vehicle Edge Environmental Parity</a></p><p><a href="https://ewaol.docs.arm.com/en/kirkstone-dev/index.html" target="_blank" rel="noopener noreferrer">Edge Workload Abstraction and Orchestration Layer (EWAOL) Documentation</a></p><p><a href="https://aws.amazon.com/ec2/graviton/" target="_blank" rel="noopener noreferrer">EC2 Instances Powered by AWS Graviton Processors</a></p>]]></content:encoded>
+            <category>meta-erlang</category>
+            <category>cloud</category>
+        </item>
+        <item>
+            <title><![CDATA[meta-erlang on cloud I, EWAOL based]]></title>
+            <link>https://meta-erlang.github.io/blog/2023/01/29/index</link>
+            <guid>https://meta-erlang.github.io/blog/2023/01/29/index</guid>
+            <pubDate>Sun, 29 Jan 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[<!---]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="intro">Intro<a href="#intro" class="hash-link" aria-label="Direct link to Intro" title="Direct link to Intro">​</a></h2><p>The <a href="https://www.yoctoproject.org/" target="_blank" rel="noopener noreferrer">Yocto Project</a> has been made to create
+specific embedded Linux distributions. And still does a great job on this field
+making it possible to run softwares in a range of target architectures.</p><p>But, the term <em>embedded Linux distribution</em> should be expanded a bit more; it's
+not only about creating tiny filesystem within cross-compiled software, scripts
+and configurations targeting platforms with small footprint, CPU and memory
+constraints.</p><p>We could do more, actually there are people using the not so newly but still new
+ARM processors that runs on cloud environment. For sure the most famous one is
+the
+<a href="https://aws.amazon.com/ec2/graviton/" target="_blank" rel="noopener noreferrer">Graviton EC2 instances, on AWS cloud</a>.</p><p>Looking into these Graviton processors and Yocto Project, what would it be
+possible ? Maybe running Yocto images on Graviton instances could be feasible
+enough to run some workload. And what about adding Erlang/OTP and Elixir to that
+mix ? Or running some advanced database or broker made with Erlang ?</p><p>That is exactly what we will try to experiment. In this first post about running
+meta-erlang on cloud, we are going to look how it would be possible.</p><p>Actually there are folks whose made possible to run Yocto images on Graviton
+instances. Technically is pretty simple and all bits and bytes have been
+described in the blog post
+<a href="https://aws.amazon.com/blogs/industries/building-an-automotive-embedded-linux-image-for-edge-using-arm-graviton-yocto-project-soafee/" target="_blank" rel="noopener noreferrer">Building an Automotive Embedded Linux Image for Edge and Cloud Using Arm-based Graviton Instances, Yocto Project, and SOAFEE</a>.
+The companion repository also worth the reading
+<a href="https://github.com/aws4embeddedlinux/meta-aws-ewaol" target="_blank" rel="noopener noreferrer">The meta-aws-ewaol repository</a>.</p><p>The idea that <!-- -->[1]<!-- --> brings is part of another idea related to Software-Defined
+Vehicles through Cloud <!-- -->[2]<!-- --> which is very excited. These references also cites a
+framework to build Edge Workloads <!-- -->[3]<!-- --> and in fact the EWAOL (Edge Workload
+Abstraction and Orchestration Layer) was used as a base to produce the
+<a href="https://github.com/aws4embeddedlinux/meta-aws-ewaol" target="_blank" rel="noopener noreferrer">meta-aws-ewaol</a> layer.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="putting-everything-together-first-experiment">Putting everything together, first experiment<a href="#putting-everything-together-first-experiment" class="hash-link" aria-label="Direct link to Putting everything together, first experiment" title="Direct link to Putting everything together, first experiment">​</a></h2><p>So, based on all what has been described so far and as a first experience, I've
+tested meta-aws-ewaol setup and added meta-erlang into that. The aim was to run
+<code>erl</code> and <code>iex</code> console on Graviton EC2 instances.</p><p>I had to make a few fixes on meta-aws-ewaol and pushed the results here:
+<a href="https://github.com/joaohf/meta-aws-ewaol/tree/main-add-meta-erlang" target="_blank" rel="noopener noreferrer">meta-aws-ewaol with meta-erlang</a>.
+The rest of this session is a small guide that I made in order to run our first
+experiment.</p><p>With a ready Yocto environment, following the
+<a href="https://github.com/joaohf/meta-aws-ewaol/tree/main-add-meta-erlang#building-ewaol" target="_blank" rel="noopener noreferrer">Building EWAOL</a>
+session is enough to get the system built. It's just Yocto, nothing more.</p><div class="theme-admonition theme-admonition-tip alert alert--success admonition_LlT9"><div class="admonitionHeading_tbUL"><span class="admonitionIcon_kALy"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_S0QG"><ul><li>You can create a free AWS account. There are Graviton instances included in
+the AWS free tier. It's more than sufficient.</li><li>Bear in mind that you don't need to be an AWS master but you will end up
+spending some time learning how to create AWS services.</li></ul></div></div><p>The next step is to create and setup all the AWS infrastructure needed in order
+to push the Yocto image as AWS AMI and start the Graviton Instance. Lucky, there
+is a Cloud Formation template which performs the initial setup. The session
+<a href="https://github.com/joaohf/meta-aws-ewaol/tree/main-add-meta-erlang#pre-requisites" target="_blank" rel="noopener noreferrer">Pre-requisites</a>
+helps to clarify it.</p><p>Then, having the Yocto image and the basic AWS account in place. It's time to
+use
+<a href="https://github.com/joaohf/meta-aws-ewaol/blob/main-add-meta-erlang/scripts/create-ami.sh" target="_blank" rel="noopener noreferrer">a special script</a>
+to convert Yocto image to an AMI image. Most of the job is done by awscli
+commands. There is nothing related to Yocto here. The session
+<a href="https://github.com/joaohf/meta-aws-ewaol/tree/main-add-meta-erlang#creating-ami-from-image-file" target="_blank" rel="noopener noreferrer">Creating AMI from image file</a>
+tells what is necessary to do.</p><p>Finally, the last part. After pushing the AMI image to the S3 bucket. The fun
+part is to instantiate a Graviton instance (please refer to the session
+<a href="https://github.com/joaohf/meta-aws-ewaol/tree/main-add-meta-erlang#launch-the-ec2-image-as-usual-using-your-newly-created-ami" target="_blank" rel="noopener noreferrer">Launch the EC2 Image as usual using your newly created AMI</a>)
+an run the EWAOL based image and test how Erlang and Elixir looks like.</p><p>I've added two screenshots below just to have a taste of the final results:</p><p><img loading="lazy" alt="alt Erlang console" src="/assets/images/meta-erlang-gravitron-erl-74d44c9d063c73e6a3f61183f0bfcb5e.jpg" title="Erlang console" width="1229" height="988" class="img_ev3q"></p><p><img loading="lazy" alt="alt Elixir console" src="/assets/images/meta-erlang-gravitron-iex-96e0e9113e0029ca640a1e9d74e3eb94.jpg" title="Elixir console" width="1007" height="167" class="img_ev3q"></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2><p>This first experiment has finished and I can conclude two main bullets:</p><ul><li>It is possible to build a Yocto image and run it on Graviton instances</li><li>meta-aws-ewaol is a great start point. And the EWAOL framework looks solid for
+what it has been planned for.</li></ul><p>However, what I am looking for is to run a tiny image with just the necessary to
+put one Erlang/Elixir up and running on ARM cloud instances. That is what the
+next blog post will do:
+<a href="/blog/2023/02/04/index/">meta-erlang on cloud II, build your own application</a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References">​</a></h2><ul><li>[1]<!-- -->:
+<a href="https://aws.amazon.com/blogs/industries/building-an-automotive-embedded-linux-image-for-edge-using-arm-graviton-yocto-project-soafee/" target="_blank" rel="noopener noreferrer">Building an Automotive Embedded Linux Image for Edge and Cloud Using Arm-based Graviton Instances, Yocto Project, and SOAFEE</a></li><li>[2]<!-- -->:
+<a href="https://armkeil.blob.core.windows.net/developer/Files/pdf/white-paper/arm-aws-edge-environmental-parity-wp.pdf" target="_blank" rel="noopener noreferrer">Accelerating Software-Defined Vehicles through Cloud-To-Vehicle Edge Environmental Parity</a></li><li>[3]<!-- -->:
+<a href="https://ewaol.docs.arm.com/en/kirkstone-dev/index.html" target="_blank" rel="noopener noreferrer">Edge Workload Abstraction and Orchestration Layer (EWAOL) Documentation</a></li></ul>]]></content:encoded>
+            <category>meta-erlang</category>
+            <category>cloud</category>
+        </item>
+        <item>
+            <title><![CDATA[New Erlang releases 24.3.4.8, 25.1.2.1, 25.2.1]]></title>
+            <link>https://meta-erlang.github.io/blog/2023/01/22/index</link>
+            <guid>https://meta-erlang.github.io/blog/2023/01/22/index</guid>
+            <pubDate>Sun, 22 Jan 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[We've added support for the following new Erlang/OTP releases:]]></description>
+            <content:encoded><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>dunfell</td><td>24.3.4.8</td></tr><tr><td>kirkstone</td><td>24.3.4.8, 25.1.2.1, 25.2.1</td></tr><tr><td>langdale</td><td>24.3.4.8, 25.1.2.1, 25.2.1</td></tr></tbody></table><p>Fixed bugs:</p><ul><li><a href="https://github.com/meta-erlang/meta-erlang/issues/205" target="_blank" rel="noopener noreferrer">QA Issue buildpaths (reproducible builds) when building with langdale</a>,
+a specific patch has been integrated in order to avoid building flags into the
+final beam.smp binary.</li></ul><p>To be decided:</p><ul><li>Yocto Langdale release has enabled reproducible build checks. Erlang/OTP from
+25 and later implements special flags to fix reproducible issues. But
+Erlang/OTP 24 does not have these special flags as a consequence langdale
+Erlang/OTP 24 builds warns about: <em>packages contains reference to TMPDIR
+<!-- -->[buildpaths]</em>. There are two paths that we could get. One is to drop
+Erlang/OTP 24 support OR disable QA buildpaths checking.</li></ul>]]></content:encoded>
             <category>meta-erlang</category>
             <category>news</category>
         </item>
         <item>
-            <title><![CDATA[New Erlang releases 24.3.4.8, 25.1.2.1, 25.2.1]]></title>
-            <link>https://meta-erlang.github.io/blog/2022/01/22/index</link>
-            <guid>/2022/01/22/index</guid>
-            <pubDate>Sat, 22 Jan 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[We've added support for the following new Erlang/OTP releases:]]></description>
-            <content:encoded><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>dunfell</td><td>24.3.4.8</td></tr><tr><td>kirkstone</td><td>24.3.4.8, 25.1.2.1, 25.2.1</td></tr><tr><td>langdale</td><td>24.3.4.8, 25.1.2.1, 25.2.1</td></tr></tbody></table><p>Fixed bugs:</p><ul><li><a href="https://github.com/meta-erlang/meta-erlang/issues/205" target="_blank" rel="noopener noreferrer">QA Issue buildpaths (reproducible builds) when building with langdale</a>, a specific
-patch has been integrated in order to avoid building flags into the final beam.smp binary.</li></ul><p>To be decided:</p><ul><li>Yocto Langdale release has enabled reproducible build checks. Erlang/OTP from 25 and later implements special flags
-to fix reproducible issues. But Erlang/OTP 24 does not have these special flags as a consequence langdale Erlang/OTP 24 builds
-warns about: <em>packages contains reference to TMPDIR <!-- -->[buildpaths]</em>. There are two paths that we could get. One is to drop Erlang/OTP 24 support
-OR disable QA buildpaths checking.</li></ul>]]></content:encoded>
+            <title><![CDATA[Welcome]]></title>
+            <link>https://meta-erlang.github.io/blog/welcome</link>
+            <guid>https://meta-erlang.github.io/blog/welcome</guid>
+            <pubDate>Fri, 30 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[This new website is based on Docusaurus documentation]]></description>
+            <content:encoded><![CDATA[<p>This new website is based on <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer">Docusaurus</a> documentation
+framework. The previous site was using <a href="https://docsify.js.org/#/" target="_blank" rel="noopener noreferrer">docsify</a>,
+which is also great. But Docusaurus address others concerns when writing
+documentation for open source project.</p><p>So, the site has a new frontend page and a blog session where we want to add
+latest meta-erlang release highlights. The documentation session is pretty much
+the same plus some improvements on
+<a href="https://meta-erlang.github.io/docs/" target="_blank" rel="noopener noreferrer">Introduction</a> chapter.</p>]]></content:encoded>
             <category>meta-erlang</category>
             <category>news</category>
         </item>
