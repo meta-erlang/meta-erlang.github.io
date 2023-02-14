@@ -1,5 +1,5 @@
 ---
-title: meta-erlang on cloud I, EWAOL based
+title: "meta-erlang on cloud I: EWAOL based"
 authors: [joaohf]
 tags: [meta-erlang, cloud]
 ---
