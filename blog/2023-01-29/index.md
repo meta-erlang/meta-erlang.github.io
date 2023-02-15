@@ -1,5 +1,5 @@
 ---
-title: "meta-erlang on cloud I: EWAOL based"
+title: 'meta-erlang on cloud I: EWAOL based'
 authors: [joaohf]
 tags: [meta-erlang, cloud]
 ---
@@ -96,9 +96,9 @@ an run the EWAOL based image and test how Erlang and Elixir looks like.
 
 I've added two screenshots below just to have a taste of the final results:
 
-![alt Erlang console](meta-erlang-gravitron-erl.jpg "Erlang console")
+![alt Erlang console](meta-erlang-gravitron-erl.jpg 'Erlang console')
 
-![alt Elixir console](meta-erlang-gravitron-iex.jpg "Elixir console")
+![alt Elixir console](meta-erlang-gravitron-iex.jpg 'Elixir console')
 
 ## Conclusion
 
