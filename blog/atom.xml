@@ -2,25 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://meta-erlang.github.io/blog</id>
     <title>meta-erlang Blog</title>
-    <updated>2023-02-14T00:00:00.000Z</updated>
+    <updated>2023-02-04T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://meta-erlang.github.io/blog"/>
     <subtitle>meta-erlang Blog</subtitle>
     <icon>https://meta-erlang.github.io/img/favicon.ico</icon>
-    <entry>
-        <title type="html"><![CDATA[meta-erlang on cloud III, for real projects]]></title>
-        <id>https://meta-erlang.github.io/blog/2023/02/14/index</id>
-        <link href="https://meta-erlang.github.io/blog/2023/02/14/index"/>
-        <updated>2023-02-14T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<!---]]></summary>
-        <content type="html"><![CDATA[<p>TBD</p>]]></content>
-        <author>
-            <name>João Henrique Ferreira de Freitas</name>
-            <uri>https://github.com/joaohf</uri>
-        </author>
-        <category label="meta-erlang" term="meta-erlang"/>
-        <category label="cloud" term="cloud"/>
-    </entry>
     <entry>
         <title type="html"><![CDATA[meta-erlang on cloud II: building your own application]]></title>
         <id>https://meta-erlang.github.io/blog/2023/02/04/index</id>
@@ -68,8 +54,7 @@ software configuration flags, anything. It's really flexible.</p><p>And for proj
 it to Cloud ecosystem.</p><p>The first blog part
 <a href="/blog/2023/01/29/index/">meta-erlang on cloud I: EWAOL based</a> has introduced
 what is possible to build. This blog post is more related to explore the
-introduced idea into something feasible and aligned with meta-erlang purposes.</p><p>The next blog will discuss about some ideas and examples
-<a href="/blog/2023/02/14/index/">meta-erlang on cloud III, for real projects</a>.</p>]]></content>
+introduced idea into something feasible and aligned with meta-erlang purposes.</p>]]></content>
         <author>
             <name>João Henrique Ferreira de Freitas</name>
             <uri>https://github.com/joaohf</uri>
@@ -128,7 +113,7 @@ part is to instantiate a Graviton instance (please refer to the session
 <a href="https://github.com/joaohf/meta-aws-ewaol/tree/main-add-meta-erlang#launch-the-ec2-image-as-usual-using-your-newly-created-ami" target="_blank" rel="noopener noreferrer">Launch the EC2 Image as usual using your newly created AMI</a>)
 an run the EWAOL based image and test how Erlang and Elixir looks like.</p><p>I've added two screenshots below just to have a taste of the final results:</p><p><img loading="lazy" alt="alt Erlang console" src="/assets/images/meta-erlang-gravitron-erl-74d44c9d063c73e6a3f61183f0bfcb5e.jpg" title="Erlang console" width="1229" height="988" class="img_ev3q"></p><p><img loading="lazy" alt="alt Elixir console" src="/assets/images/meta-erlang-gravitron-iex-96e0e9113e0029ca640a1e9d74e3eb94.jpg" title="Elixir console" width="1007" height="167" class="img_ev3q"></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2><p>This first experiment has finished and I can conclude two main bullets:</p><ul><li>It is possible to build a Yocto image and run it on Graviton instances</li><li>meta-aws-ewaol is a great start point. And the EWAOL framework looks solid for
 what it has been planned for.</li></ul><p>However, what I am looking for is to run a tiny image with just the necessary to
-put one Erlang/Elixir up and running on ARM cloud instances. That is what the
+instantiate an ARM cloud instance running Erlang/Elixir. That is what the
 next blog post will do:
 <a href="/blog/2023/02/04/index/">meta-erlang on cloud II, build your own application</a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References">​</a></h2><ul><li>[1]<!-- -->:
 <a href="https://aws.amazon.com/blogs/industries/building-an-automotive-embedded-linux-image-for-edge-using-arm-graviton-yocto-project-soafee/" target="_blank" rel="noopener noreferrer">Building an Automotive Embedded Linux Image for Edge and Cloud Using Arm-based Graviton Instances, Yocto Project, and SOAFEE</a></li><li>[2]<!-- -->:
