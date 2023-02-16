@@ -177,6 +177,3 @@ The first blog part
 [meta-erlang on cloud I: EWAOL based](/blog/2023/01/29/index) has introduced
 what is possible to build. This blog post is more related to explore the
 introduced idea into something feasible and aligned with meta-erlang purposes.
-
-The next blog will discuss about some ideas and examples
-[meta-erlang on cloud III, for real projects](/blog/2023/02/14/index).

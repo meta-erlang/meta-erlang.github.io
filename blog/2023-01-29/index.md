@@ -109,7 +109,7 @@ This first experiment has finished and I can conclude two main bullets:
   what it has been planned for.
 
 However, what I am looking for is to run a tiny image with just the necessary to
-put one Erlang/Elixir up and running on ARM cloud instances. That is what the
+instantiate an ARM cloud instance running Erlang/Elixir. That is what the
 next blog post will do:
 [meta-erlang on cloud II, build your own application](/blog/2023/02/04/index)
 
