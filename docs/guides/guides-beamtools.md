@@ -9,13 +9,14 @@ Building and running your own Erlang and/or Elixir version could be an
 alternative when the host does not provide those packages or when additional
 tools are necessary and you want to provide a single installation source.
 
-The meta-erlang layer is able to make a specific tarball having the following:
+The meta-erlang layer is able to make a specific tarball having the following
+tools:
 
 - Erlang
 - Elixir
-- rebar3
-- erlfmt
-- elvis
+- [rebar3](http://rebar3.org/)
+- [erlfmt](https://github.com/WhatsApp/erlfmt)
+- [elvis](https://github.com/inaka/elvis)
 
 This tarball builds all the listed tools natively, wrapping them into a tarball
 self-installed script and ready to be shared. The _beamtools_ does not provides

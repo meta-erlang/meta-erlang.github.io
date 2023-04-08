@@ -22,9 +22,9 @@ Follow the quickstart guide to get a basic working environment and then:
 - Add erlang preferred version 24.x in _conf/local.conf_
 
 ```bash
-echo 'PREFERRED_VERSION_erlang = "24.3.3"
-echo 'PREFERRED_VERSION_erlang-native = "24.3.3"
-echo 'PREFERRED_VERSION_nativesdk-erlang = "24.3.3"
+echo 'PREFERRED_VERSION_erlang = "24.3.3"' >> conf/local.conf
+echo 'PREFERRED_VERSION_erlang-native = "24.3.3"' >> conf/local.conf
+echo 'PREFERRED_VERSION_nativesdk-erlang = "24.3.3"' >> conf/local.conf
 ```
 
 - Add `emqx` package to `IMAGE_INSTAL` in _conf/local.conf_
@@ -33,7 +33,7 @@ echo 'PREFERRED_VERSION_nativesdk-erlang = "24.3.3"
 echo 'IMAGE_INSTALL:append = " vernemq"' >> conf/local.conf
 ```
 
-- Now its time to build the image:
+- Now it's time to build the image:
 
 ```bash
 bitbake core-image-minimal
