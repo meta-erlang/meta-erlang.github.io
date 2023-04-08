@@ -21,14 +21,14 @@ Follow the quickstart guide to get a basic working environment and then:
   [Riak KV 3.0 Release Notes](https://github.com/basho/riak/blob/develop-3.0/RELEASE-NOTES.md#riak-kv-30-release-notes))
 
 ```bash
-echo 'PREFERRED_VERSION_erlang = "22%" >> conf/local.conf
-echo 'PREFERRED_VERSION_erlang-native = "22%" >> conf/local.conf
+echo 'PREFERRED_VERSION_erlang = "22%"' >> conf/local.conf
+echo 'PREFERRED_VERSION_erlang-native = "22%"' >> conf/local.conf
 ```
 
 - Add rebar3-native preferred version 3.13 in _conf/local.conf_ file
 
 ```bash
-echo 'PREFERRED_VERSION_rebar3-native = "3.13%" >> conf/local.conf
+echo 'PREFERRED_VERSION_rebar3-native = "3.13%"' >> conf/local.conf
 ```
 
 - Append `pam` to DISTRO*FEATURES in \_conf/local.conf* file:

@@ -8,7 +8,7 @@ description: Shows how to set up and install couchdb.
 # couchdb
 
 In this guide we are using the plain meta-erlang layer to build the
-[couchdb](https://couchdb.apache.org/.
+[couchdb](https://couchdb.apache.org/).
 
 The recipe
 [couchdb.inc](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-database/couchdb/couchdb.inc)
