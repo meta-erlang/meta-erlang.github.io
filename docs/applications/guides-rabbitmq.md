@@ -47,7 +47,7 @@ bitbake core-image-minimal
 - And check the results with qemu:
 
 ```bash
-runqemu core-image-minimal kvm slirp nographic qemuparams="-m 1024"
+runqemu core-image-minimal kvm nographic qemuparams="-m 1024"
 ```
 
 After qemu boot, we can check if rabbitmq-server is up and running:
