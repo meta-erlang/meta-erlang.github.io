@@ -4,10 +4,24 @@
         <title>meta-erlang Blog</title>
         <link>https://meta-erlang.github.io/blog</link>
         <description>meta-erlang Blog</description>
-        <lastBuildDate>Sat, 04 Feb 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 07 May 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[New Erlang releases 24.3.4.11, 25.3.2 and recipe updates]]></title>
+            <link>https://meta-erlang.github.io/blog/2023/05/07/index</link>
+            <guid>https://meta-erlang.github.io/blog/2023/05/07/index</guid>
+            <pubDate>Sun, 07 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[We've added support for the following new Erlang/OTP releases:]]></description>
+            <content:encoded><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>dunfell</td><td>24.3.4.11</td></tr><tr><td>kirkstone</td><td>24.3.4.11, 25.3.2</td></tr><tr><td>langdale</td><td>25.3.2</td></tr></tbody></table><p>Removed recipes:</p><ul><li>For langdale the recipes ejabberd and emqx have been removed due the lack of
+supporting cross-compilation build in a stable way.</li></ul><p>Updated recipes:</p><ul><li>For langdale the following recipes have been updated: lux, vernemq, yaws, tsung, riak, couchdb.
+It is important to mention about langdale <a href="https://wiki.yoctoproject.org/wiki/Releases" target="_blank" rel="noopener noreferrer">EOL in May 2023</a>.
+So, this branch will not receive updates.</li></ul><p>It has been decided:</p><ul><li>Dropped support to Erlang/OTP 24 in langdale. Due the lack of deterministic build flags in 24. Elixir
+1.12 has also been dropped (because it dependes on Erlang/OTP 24).</li></ul>]]></content:encoded>
+            <category>meta-erlang</category>
+            <category>news</category>
+        </item>
         <item>
             <title><![CDATA[meta-erlang on cloud II: building your own application]]></title>
             <link>https://meta-erlang.github.io/blog/2023/02/04/index</link>
