@@ -2,11 +2,30 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://meta-erlang.github.io/blog</id>
     <title>meta-erlang Blog</title>
-    <updated>2023-05-07T00:00:00.000Z</updated>
+    <updated>2023-06-09T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://meta-erlang.github.io/blog"/>
     <subtitle>meta-erlang Blog</subtitle>
     <icon>https://meta-erlang.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[New meta-erlang branch mickledore]]></title>
+        <id>https://meta-erlang.github.io/blog/2023/06/09/index</id>
+        <link href="https://meta-erlang.github.io/blog/2023/06/09/index"/>
+        <updated>2023-06-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Yocto Project has released a new]]></summary>
+        <content type="html"><![CDATA[<p>Yocto Project has <a href="https://wiki.yoctoproject.org/wiki/Releases" target="_blank" rel="noopener noreferrer">released</a> a new
+<a href="https://docs.yoctoproject.org/dev/migration-guides/migration-4.2.html" target="_blank" rel="noopener noreferrer">version 4.2 (Mickledore)</a>.
+As consequence meta-erlang brings a new branch mickledore updating most of the
+recipes. mickledore release is not a LTS release and community support will be
+available until November 2023.</p><p>We've also upgraded to the latest Erlang/OTP and Elixir releases supporting the
+following new Erlang/OTP releases:</p><ul><li>Erlang/OTP 26.0.1</li><li>Erlang/OTP 25.3.2.2</li><li>Elixir 1.14.4</li></ul><p>It's worth mentioning the meta-erlang master has also been updated.</p>]]></content>
+        <author>
+            <name>João Henrique Ferreira de Freitas</name>
+            <uri>https://github.com/joaohf</uri>
+        </author>
+        <category label="meta-erlang" term="meta-erlang"/>
+        <category label="news" term="news"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[New Erlang releases 24.3.4.11, 25.3.2 and recipe updates]]></title>
         <id>https://meta-erlang.github.io/blog/2023/05/07/index</id>
@@ -14,10 +33,12 @@
         <updated>2023-05-07T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[We've added support for the following new Erlang/OTP releases:]]></summary>
         <content type="html"><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>dunfell</td><td>24.3.4.11</td></tr><tr><td>kirkstone</td><td>24.3.4.11, 25.3.2</td></tr><tr><td>langdale</td><td>25.3.2</td></tr></tbody></table><p>Removed recipes:</p><ul><li>For langdale the recipes ejabberd and emqx have been removed due the lack of
-supporting cross-compilation build in a stable way.</li></ul><p>Updated recipes:</p><ul><li>For langdale the following recipes have been updated: lux, vernemq, yaws, tsung, riak, couchdb.
-It is important to mention about langdale <a href="https://wiki.yoctoproject.org/wiki/Releases" target="_blank" rel="noopener noreferrer">EOL in May 2023</a>.
-So, this branch will not receive updates.</li></ul><p>It has been decided:</p><ul><li>Dropped support to Erlang/OTP 24 in langdale. Due the lack of deterministic build flags in 24. Elixir
-1.12 has also been dropped (because it dependes on Erlang/OTP 24).</li></ul>]]></content>
+supporting cross-compilation build in a stable way.</li></ul><p>Updated recipes:</p><ul><li>For langdale the following recipes have been updated: lux, vernemq, yaws,
+tsung, riak, couchdb. It is important to mention about langdale
+<a href="https://wiki.yoctoproject.org/wiki/Releases" target="_blank" rel="noopener noreferrer">EOL in May 2023</a>. So, this
+branch will not receive updates.</li></ul><p>It has been decided:</p><ul><li>Dropped support to Erlang/OTP 24 in langdale. Due the lack of deterministic
+build flags in 24. Elixir 1.12 has also been dropped (because it dependes on
+Erlang/OTP 24).</li></ul>]]></content>
         <author>
             <name>João Henrique Ferreira de Freitas</name>
             <uri>https://github.com/joaohf</uri>
