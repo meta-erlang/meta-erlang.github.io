@@ -2,11 +2,30 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://meta-erlang.github.io/blog</id>
     <title>meta-erlang Blog</title>
-    <updated>2023-06-09T00:00:00.000Z</updated>
+    <updated>2023-07-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://meta-erlang.github.io/blog"/>
     <subtitle>meta-erlang Blog</subtitle>
     <icon>https://meta-erlang.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[New Erlang releases 24.3.4.13, 25.3.2.3, 26.0.2]]></title>
+        <id>https://meta-erlang.github.io/blog/2023/07/01/index</id>
+        <link href="https://meta-erlang.github.io/blog/2023/07/01/index"/>
+        <updated>2023-07-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We've added support for the following new Erlang/OTP releases:]]></summary>
+        <content type="html"><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>dunfell</td><td>24.3.4.13</td></tr><tr><td>kirkstone</td><td>24.3.4.13, 25.3.2.3, 26.0.2</td></tr><tr><td>mickledore</td><td>25.3.2.3, 26.0.2</td></tr></tbody></table><p>In additional to those new versions, a new
+<a href="https://meta-erlang.github.io/docs/guides/guides-beamtools/" target="_blank" rel="noopener noreferrer">beamtools</a> is
+available
+<a href="https://github.com/meta-erlang/meta-erlang/releases/tag/beamtools-0.7.0" target="_blank" rel="noopener noreferrer">here</a>.</p><p>This new version was made with
+<a href="https://docs.yoctoproject.org/dev/migration-guides/migration-4.2.html" target="_blank" rel="noopener noreferrer">Yocto mickledore</a>
+release and brings Erlang/OTP 26.0.2 and Elixir 1.15.2.</p>]]></content>
+        <author>
+            <name>João Henrique Ferreira de Freitas</name>
+            <uri>https://github.com/joaohf</uri>
+        </author>
+        <category label="meta-erlang" term="meta-erlang"/>
+        <category label="news" term="news"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[New meta-erlang branch mickledore]]></title>
         <id>https://meta-erlang.github.io/blog/2023/06/09/index</id>

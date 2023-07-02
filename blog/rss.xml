@@ -4,10 +4,25 @@
         <title>meta-erlang Blog</title>
         <link>https://meta-erlang.github.io/blog</link>
         <description>meta-erlang Blog</description>
-        <lastBuildDate>Fri, 09 Jun 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 01 Jul 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[New Erlang releases 24.3.4.13, 25.3.2.3, 26.0.2]]></title>
+            <link>https://meta-erlang.github.io/blog/2023/07/01/index</link>
+            <guid>https://meta-erlang.github.io/blog/2023/07/01/index</guid>
+            <pubDate>Sat, 01 Jul 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[We've added support for the following new Erlang/OTP releases:]]></description>
+            <content:encoded><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>dunfell</td><td>24.3.4.13</td></tr><tr><td>kirkstone</td><td>24.3.4.13, 25.3.2.3, 26.0.2</td></tr><tr><td>mickledore</td><td>25.3.2.3, 26.0.2</td></tr></tbody></table><p>In additional to those new versions, a new
+<a href="https://meta-erlang.github.io/docs/guides/guides-beamtools/" target="_blank" rel="noopener noreferrer">beamtools</a> is
+available
+<a href="https://github.com/meta-erlang/meta-erlang/releases/tag/beamtools-0.7.0" target="_blank" rel="noopener noreferrer">here</a>.</p><p>This new version was made with
+<a href="https://docs.yoctoproject.org/dev/migration-guides/migration-4.2.html" target="_blank" rel="noopener noreferrer">Yocto mickledore</a>
+release and brings Erlang/OTP 26.0.2 and Elixir 1.15.2.</p>]]></content:encoded>
+            <category>meta-erlang</category>
+            <category>news</category>
+        </item>
         <item>
             <title><![CDATA[New meta-erlang branch mickledore]]></title>
             <link>https://meta-erlang.github.io/blog/2023/06/09/index</link>
