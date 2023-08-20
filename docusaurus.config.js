@@ -73,6 +73,7 @@ const config = {
       navbar: {
         title: 'meta-erlang',
         items: [
+          {to: '/beamtools', label: 'BEAM Tools', position: 'left'},
           {
             type: 'doc',
             docId: 'intro',
