@@ -1,0 +1,1034 @@
+DEBUG: Executing python function extend_recipe_sysroot
+NOTE: Direct dependencies are ['/build/../work/poky/meta/recipes-connectivity/openssl/openssl_3.1.1.bb:do_populate_sysroot', '/build/../work/poky/meta/recipes-core/glibc/glibc_2.37.bb:do_populate_sysroot', '/build/../work/poky/meta/recipes-core/ncurses/ncurses_6.4.bb:do_populate_sysroot', '/build/../work/poky/meta/recipes-core/zlib/zlib_1.2.13.bb:do_populate_sysroot', '/build/../work/poky/meta/recipes-devtools/gcc/gcc-cross_13.1.bb:do_populate_sysroot', '/build/../work/poky/meta/recipes-devtools/gcc/gcc-runtime_13.1.bb:do_populate_sysroot', '/build/../work/poky/meta/recipes-devtools/libtool/libtool-cross_2.4.7.bb:do_populate_sysroot', '/build/../work/poky/meta/recipes-devtools/libtool/libtool-native_2.4.7.bb:do_populate_sysroot', '/build/../work/poky/meta/recipes-devtools/quilt/quilt-native_0.67.bb:do_populate_sysroot', 'virtual:native:/build/../work/meta-erlang/recipes-devtools/erlang/erlang_26.0.2.bb:do_populate_sysroot', 'virtual:native:/build/../work/poky/meta/recipes-devtools/autoconf/autoconf_2.71.bb:do_populate_sysroot', 'virtual:native:/build/../work/poky/meta/recipes-devtools/automake/automake_1.16.5.bb:do_populate_sysroot', 'virtual:native:/build/../work/poky/meta/recipes-devtools/patch/patch_2.7.6.bb:do_populate_sysroot', 'virtual:native:/build/../work/poky/meta/recipes-devtools/pkgconfig/pkgconfig_git.bb:do_populate_sysroot', 'virtual:native:/build/../work/poky/meta/recipes-devtools/pseudo/pseudo_git.bb:do_populate_sysroot']
+NOTE: Installed into sysroot: []
+NOTE: Skipping as already exists in sysroot: ['openssl', 'glibc', 'ncurses', 'zlib', 'gcc-cross-x86_64', 'gcc-runtime', 'libtool-cross', 'libtool-native', 'quilt-native', 'erlang-native', 'autoconf-native', 'automake-native', 'patch-native', 'pkgconfig-native', 'pseudo-native', 'opkg-utils', 'texinfo-dummy-native', 'libgcc', 'linux-libc-headers', 'openssl-native', 'ncurses-native', 'zlib-native', 'binutils-cross-x86_64', 'gmp-native', 'zstd-native', 'mpfr-native', 'libmpc-native', 'xz-native', 'gnu-config-native', 'flex-native', 'm4-native', 'attr-native', 'perl-native', 'gettext-minimal-native', 'make-native', 'gdbm-native']
+DEBUG: Python function extend_recipe_sysroot finished
+DEBUG: Executing shell function autotools_preconfigure
+DEBUG: Shell function autotools_preconfigure finished
+DEBUG: Executing python function autotools_aclocals
+DEBUG: SITE files ['endian-little', 'common-linux', 'common-glibc', 'bit-32', 'ix86-common', 'x32-linux', 'x86_64-linux-gnux32', 'common']
+DEBUG: Python function autotools_aclocals finished
+DEBUG: Executing shell function do_configure
+
+=== cleaning lib/common_test/configure
+=== running autoconf in lib/common_test
+
+=== cleaning lib/crypto/configure
+=== running autoconf in lib/crypto
+
+=== cleaning lib/erl_interface/configure
+=== running autoconf in lib/erl_interface
+=== running autoheader in lib/erl_interface
+
+=== cleaning lib/megaco/configure
+=== running autoconf in lib/megaco
+
+=== cleaning lib/odbc/configure
+=== running autoconf in lib/odbc
+
+=== cleaning lib/snmp/configure
+=== running autoconf in lib/snmp
+
+=== cleaning lib/wx/configure
+=== running autoconf in lib/wx
+
+=== cleaning lib/common_test/test_server/configure
+=== running autoconf in lib/common_test/test_server
+
+=== cleaning make/configure
+=== running autoconf in make
+
+=== cleaning erts/configure
+=== running autoconf in erts
+=== running autoheader in erts
+
+=== creating ./configure
+Updated: ./configure  ./erts/autoconf/install-sh ./erts/autoconf/config.guess ./erts/autoconf/config.sub ./lib/common_test/test_server/install-sh ./lib/common_test/test_server/config.guess ./lib/common_test/test_server/config.sub lib/common_test/configure lib/crypto/configure lib/erl_interface/configure lib/erl_interface/config.h.in lib/megaco/configure lib/odbc/configure lib/snmp/configure lib/wx/configure lib/common_test/test_server/configure make/configure erts/configure erts/config.h.in
+/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git
+NOTE: Running ./configure  --build=x86_64-linux 		  --host=x86_64-poky-linux-gnux32 		  --target=x86_64-poky-linux-gnux32 		  --prefix=/usr 		  --exec_prefix=/usr 		  --bindir=/usr/bin 		  --sbindir=/usr/sbin 		  --libexecdir=/usr/libexec 		  --datadir=/usr/share 		  --sysconfdir=/etc 		  --sharedstatedir=/com 		  --localstatedir=/var 		  --libdir=/usr/libx32 		  --includedir=/usr/include 		  --oldincludedir=/usr/include 		  --infodir=/usr/share/info 		  --mandir=/usr/share/man 		  --disable-silent-rules 		  --disable-dependency-tracking 		  --with-libtool-sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot  --with-ssl-rpath=no --disable-static  --without-javac --without-dynamic-trace --without-observer --without-odbc --enable-pkg-config --enable-deterministic-build 
+=== Running configure in /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/erts ===
+./configure '--build=x86_64-linux' '--host=x86_64-poky-linux-gnux32' '--target=x86_64-poky-linux-gnux32' '--prefix=/usr' '--exec_prefix=/usr' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--libexecdir=/usr/libexec' '--datadir=/usr/share' '--sysconfdir=/etc' '--sharedstatedir=/com' '--localstatedir=/var' '--libdir=/usr/libx32' '--includedir=/usr/include' '--oldincludedir=/usr/include' '--infodir=/usr/share/info' '--mandir=/usr/share/man' '--disable-silent-rules' '--disable-dependency-tracking' '--with-libtool-sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot' '--with-ssl-rpath=no' '--disable-static' '--without-javac' '--without-dynamic-trace' '--without-observer' '--without-odbc' --enable-deterministic-build CFLAGS=' -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= ' LDFLAGS='-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -Wl,-z,relro,-z,now' --enable-pkg-config --disable-option-checking --cache-file=/dev/null --srcdir="/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/erts"
+configure: loading site script /build/../work/poky/meta/site/endian-little
+configure: loading site script /build/../work/poky/meta/site/common-linux
+configure: loading site script /build/../work/poky/meta/site/common-glibc
+configure: loading site script /build/../work/poky/meta/site/ix86-common
+configure: loading site script /build/../work/poky/meta/site/x32-linux
+configure: loading site script /build/../work/poky/meta/site/common
+configure: loading site script /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot/usr/share/x86_64-poky-linux-gnux32_config_site.d/ncurses_config
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-poky-linux-gnux32
+checking target system type... x86_64-poky-linux-gnux32
+checking for x86_64-poky-linux-gnux32-gcc... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -g... yes
+checking for x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot option to enable C11 features... none needed
+checking for library containing strerror... none required
+checking OTP release... 26
+checking OTP version... 26.0.2
+checking for x86_64-poky-linux-gnux32-gcc... (cached) x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking whether the compiler supports GNU C... (cached) yes
+checking whether x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -g... (cached) yes
+checking for x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot option to enable C11 features... (cached) none needed
+checking whether the compiler supports GNU C++... yes
+checking whether x86_64-poky-linux-gnux32-g++  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -g... yes
+checking for x86_64-poky-linux-gnux32-g++  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot option to enable C++11 features... none needed
+checking for grep that handles long lines and -e... /build/tmp/hosttools/grep
+checking for egrep... /build/tmp/hosttools/grep -E
+checking how to run the C preprocessor... x86_64-poky-linux-gnux32-gcc -E --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security
+checking for x86_64-poky-linux-gnux32-ranlib... x86_64-poky-linux-gnux32-gcc-ranlib
+checking for bison... no
+checking for byacc... no
+checking for perl5... no
+checking for perl... /build/tmp/hosttools/perl
+checking whether ln -s works... yes
+checking for x86_64-poky-linux-gnux32-ar... x86_64-poky-linux-gnux32-gcc-ar
+checking for xsltproc... no
+configure: WARNING: No 'xsltproc' command found: the documentation cannot be built
+checking for fop... no
+configure: WARNING: No 'fop' command found: going to generate placeholder PDF files
+checking for xmllint... no
+checking for a BSD-compatible install... configure: WARNING: No 'xmllint' command found: can't run the xmllint target for the documentation
+/build/tmp/hosttools/install -c
+checking how to create a directory including parents... /build/tmp/hosttools/install -c -d
+checking for mixed mingw-gcc and native VC++ environment... no
+checking for mixed cygwin and native MinGW environment... no
+checking if we mix cygwin with any native compiler... no
+checking if we mix msys with another native compiler... no
+checking if we mix WSL with another native compiler... no
+checking for x86_64-poky-linux-gnux32-getconf... false
+checking for x86_64-poky-linux-gnux32-getconf... no
+checking for getconf... no
+configure: WARNING: Do not know how to check for large file support flags; no getconf is available
+checking if we can add -Werror=return-type to WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -Werror=implicit to WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -Werror=undef to WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -fno-common to CFLAGS (via CFLAGS)... yes
+checking if we can add -fno-strict-aliasing to CFLAGS (via CFLAGS)... yes
+checking C99 support... yes
+checking whether x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -fprofile-generate -Werror...... no
+checking whether x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -fprofile-use -Werror...... no
+checking whether x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -fprofile-use -fprofile-correction -Werror...... no
+checking whether x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -fprofile-instr-generate -Werror...... no
+checking whether to do PGO of erts... no, cross compiling
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/time.h... yes
+checking size of void *... (cached) 4
+checking target hardware architecture... amd64
+checking whether compilation mode forces ARCH adjustment... yes: adjusting ARCH=amd64 to ARCH=x86
+checking if VM has to be linked with Carbon framework... no
+checking for mkdir... /bin/mkdir
+checking for cp... /bin/cp
+checking if we are building a sharing-preserving emulator... no
+checking for extra flags needed to export symbols... -Wl,-export-dynamic
+checking for sin in -lm... yes
+checking for dlopen in -ldl... yes
+checking for dlvsym in -ldl... yes
+checking for main in -linet... no
+checking for openpty in -lutil... yes
+checking size of void *... (cached) 4
+checking for native win32 threads... no
+checking for pthread_create in -lpthread... yes
+checking for x86_64-poky-linux-gnux32-getconf... (cached) false
+checking for x86_64-poky-linux-gnux32-getconf... no
+checking for getconf... no
+checking for Native POSIX Thread Library... cross
+configure: WARNING: result yes guessed because of cross compilation
+checking for nptl/pthread.h... no
+checking for pthread.h... yes
+checking for pthread/mit/pthread.h... no
+checking for kstat_open in -lkstat... no
+checking for clock_gettime in -lrt... yes
+checking for clock_gettime(CLOCK_MONOTONIC_RAW, _)... yes
+checking for clock_gettime() with custom monotonic clock type... CLOCK_MONOTONIC
+checking for clock_getres... yes
+checking for clock_get_attributes... no
+checking for gethrtime... no
+checking for mach clock_get_time() with monotonic clock type... no
+checking if SIGUSR1 and SIGUSR2 can be used... cross
+configure: WARNING: result yes guessed because of cross compilation
+checking if sigaltstack can be used... cross
+configure: WARNING: result yes guessed because of cross compilation
+checking for pthread.h... (cached) yes
+checking for pthread/mit/pthread.h... (cached) no
+checking for sched.h... yes
+checking for sys/time.h... (cached) yes
+checking for usable PTHREAD_STACK_MIN... yes
+checking for pthread_spin_lock... yes
+checking for sched_yield... yes
+checking whether sched_yield() returns an int... yes
+checking for pthread_yield... no
+checking for pthread_rwlock_init... yes
+checking for pthread_rwlockattr_setkind_np... yes
+checking for PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP... yes
+checking for pthread_attr_setguardsize... yes
+checking whether pthread_cond_timedwait() can use the monotonic clock CLOCK_MONOTONIC for timeout... yes
+checking for Linux futexes... yes
+checking for pthread_setname_np... linux
+checking for pthread_getname_np... linux
+checking size of short... (cached) 2
+checking size of int... (cached) 4
+checking size of long... (cached) 4
+checking size of long long... (cached) 8
+checking size of __int128_t... 16
+checking for a working __sync_synchronize()... yes
+checking for 32-bit __sync_add_and_fetch()... yes
+checking for 64-bit __sync_add_and_fetch()... yes
+checking for 128-bit __sync_add_and_fetch()... no
+checking for 32-bit __sync_fetch_and_and()... yes
+checking for 64-bit __sync_fetch_and_and()... yes
+checking for 128-bit __sync_fetch_and_and()... no
+checking for 32-bit __sync_fetch_and_or()... yes
+checking for 64-bit __sync_fetch_and_or()... yes
+checking for 128-bit __sync_fetch_and_or()... no
+checking for 32-bit __sync_val_compare_and_swap()... yes
+checking for 64-bit __sync_val_compare_and_swap()... yes
+checking for 128-bit __sync_val_compare_and_swap()... no
+checking for 32-bit __atomic_store_n()... yes
+checking for 64-bit __atomic_store_n()... yes
+checking for 128-bit __atomic_store_n()... no
+checking for 32-bit __atomic_load_n()... yes
+checking for 64-bit __atomic_load_n()... yes
+checking for 128-bit __atomic_load_n()... no
+checking for 32-bit __atomic_add_fetch()... yes
+checking for 64-bit __atomic_add_fetch()... yes
+checking for 128-bit __atomic_add_fetch()... no
+checking for 32-bit __atomic_fetch_and()... yes
+checking for 64-bit __atomic_fetch_and()... yes
+checking for 128-bit __atomic_fetch_and()... no
+checking for 32-bit __atomic_fetch_or()... yes
+checking for 64-bit __atomic_fetch_or()... yes
+checking for 128-bit __atomic_fetch_or()... no
+checking for 32-bit __atomic_compare_exchange_n()... yes
+checking for 64-bit __atomic_compare_exchange_n()... yes
+checking for 128-bit __atomic_compare_exchange_n()... no
+checking for a usable libatomic_ops implementation... no
+checking whether default stack size should be modified... no
+checking size of void *... (cached) 4
+checking size of int... (cached) 4
+checking size of long... (cached) 4
+checking size of long long... (cached) 8
+checking size of __int64... 0
+checking size of __int128_t... (cached) 16
+checking whether byte ordering is bigendian... (cached) no
+checking whether double word ordering is middle-endian... 
+configure: WARNING: unknown double endianness
+presetting ac_cv_c_double_middle_endian=no (or yes) will help
+checking for gcc sse2 asm support... yes
+checking for gcc cmpxchg8b plain asm support... yes
+checking for posix_fadvise... yes
+checking for closefrom... yes
+checking for linux/falloc.h... yes
+checking whether fallocate() works... yes
+checking whether posix_fallocate() works... no
+checking whether lock checking should be enabled... no
+checking whether lock counters should be enabled... no
+checking whether dlopen() needs to be called before first call to dlerror()... no
+checking for kstat_open in -lkstat... (cached) no
+checking for tgetent in -ltinfo... yes
+checking for wcwidth... yes
+checking for zlib 1.2.5 or higher... yes
+checking for library containing inflateGetDictionary... none required
+checking for localtime_r... yes
+checking for strftime... yes
+checking for getprotoent... yes
+checking for setprotoent... yes
+checking for endprotoent... yes
+checking for if_nametoindex... yes
+checking for if_indextoname... yes
+checking for if_nameindex... yes
+checking for if_freenameindex... yes
+checking for gethostname... yes
+checking for struct ifreq.ifr_map... yes
+checking for struct ifreq.ifr_hwaddr... yes
+checking for struct ifreq.ifr_ifindex... yes
+checking for struct ifreq.ifr_index... no
+checking for struct sockaddr_dl.sdl_len... no
+checking for connect... yes
+checking for gethostbyname... yes
+checking for gethostbyname_r... yes
+checking for working posix_openpt implementation... yes
+checking if netdb.h requires netinet/in.h to be previously included... yes
+checking for socklen_t... yes
+checking for h_errno declaration in netdb.h... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for fcntl.h... yes
+checking for limits.h... yes
+checking for unistd.h... (cached) yes
+checking for syslog.h... yes
+checking for dlfcn.h... yes
+checking for ieeefp.h... no
+checking for sys/types.h... (cached) yes
+checking for sys/stropts.h... no
+checking for sys/sysctl.h... no
+checking for sys/ioctl.h... yes
+checking for sys/time.h... (cached) yes
+checking for sys/uio.h... yes
+checking for sys/mman.h... yes
+checking for sys/socket.h... yes
+checking for sys/sockio.h... no
+checking for sys/socketio.h... no
+checking for net/errno.h... no
+checking for malloc.h... yes
+checking for arpa/nameser.h... yes
+checking for libdlpi.h... no
+checking for pty.h... yes
+checking for util.h... no
+checking for libutil.h... no
+checking for utmp.h... yes
+checking for langinfo.h... yes
+checking for poll.h... yes
+checking for sdkddkver.h... no
+checking for elf.h... yes
+checking for struct ifreq.ifr_hwaddr... (cached) yes
+checking for struct ifreq.ifr_enaddr... no
+checking for struct ip_mreqn... yes
+checking for dlpi_open in -ldlpi... no
+configure: Extending the search to include  /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot/lib
+checking for dlpi_open in -ldlpi... no
+checking for x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot options needed to detect all undeclared functions... none needed
+checking for sys/resource.h... yes
+checking whether getrlimit is declared... yes
+checking whether setrlimit is declared... yes
+checking whether RLIMIT_STACK is declared... yes
+checking for getrusage... yes
+checking for sys/event.h... no
+checking for sys/epoll.h... yes
+checking for sys/devpoll.h... no
+checking for sys/timerfd.h... yes
+checking for netpacket/packet.h... yes
+checking for netinet/sctp.h... no
+checking for sched.h... (cached) yes
+checking for setns.h... no
+checking for setns... yes
+checking for linux/types.h... yes
+checking for linux/errqueue.h... yes
+checking for valgrind/valgrind.h... no
+checking for SO_BSDCOMPAT declaration... yes
+checking for INADDR_LOOPBACK in netinet/in.h... yes
+checking for sys_errlist declaration in stdio.h or errno.h... no
+checking if windows.h includes winsock2.h... no
+checking for an ANSI C-conforming const... yes
+checking for off_t... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking whether struct sockaddr has sa_len field... no
+checking size of char... (cached) 1
+checking size of short... (cached) 2
+checking size of int... (cached) 4
+checking size of long... (cached) 4
+checking size of void *... (cached) 4
+checking size of long long... (cached) 8
+checking size of size_t... (cached) 4
+checking size of off_t... 8
+checking size of time_t... 8
+checking size of suseconds_t... 8
+checking size of _Float16... 2
+checking for C compiler 'restrict' support... yes
+checking if we should add -fno-tree-copyrename to CFLAGS for computed gotos to work properly... no
+checking for broken gcc-4.3.0 compiler... no; could not run test since cross compiling, checked version number (13.1.1) instead
+checking whether byte ordering is bigendian... (cached) no
+checking whether double word ordering is middle-endian... 
+configure: WARNING: unknown double endianness
+presetting ac_cv_c_double_middle_endian=no (or yes) will help
+checking for fdatasync... yes
+checking for library containing fdatasync... none required
+checking for sendfile... yes
+checking for windows.h... no
+checking for winsock2.h... no
+checking for ws2tcpip.h... no
+checking for getaddrinfo... yes
+checking whether getaddrinfo accepts enough flags... yes
+checking for getnameinfo... yes
+checking for getipnodebyname... no
+checking for getipnodebyaddr... no
+checking for gethostbyname2... yes
+checking for ieee_handler... no
+checking for fpsetmask... no
+checking for finite... yes
+checking for isnan... yes
+checking for isinf... yes
+checking for res_gethostbyname... no
+checking for dlopen... yes
+checking for dlvsym... yes
+checking for pread... yes
+checking for pwrite... yes
+checking for memmove... yes
+checking for strerror... (cached) yes
+checking for strerror_r... yes
+checking for strncasecmp... yes
+checking for gethrtime... (cached) no
+checking for localtime_r... (cached) yes
+checking for gmtime_r... yes
+checking for mprotect... yes
+checking for madvise... yes
+checking for posix_madvise... yes
+checking for mmap... yes
+checking for mremap... yes
+checking for memcpy... (cached) yes
+checking for memrchr... yes
+checking for mallopt... yes
+checking for sbrk... yes
+checking for _sbrk... no
+checking for __sbrk... yes
+checking for brk... yes
+checking for _brk... no
+checking for __brk... no
+checking for flockfile... yes
+checking for fstat... yes
+checking for strlcpy... no
+checking for strlcat... no
+checking for setsid... yes
+checking for posix2time... no
+checking for time2posix... no
+checking for setlocale... yes
+checking for nl_langinfo... yes
+checking for poll... yes
+checking for mlockall... yes
+checking for ppoll... yes
+checking for vsyslog... yes
+checking for inet_pton... yes
+checking for isfinite... no
+checking for posix_memalign... yes
+checking for writev... yes
+checking whether posix2time is declared... no
+checking whether time2posix is declared... no
+checking for vprintf... yes
+checking for conflicting declaration of fread... yes
+checking for putc_unlocked... yes
+checking for fwrite_unlocked... yes
+checking for openpty... yes
+checking for net/if_dl.h... no
+checking for ifaddrs.h... yes
+checking for netpacket/packet.h... (cached) yes
+checking for sys/un.h... yes
+checking for getifaddrs... yes
+checking for struct sockaddr_un.sun_path... yes
+checking whether in6addr_any is declared... yes
+checking whether in6addr_loopback is declared... yes
+checking whether IN6ADDR_ANY_INIT is declared... yes
+checking whether IN6ADDR_LOOPBACK_INIT is declared... yes
+checking whether IPV6_V6ONLY is declared... yes
+checking for sched_getaffinity/sched_setaffinity... yes
+checking for pset functionality... no
+checking for processor_bind functionality... no
+checking for cpuset_getaffinity/cpuset_setaffinity... no
+checking for 'end' symbol... yes
+checking for '_end' symbol... yes
+checking if __after_morecore_hook can track malloc()s core memory use... cross
+configure: WARNING: result no guessed because of cross compilation
+checking types of sbrk()s return value and argument... void *,intptr_t
+checking types of brk()s return value and argument... int,void *
+checking if sbrk()/brk() wrappers can track malloc()s core memory use... cross
+configure: WARNING: result no guessed because of cross compilation
+checking for IP version 6 support... yes
+checking for multicast support... yes
+checking for clock_gettime in -lrt... (cached) yes
+checking for clock_gettime() with wall clock type... CLOCK_REALTIME
+checking for clock_getres... (cached) yes
+checking for clock_get_attributes... (cached) no
+checking for gettimeofday... yes
+checking for mach clock_get_time() with wall clock type... no
+checking for clock_gettime in -lrt... (cached) yes
+checking for clock_gettime(CLOCK_MONOTONIC_RAW, _)... (cached) yes
+checking for clock_gettime() with custom monotonic clock type... CLOCK_MONOTONIC
+checking for clock_getres... (cached) yes
+checking for clock_get_attributes... (cached) no
+checking for gethrtime... (cached) no
+checking for mach clock_get_time() with monotonic clock type... (cached) no
+checking for clock_gettime in -lrt... (cached) yes
+checking for clock_gettime(CLOCK_MONOTONIC_RAW, _)... (cached) yes
+checking for clock_gettime() with high resolution monotonic clock type... CLOCK_MONOTONIC
+checking for clock_getres... (cached) yes
+checking for clock_get_attributes... (cached) no
+checking for gethrtime... (cached) no
+checking for mach clock_get_time() with monotonic clock type... (cached) no
+checking if gethrvtime works and how to use it... cross
+configure: WARNING: result 'not working' guessed because of cross compilation
+checking if clock_gettime can be used to get thread CPU time... cross
+configure: WARNING: result no guessed because of cross compilation
+checking for m4... m4
+configure: WARNING: JIT disabled due to lack to support on x86-linux
+checking whether to redefine FD_SETSIZE... no
+checking for working poll()... cross
+configure: WARNING: result yes guessed based on OS (linux-gnux32) because of cross compilation
+checking whether epoll is level triggered... yes
+checking whether kernel poll support should be enabled... yes; epoll
+checking whether putenv() stores a copy of the key-value pair... cross
+configure: WARNING: result no guessed because of cross compilation
+checking for a compiler that handles jumptables... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking for kstat_open in -lkstat... (cached) no
+checking for kvm_open in -lkvm... no
+checking for log2... yes
+checking CFLAGS for -O switch... yes
+configure: creating ./config.status
+config.status: creating emulator/x86_64-poky-linux-gnux32/Makefile
+config.status: creating epmd/src/x86_64-poky-linux-gnux32/Makefile
+config.status: creating etc/common/x86_64-poky-linux-gnux32/Makefile
+config.status: creating include/internal/x86_64-poky-linux-gnux32/ethread.mk
+config.status: creating include/internal/x86_64-poky-linux-gnux32/erts_internal.mk
+config.status: creating lib_src/x86_64-poky-linux-gnux32/Makefile
+config.status: creating ../make/x86_64-poky-linux-gnux32/otp.mk
+config.status: creating emulator/x86_64-poky-linux-gnux32/erl_erts.pc
+config.status: creating ../make/make_emakefile
+config.status: creating ../lib/os_mon/c_src/x86_64-poky-linux-gnux32/Makefile
+config.status: creating ../lib/runtime_tools/c_src/x86_64-poky-linux-gnux32/Makefile
+config.status: creating ../make/install_dir_data.sh
+config.status: creating x86_64-poky-linux-gnux32/config.h
+config.status: creating include/internal/x86_64-poky-linux-gnux32/ethread_header_config.h
+config.status: creating include/x86_64-poky-linux-gnux32/erl_int_sizes_config.h
+
+=== Running configure in /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/make ===
+./configure '--build=x86_64-linux' '--host=x86_64-poky-linux-gnux32' '--target=x86_64-poky-linux-gnux32' '--prefix=/usr' '--exec_prefix=/usr' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--libexecdir=/usr/libexec' '--datadir=/usr/share' '--sysconfdir=/etc' '--sharedstatedir=/com' '--localstatedir=/var' '--libdir=/usr/libx32' '--includedir=/usr/include' '--oldincludedir=/usr/include' '--infodir=/usr/share/info' '--mandir=/usr/share/man' '--disable-silent-rules' '--disable-dependency-tracking' '--with-libtool-sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot' '--with-ssl-rpath=no' '--disable-static' '--without-javac' '--without-dynamic-trace' '--without-observer' '--without-odbc' --enable-deterministic-build CFLAGS=' -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= ' LDFLAGS='-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -Wl,-z,relro,-z,now' --enable-pkg-config --disable-option-checking --cache-file=/dev/null --srcdir="/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/make"
+configure: loading site script /build/../work/poky/meta/site/endian-little
+configure: loading site script /build/../work/poky/meta/site/common-linux
+configure: loading site script /build/../work/poky/meta/site/common-glibc
+configure: loading site script /build/../work/poky/meta/site/ix86-common
+configure: loading site script /build/../work/poky/meta/site/x32-linux
+configure: loading site script /build/../work/poky/meta/site/common
+configure: loading site script /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot/usr/share/x86_64-poky-linux-gnux32_config_site.d/ncurses_config
+Ignoring the --cache-file argument since it can cause the system to be erroneously configured
+Disabling caching
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-poky-linux-gnux32
+checking target system type... x86_64-poky-linux-gnux32
+checking for x86_64-poky-linux-gnux32-gcc... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -g... yes
+checking for x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot option to enable C11 features... none needed
+checking whether the compiler supports GNU C++... yes
+checking whether x86_64-poky-linux-gnux32-g++  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -g... yes
+checking for x86_64-poky-linux-gnux32-g++  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot option to enable C++11 features... none needed
+checking for x86_64-poky-linux-gnux32-ld... x86_64-poky-linux-gnux32-ld --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot  -m elf32_x86_64
+checking for mixed mingw-gcc and native VC++ environment... no
+checking for mixed cygwin and native MinGW environment... no
+checking if we mix cygwin with any native compiler... no
+checking if we mix msys with another native compiler... no
+checking if we mix WSL with another native compiler... no
+checking for env... /usr/bin/env
+checking for GNU make... yes (make)
+checking for a BSD-compatible install... /build/tmp/hosttools/install -c
+checking whether ln -s works... yes
+checking for x86_64-poky-linux-gnux32-ranlib... x86_64-poky-linux-gnux32-gcc-ranlib
+checking for perl5... no
+checking for perl... /build/tmp/hosttools/perl
+checking ERTS version... 14.0.2
+checking OTP release... 26
+checking OTP version... 26.0.2
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for native win32 threads... no
+checking for pthread_create in -lpthread... yes
+checking for x86_64-poky-linux-gnux32-getconf... false
+checking for x86_64-poky-linux-gnux32-getconf... no
+checking for getconf... no
+checking for Native POSIX Thread Library... cross
+checking for nptl/pthread.h... no
+checking for pthread.h... yes
+checking for pthread/mit/pthread.h... no
+checking if we can add -Wdeclaration-after-statement to DED_WARN_FLAGS (via CFLAGS)... yes
+checking if we can add -Werror=return-type to DED_WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -Werror=implicit to DED_WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -Werror=undef to DED_WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -fno-common to DED_CFLAGS (via CFLAGS)... yes
+checking if we can add -fno-strict-aliasing to DED_CFLAGS (via CFLAGS)... yes
+checking for x86_64-poky-linux-gnux32-ld... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking for static compiler flags... -Werror=undef -Werror=implicit -Werror=return-type    -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -fno-strict-aliasing -fno-common  -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=   -D_GNU_SOURCE -DSTATIC_ERLANG_NIF -DSTATIC_ERLANG_DRIVER
+checking for basic compiler flags for loadable drivers... -fno-strict-aliasing -fno-common -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -D_GNU_SOURCE -fPIC
+checking for compiler flags for loadable drivers... -Werror=undef -Werror=implicit -Werror=return-type  -Wdeclaration-after-statement -Wall -Wstrict-prototypes -Wmissing-prototypes  -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -fno-strict-aliasing -fno-common -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -D_GNU_SOURCE -fPIC
+checking for linker for loadable drivers... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking for linker flags for loadable drivers... -shared -Wl,-Bsymbolic
+checking for 'runtime library path' linker flag... -Wl,-R
+configure: creating ./config.status
+config.status: creating ../Makefile
+config.status: creating output.mk
+config.status: creating ../make/x86_64-poky-linux-gnux32/otp_ded.mk
+config.status: creating emd2exml
+configure: WARNING: result yes guessed because of cross compilation
+config.status: WARNING:  '../Makefile.in' seems to ignore the --datarootdir setting
+
+=== Running configure in /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/lib/common_test ===
+./configure '--build=x86_64-linux' '--host=x86_64-poky-linux-gnux32' '--target=x86_64-poky-linux-gnux32' '--prefix=/usr' '--exec_prefix=/usr' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--libexecdir=/usr/libexec' '--datadir=/usr/share' '--sysconfdir=/etc' '--sharedstatedir=/com' '--localstatedir=/var' '--libdir=/usr/libx32' '--includedir=/usr/include' '--oldincludedir=/usr/include' '--infodir=/usr/share/info' '--mandir=/usr/share/man' '--disable-silent-rules' '--disable-dependency-tracking' '--with-libtool-sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot' '--with-ssl-rpath=no' '--disable-static' '--without-javac' '--without-dynamic-trace' '--without-observer' '--without-odbc' --enable-deterministic-build CFLAGS=' -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= ' LDFLAGS='-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -Wl,-z,relro,-z,now' --enable-pkg-config --disable-option-checking --cache-file=/dev/null --srcdir="/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/lib/common_test"
+configure: loading site script /build/../work/poky/meta/site/endian-little
+configure: loading site script /build/../work/poky/meta/site/common-linux
+configure: loading site script /build/../work/poky/meta/site/common-glibc
+configure: loading site script /build/../work/poky/meta/site/ix86-common
+configure: loading site script /build/../work/poky/meta/site/x32-linux
+configure: loading site script /build/../work/poky/meta/site/common
+configure: loading site script /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot/usr/share/x86_64-poky-linux-gnux32_config_site.d/ncurses_config
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-poky-linux-gnux32
+checking target system type... x86_64-poky-linux-gnux32
+configure: creating ./config.status
+config.status: creating priv/x86_64-poky-linux-gnux32/Makefile
+
+=== Running configure in /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/lib/crypto ===
+./configure '--build=x86_64-linux' '--host=x86_64-poky-linux-gnux32' '--target=x86_64-poky-linux-gnux32' '--prefix=/usr' '--exec_prefix=/usr' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--libexecdir=/usr/libexec' '--datadir=/usr/share' '--sysconfdir=/etc' '--sharedstatedir=/com' '--localstatedir=/var' '--libdir=/usr/libx32' '--includedir=/usr/include' '--oldincludedir=/usr/include' '--infodir=/usr/share/info' '--mandir=/usr/share/man' '--disable-silent-rules' '--disable-dependency-tracking' '--with-libtool-sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot' '--with-ssl-rpath=no' '--disable-static' '--without-javac' '--without-dynamic-trace' '--without-observer' '--without-odbc' --enable-deterministic-build CFLAGS=' -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= ' LDFLAGS='-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -Wl,-z,relro,-z,now' --enable-pkg-config --disable-option-checking --cache-file=/dev/null --srcdir="/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/lib/crypto"
+configure: loading site script /build/../work/poky/meta/site/endian-little
+configure: loading site script /build/../work/poky/meta/site/common-linux
+configure: loading site script /build/../work/poky/meta/site/common-glibc
+configure: loading site script /build/../work/poky/meta/site/ix86-common
+configure: loading site script /build/../work/poky/meta/site/x32-linux
+configure: loading site script /build/../work/poky/meta/site/common
+configure: loading site script /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot/usr/share/x86_64-poky-linux-gnux32_config_site.d/ncurses_config
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-poky-linux-gnux32
+checking target system type... x86_64-poky-linux-gnux32
+checking for x86_64-poky-linux-gnux32-gcc... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -g... yes
+checking for x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot option to enable C11 features... none needed
+checking for mixed mingw-gcc and native VC++ environment... no
+checking for mixed cygwin and native MinGW environment... no
+checking if we mix cygwin with any native compiler... no
+checking if we mix msys with another native compiler... no
+checking if we mix WSL with another native compiler... no
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for native win32 threads... no
+checking for pthread_create in -lpthread... yes
+checking for x86_64-poky-linux-gnux32-getconf... false
+checking for x86_64-poky-linux-gnux32-getconf... no
+checking for getconf... no
+checking for Native POSIX Thread Library... cross
+checking for nptl/pthread.h... no
+checking for pthread.h... yes
+checking for pthread/mit/pthread.h... no
+checking if we can add -Wdeclaration-after-statement to DED_WARN_FLAGS (via CFLAGS)... yes
+checking if we can add -Werror=return-type to DED_WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -Werror=implicit to DED_WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -Werror=undef to DED_WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -fno-common to DED_CFLAGS (via CFLAGS)... yes
+checking if we can add -fno-strict-aliasing to DED_CFLAGS (via CFLAGS)... yes
+checking for x86_64-poky-linux-gnux32-ld... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking for static compiler flags... -Werror=undef -Werror=implicit -Werror=return-type    -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -fno-strict-aliasing -fno-common  -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=   -D_GNU_SOURCE -DSTATIC_ERLANG_NIF -DSTATIC_ERLANG_DRIVER
+checking for basic compiler flags for loadable drivers... -fno-strict-aliasing -fno-common -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -D_GNU_SOURCE -fPIC
+checking for compiler flags for loadable drivers... -Werror=undef -Werror=implicit -Werror=return-type  -Wdeclaration-after-statement -Wall -Wstrict-prototypes -Wmissing-prototypes  -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -fno-strict-aliasing -fno-common -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -D_GNU_SOURCE -fPIC
+checking for linker for loadable drivers... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking for linker flags for loadable drivers... -shared -Wl,-Bsymbolic
+checking for 'runtime library path' linker flag... -Wl,-R
+checking for multiarch directory... not found
+checking size of void *... (cached) 4
+checking for static zlib... /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot/usr/libx32/libz.a
+checking how to run the C preprocessor... x86_64-poky-linux-gnux32-gcc -E --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security
+checking for grep that handles long lines and -e... /build/tmp/hosttools/grep
+checking for egrep... /build/tmp/hosttools/grep -E
+checking for OpenSSL crypto library with version >= 0.9.8c in standard locations... dynamic crypto library in /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot/usr/libx32
+checking for x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot options needed to detect all undeclared functions... none needed
+checking whether CRYPTO_memcmp is declared... yes
+checking whether CRYPTO_memcmp can be linked... yes
+configure: creating ./config.status
+config.status: creating c_src/x86_64-poky-linux-gnux32/Makefile
+configure: WARNING: result yes guessed because of cross compilation
+
+=== Running configure in /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/lib/erl_interface ===
+./configure '--build=x86_64-linux' '--host=x86_64-poky-linux-gnux32' '--target=x86_64-poky-linux-gnux32' '--prefix=/usr' '--exec_prefix=/usr' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--libexecdir=/usr/libexec' '--datadir=/usr/share' '--sysconfdir=/etc' '--sharedstatedir=/com' '--localstatedir=/var' '--libdir=/usr/libx32' '--includedir=/usr/include' '--oldincludedir=/usr/include' '--infodir=/usr/share/info' '--mandir=/usr/share/man' '--disable-silent-rules' '--disable-dependency-tracking' '--with-libtool-sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot' '--with-ssl-rpath=no' '--disable-static' '--without-javac' '--without-dynamic-trace' '--without-observer' '--without-odbc' --enable-deterministic-build CFLAGS=' -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= ' LDFLAGS='-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -Wl,-z,relro,-z,now' --enable-pkg-config --disable-option-checking --cache-file=/dev/null --srcdir="/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/lib/erl_interface"
+configure: loading site script /build/../work/poky/meta/site/endian-little
+configure: loading site script /build/../work/poky/meta/site/common-linux
+configure: loading site script /build/../work/poky/meta/site/common-glibc
+configure: loading site script /build/../work/poky/meta/site/ix86-common
+configure: loading site script /build/../work/poky/meta/site/x32-linux
+configure: loading site script /build/../work/poky/meta/site/common
+configure: loading site script /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot/usr/share/x86_64-poky-linux-gnux32_config_site.d/ncurses_config
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-poky-linux-gnux32
+checking target system type... x86_64-poky-linux-gnux32
+checking for x86_64-poky-linux-gnux32-gcc... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -g... yes
+checking for x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot option to enable C11 features... none needed
+checking how to run the C preprocessor... x86_64-poky-linux-gnux32-gcc -E --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security
+checking for grep that handles long lines and -e... /build/tmp/hosttools/grep
+checking for egrep... /build/tmp/hosttools/grep -E
+checking for x86_64-poky-linux-gnux32-ranlib... x86_64-poky-linux-gnux32-gcc-ranlib
+checking for ld.sh... x86_64-poky-linux-gnux32-ld --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot  -m elf32_x86_64
+checking for x86_64-poky-linux-gnux32-ld... (cached) x86_64-poky-linux-gnux32-ld --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot  -m elf32_x86_64
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/time.h... yes
+checking size of short... (cached) 2
+checking size of int... (cached) 4
+checking size of long... (cached) 4
+checking size of void *... (cached) 4
+checking size of long long... (cached) 8
+checking target hardware architecture... amd64
+checking whether compilation mode forces ARCH adjustment... yes: adjusting ARCH=amd64 to ARCH=x86
+checking for unaligned word access... yes: x86 or amd64
+checking for x86_64-poky-linux-gnux32-ar... x86_64-poky-linux-gnux32-gcc-ar
+checking for a BSD-compatible install... /build/tmp/hosttools/install -c
+checking how to create a directory including parents... /build/tmp/hosttools/install -c -d
+checking for library containing gethostbyname... none required
+checking for library containing getpeername... none required
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for arpa/inet.h... yes
+checking for fcntl.h... yes
+checking for limits.h... yes
+checking for malloc.h... yes
+checking for netdb.h... yes
+checking for netinet/in.h... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for sys/param.h... yes
+checking for sys/socket.h... yes
+checking for sys/select.h... yes
+checking for sys/time.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/uio.h... yes
+checking for uid_t in sys/types.h... (cached) {ac_cv_type_uid_t=yes}
+checking for pid_t... yes
+checking for size_t... yes
+checking for socklen_t usability... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking whether x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot needs -traditional... no
+checking for working memcmp... (cached) yes
+checking for dup2... yes
+checking for gethostbyaddr... yes
+checking for gethostbyname... yes
+checking for gethostbyaddr_r... yes
+checking for gethostbyname_r... yes
+checking for gethostname... yes
+checking for writev... yes
+checking for gethrtime... no
+checking for gettimeofday... yes
+checking for inet_ntoa... yes
+checking for memchr... yes
+checking for memmove... yes
+checking for memset... yes
+checking for select... yes
+checking for socket... yes
+checking for strchr... yes
+checking for strerror... (cached) yes
+checking for strrchr... yes
+checking for strstr... yes
+checking for uname... yes
+checking for sysconf... yes
+checking for res_gethostbyname... no
+checking for res_gethostbyname in -lresolv... no
+checking for clock_gettime... yes
+checking for mixed mingw-gcc and native VC++ environment... no
+checking for mixed cygwin and native MinGW environment... no
+checking if we mix cygwin with any native compiler... no
+checking if we mix msys with another native compiler... no
+checking if we mix WSL with another native compiler... no
+checking for native win32 threads... no
+checking for pthread_create in -lpthread... yes
+checking for x86_64-poky-linux-gnux32-getconf... false
+checking for x86_64-poky-linux-gnux32-getconf... no
+checking for getconf... no
+checking for Native POSIX Thread Library... cross
+checking for nptl/pthread.h... no
+checking for pthread.h... yes
+checking for pthread/mit/pthread.h... no
+checking size of short... (cached) 2
+checking size of int... (cached) 4
+checking size of long... (cached) 4
+checking size of long long... (cached) 8
+checking size of __int128_t... 16
+checking for a working __sync_synchronize()... yes
+checking for 32-bit __sync_add_and_fetch()... yes
+checking for 64-bit __sync_add_and_fetch()... yes
+checking for 128-bit __sync_add_and_fetch()... no
+checking for 32-bit __sync_fetch_and_and()... yes
+checking for 64-bit __sync_fetch_and_and()... yes
+checking for 128-bit __sync_fetch_and_and()... no
+checking for 32-bit __sync_fetch_and_or()... yes
+checking for 64-bit __sync_fetch_and_or()... yes
+checking for 128-bit __sync_fetch_and_or()... no
+checking for 32-bit __sync_val_compare_and_swap()... yes
+checking for 64-bit __sync_val_compare_and_swap()... yes
+checking for 128-bit __sync_val_compare_and_swap()... no
+checking for 32-bit __atomic_store_n()... yes
+checking for 64-bit __atomic_store_n()... yes
+checking for 128-bit __atomic_store_n()... no
+checking for 32-bit __atomic_load_n()... yes
+checking for 64-bit __atomic_load_n()... yes
+checking for 128-bit __atomic_load_n()... no
+checking for 32-bit __atomic_add_fetch()... yes
+checking for 64-bit __atomic_add_fetch()... yes
+checking for 128-bit __atomic_add_fetch()... no
+checking for 32-bit __atomic_fetch_and()... yes
+checking for 64-bit __atomic_fetch_and()... yes
+checking for 128-bit __atomic_fetch_and()... no
+checking for 32-bit __atomic_fetch_or()... yes
+checking for 64-bit __atomic_fetch_or()... yes
+checking for 128-bit __atomic_fetch_or()... no
+checking for 32-bit __atomic_compare_exchange_n()... yes
+checking for 64-bit __atomic_compare_exchange_n()... yes
+checking for 128-bit __atomic_compare_exchange_n()... no
+checking if we can add -Werror=return-type to WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -fno-common to CFLAGS (via CFLAGS)... yes
+checking if we can add -Wdeclaration-after-statement to DED_WARN_FLAGS (via CFLAGS)... yes
+checking if we can add -Werror=return-type to DED_WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -Werror=implicit to DED_WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -Werror=undef to DED_WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -fno-common to DED_CFLAGS (via CFLAGS)... yes
+checking if we can add -fno-strict-aliasing to DED_CFLAGS (via CFLAGS)... yes
+checking for x86_64-poky-linux-gnux32-ld... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking for static compiler flags... -Werror=undef -Werror=implicit -Werror=return-type    -fno-strict-aliasing -fno-common -fno-common -Werror=return-type -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -D_GNU_SOURCE -DSTATIC_ERLANG_NIF -DSTATIC_ERLANG_DRIVER
+checking for basic compiler flags for loadable drivers... -fno-strict-aliasing -fno-common -fno-common -Werror=return-type -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -D_GNU_SOURCE -fPIC
+checking for compiler flags for loadable drivers... -Werror=undef -Werror=implicit -Werror=return-type  -Wdeclaration-after-statement -Wall -Wstrict-prototypes -Wmissing-prototypes  -fno-strict-aliasing -fno-common -fno-common -Werror=return-type -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -D_GNU_SOURCE -fPIC
+checking for linker for loadable drivers... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking for linker flags for loadable drivers... -shared -Wl,-Bsymbolic
+checking for 'runtime library path' linker flag... -Wl,-R
+configure: creating ./config.status
+config.status: creating src/x86_64-poky-linux-gnux32/Makefile
+config.status: creating src/x86_64-poky-linux-gnux32/eidefs.mk
+config.status: creating src/x86_64-poky-linux-gnux32/erl_ei.pc
+config.status: creating src/x86_64-poky-linux-gnux32/config.h
+configure: WARNING: result yes guessed because of cross compilation
+
+=== Running configure in /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/lib/megaco ===
+./configure '--build=x86_64-linux' '--host=x86_64-poky-linux-gnux32' '--target=x86_64-poky-linux-gnux32' '--prefix=/usr' '--exec_prefix=/usr' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--libexecdir=/usr/libexec' '--datadir=/usr/share' '--sysconfdir=/etc' '--sharedstatedir=/com' '--localstatedir=/var' '--libdir=/usr/libx32' '--includedir=/usr/include' '--oldincludedir=/usr/include' '--infodir=/usr/share/info' '--mandir=/usr/share/man' '--disable-silent-rules' '--disable-dependency-tracking' '--with-libtool-sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot' '--with-ssl-rpath=no' '--disable-static' '--without-javac' '--without-dynamic-trace' '--without-observer' '--without-odbc' --enable-deterministic-build CFLAGS=' -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= ' LDFLAGS='-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -Wl,-z,relro,-z,now' --enable-pkg-config --disable-option-checking --cache-file=/dev/null --srcdir="/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/lib/megaco"
+configure: loading site script /build/../work/poky/meta/site/endian-little
+configure: loading site script /build/../work/poky/meta/site/common-linux
+configure: loading site script /build/../work/poky/meta/site/common-glibc
+configure: loading site script /build/../work/poky/meta/site/ix86-common
+configure: loading site script /build/../work/poky/meta/site/x32-linux
+configure: loading site script /build/../work/poky/meta/site/common
+configure: loading site script /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot/usr/share/x86_64-poky-linux-gnux32_config_site.d/ncurses_config
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-poky-linux-gnux32
+checking target system type... x86_64-poky-linux-gnux32
+checking for x86_64-poky-linux-gnux32-gcc... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -g... yes
+checking for x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot option to enable C11 features... none needed
+checking for mixed mingw-gcc and native VC++ environment... no
+checking for mixed cygwin and native MinGW environment... no
+checking if we mix cygwin with any native compiler... no
+checking if we mix msys with another native compiler... no
+checking if we mix WSL with another native compiler... no
+checking for flex... flex
+checking for lex output file root... lex.yy
+checking for lex library... none needed
+checking whether yytext is a pointer... yes
+checking for reentrant capable flex... yes
+checking if we can add -Werror=return-type to CFLAGS (via CFLAGS)... yes
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for native win32 threads... no
+checking for pthread_create in -lpthread... yes
+checking for x86_64-poky-linux-gnux32-getconf... false
+checking for x86_64-poky-linux-gnux32-getconf... no
+checking for getconf... no
+checking for Native POSIX Thread Library... cross
+checking for nptl/pthread.h... no
+checking for pthread.h... yes
+checking for pthread/mit/pthread.h... no
+checking if we can add -Wdeclaration-after-statement to DED_WARN_FLAGS (via CFLAGS)... yes
+checking if we can add -Werror=return-type to DED_WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -Werror=implicit to DED_WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -Werror=undef to DED_WERRORFLAGS (via CFLAGS)... yes
+checking if we can add -fno-common to DED_CFLAGS (via CFLAGS)... yes
+checking if we can add -fno-strict-aliasing to DED_CFLAGS (via CFLAGS)... yes
+checking for x86_64-poky-linux-gnux32-ld... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking for static compiler flags... -Werror=undef -Werror=implicit -Werror=return-type    -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -fno-strict-aliasing -fno-common -Werror=return-type  -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=   -D_GNU_SOURCE -DSTATIC_ERLANG_NIF -DSTATIC_ERLANG_DRIVER
+checking for basic compiler flags for loadable drivers... -fno-strict-aliasing -fno-common -Werror=return-type -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -D_GNU_SOURCE -fPIC
+checking for compiler flags for loadable drivers... -Werror=undef -Werror=implicit -Werror=return-type  -Wdeclaration-after-statement -Wall -Wstrict-prototypes -Wmissing-prototypes  -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -fno-strict-aliasing -fno-common -Werror=return-type -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -D_GNU_SOURCE -fPIC
+checking for linker for loadable drivers... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking for linker flags for loadable drivers... -shared -Wl,-Bsymbolic
+checking for 'runtime library path' linker flag... -Wl,-R
+checking for perl... perl
+configure: creating ./config.status
+config.status: creating examples/meas/Makefile
+configure: creating ./config.status
+config.status: creating examples/meas/Makefile
+config.status: creating src/flex/x86_64-poky-linux-gnux32/Makefile
+configure: WARNING: result yes guessed because of cross compilation
+
+=== Running configure in /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/lib/snmp ===
+./configure '--build=x86_64-linux' '--host=x86_64-poky-linux-gnux32' '--target=x86_64-poky-linux-gnux32' '--prefix=/usr' '--exec_prefix=/usr' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--libexecdir=/usr/libexec' '--datadir=/usr/share' '--sysconfdir=/etc' '--sharedstatedir=/com' '--localstatedir=/var' '--libdir=/usr/libx32' '--includedir=/usr/include' '--oldincludedir=/usr/include' '--infodir=/usr/share/info' '--mandir=/usr/share/man' '--disable-silent-rules' '--disable-dependency-tracking' '--with-libtool-sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot' '--with-ssl-rpath=no' '--disable-static' '--without-javac' '--without-dynamic-trace' '--without-observer' '--without-odbc' --enable-deterministic-build CFLAGS=' -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= ' LDFLAGS='-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -Wl,-z,relro,-z,now' --enable-pkg-config --disable-option-checking --cache-file=/dev/null --srcdir="/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/lib/snmp"
+configure: loading site script /build/../work/poky/meta/site/endian-little
+configure: loading site script /build/../work/poky/meta/site/common-linux
+configure: loading site script /build/../work/poky/meta/site/common-glibc
+configure: loading site script /build/../work/poky/meta/site/ix86-common
+configure: loading site script /build/../work/poky/meta/site/x32-linux
+configure: loading site script /build/../work/poky/meta/site/common
+configure: loading site script /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot/usr/share/x86_64-poky-linux-gnux32_config_site.d/ncurses_config
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-poky-linux-gnux32
+checking target system type... x86_64-poky-linux-gnux32
+checking for perl... perl
+configure: Default (snmp) empty pdu size set to 21
+configure: creating ./config.status
+config.status: creating mibs/Makefile
+config.status: creating src/agent/Makefile
+
+=== Running configure in /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/lib/wx ===
+./configure '--build=x86_64-linux' '--host=x86_64-poky-linux-gnux32' '--target=x86_64-poky-linux-gnux32' '--prefix=/usr' '--exec_prefix=/usr' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--libexecdir=/usr/libexec' '--datadir=/usr/share' '--sysconfdir=/etc' '--sharedstatedir=/com' '--localstatedir=/var' '--libdir=/usr/libx32' '--includedir=/usr/include' '--oldincludedir=/usr/include' '--infodir=/usr/share/info' '--mandir=/usr/share/man' '--disable-silent-rules' '--disable-dependency-tracking' '--with-libtool-sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot' '--with-ssl-rpath=no' '--disable-static' '--without-javac' '--without-dynamic-trace' '--without-observer' '--without-odbc' --enable-deterministic-build CFLAGS=' -O2 -pipe -g -feliminate-unused-debug-types -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= ' LDFLAGS='-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0 -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot= -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native= -Wl,-z,relro,-z,now' --enable-pkg-config --disable-option-checking --cache-file=/dev/null --srcdir="/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/lib/wx"
+configure: loading site script /build/../work/poky/meta/site/endian-little
+configure: loading site script /build/../work/poky/meta/site/common-linux
+configure: loading site script /build/../work/poky/meta/site/common-glibc
+configure: loading site script /build/../work/poky/meta/site/ix86-common
+configure: loading site script /build/../work/poky/meta/site/x32-linux
+configure: loading site script /build/../work/poky/meta/site/common
+configure: loading site script /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot/usr/share/x86_64-poky-linux-gnux32_config_site.d/ncurses_config
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-poky-linux-gnux32
+checking target system type... x86_64-poky-linux-gnux32
+checking for x86_64-poky-linux-gnux32-gcc... x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -g... yes
+checking for x86_64-poky-linux-gnux32-gcc  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot option to enable C11 features... none needed
+checking whether the compiler supports GNU C++... yes
+checking whether x86_64-poky-linux-gnux32-g++  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot accepts -g... yes
+checking for x86_64-poky-linux-gnux32-g++  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot option to enable C++11 features... none needed
+checking for x86_64-poky-linux-gnux32-ranlib... x86_64-poky-linux-gnux32-gcc-ranlib
+checking how to run the C preprocessor... x86_64-poky-linux-gnux32-gcc -E --sysroot=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot  -mx32 -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fcanon-prefix-map  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git=/usr/src/debug/erlang/26.0.2-r0  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fmacro-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot=  -fdebug-prefix-map=/build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/recipe-sysroot-native=  -Wl,-z,relro,-z,now -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security
+configure: Building for linux-gnux32
+checking for mixed mingw-gcc and native VC++ environment... no
+checking for mixed cygwin and native MinGW environment... no
+checking if we mix cygwin with any native compiler... no
+checking if we mix msys with another native compiler... no
+checking if we mix WSL with another native compiler... no
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking size of void *... (cached) 4
+checking if we can add -fno-move-loop-invariants to CXXNOOPT (via CFLAGS)... yes
+checking if we can add -fno-var-tracking-assignments to CXXNOOPT (via CFLAGS)... yes
+checking for GL/gl.h... (cached) yes
+checking for GL/glu.h... no
+checking for OpenGL/glu.h... no
+checking for wx-config... no
+checking for wxwidgets webview... no
+checking for wx-config... (cached) no
+checking for debug build of wxWidgets... no
+checking for wx-config... (cached) no
+checking for standard build of wxWidgets... no
+checking if we can add -Werror=return-type to CFLAGS (via CFLAGS)... yes
+checking if we can add -Werror=return-type to CXXFLAGS (via CFLAGS)... yes
+configure: creating x86_64-poky-linux-gnux32/config.status
+config.status: creating config.mk
+config.status: creating c_src/Makefile
+configure: WARNING: No GLU headers found, wx will NOT be usable
+configure: WARNING:
+        wxWidgets must be installed on your system.
+
+        Please check that wx-config is in path, the directory
+        where wxWidgets libraries are installed (returned by
+        'wx-config --libs' or 'wx-config --static --libs' command)
+        is in LD_LIBRARY_PATH or equivalent variable and
+        wxWidgets version is 3.0.2 or above.
+
+*********************************************************************
+**********************  APPLICATIONS DISABLED  **********************
+*********************************************************************
+
+jinterface     : Java compiler disabled by user
+observer       : User gave --without-observer option
+odbc           : User gave --without-odbc option
+
+*********************************************************************
+*********************************************************************
+**********************  APPLICATIONS INFORMATION  *******************
+*********************************************************************
+
+wx             : No GLU headers found, wx will NOT be usable
+wxWidgets was not compiled with --enable-webview or wxWebView developer package is not installed, wxWebView will NOT be available
+
+        wxWidgets must be installed on your system.
+
+        Please check that wx-config is in path, the directory
+        where wxWidgets libraries are installed (returned by
+        'wx-config --libs' or 'wx-config --static --libs' command)
+        is in LD_LIBRARY_PATH or equivalent variable and
+        wxWidgets version is 3.0.2 or above.
+
+*********************************************************************
+*********************************************************************
+**********************  DOCUMENTATION INFORMATION  ******************
+*********************************************************************
+
+documentation  : 
+                 xsltproc is missing.
+                 fop is missing.
+                 xmllint is missing.
+                 The documentation cannot be built.
+
+*********************************************************************
+DEBUG: Shell function do_configure finished
+DEBUG: Executing python function do_qa_configure
+NOTE: Checking autotools environment for common misconfiguration
+NOTE: Checking configure output for unrecognised options
+grep: /build/tmp/work/x86_64_x32-poky-linux-gnux32/erlang/26.0.2-r0/git/config.log: No such file or directory
+DEBUG: Python function do_qa_configure finished
+DEBUG: Executing shell function autotools_postconfigure
+DEBUG: Shell function autotools_postconfigure finished
