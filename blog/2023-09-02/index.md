@@ -4,6 +4,8 @@ authors: [joaohf]
 tags: [meta-erlang, x32]
 ---
 
+## Intro
+
 According to [Wikipedia X32 ABI](https://en.wikipedia.org/wiki/X32_ABI) page:
 
 > The x32 ABI is an application binary interface (ABI) and one of the interfaces
@@ -29,6 +31,85 @@ Here is some references about the subject:
 
 In fact, x32 seems to be around since 2011/2012 and has been integrated in many
 platforms. Like Ubuntu, Debian, Gentoo.
+
+## Building Erlang/OTP using x32 toolchain
+
+:::note
+
+A toolchain with x32 support is necessary. However, it's not easy to find one.
+Instead projects like [crosstool-NG](https://crosstool-ng.github.io/) and
+[Yocto Project](https://www.yoctoproject.org/) have tools to make a toolchain
+with x32 support enabled.
+
+:::
+
+In order to follow this experiment, you can download a specific toolchain with
+x32 enabled here:
+[poky-glibc-x86_64-core-image-minimal-x86_64_x32-qemux86-64-toolchain-4.2.sh](https://github.com/meta-erlang/meta-erlang.github.io/releases/tag/x32-toolchain).
+
+It will be necessary to install it in a temporary folder like the steps below:
+
+```
+chmod +x poky-glibc-x86_64-core-image-minimal-x86_64_x32-qemux86-64-toolchain-4.2.sh
+poky-glibc-x86_64-core-image-minimal-x86_64_x32-qemux86-64-toolchain-4.2.sh -y -d /tmp/poky/4.2
+```
+
+Following the Erlang/OTP
+[INSTALL-CROSS.md](https://github.com/erlang/otp/blob/master/HOWTO/INSTALL-CROSS.md)
+document, we first need to build a Bootstrap System:
+
+```
+cd $ERL_TOP
+./configure --enable-bootstrap-only
+make
+```
+
+Next, we have to source the toolchain environment configurations:
+
+```
+. /tmp/poky/4.2/environment-setup-x86_64_x32-poky-linux-gnux32
+```
+
+After sourcering the environment variable, the shell gets configured with some
+extra variables using during the build:
+
+```
+x86_64-poky-linux-gnux32-gcc -mx32 \
+ -fstack-protector-strong \
+ -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security \
+ --sysroot=/tmp/poky/4.2/sysroots/x86_64_x32-poky-linux-gnux32
+```
+
+It's important to not the GCC flag
+[-mx32](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html#index-mx32):
+
+> The -mx32 option sets int, long, and pointer types to 32 bits, and generates
+> code for the x86-64 architecture.
+
+Finally, start the second part of Erlang/OTP build, which is the Cross Build:
+
+```
+./configure  $CONFIGURE_FLAGS  --disable-silent-rules --disable-dependency-tracking \
+	--with-ssl-rpath=no --disable-static  --without-javac --without-dynamic-trace --without-observer --without-odbc
+```
+
+Installing the build output and inspecting the `erlexec` binary to see what it
+looks like:
+
+```
+make install DESTDIR=/tmp/e
+
+file /tmp/e/usr/local/lib/erlang/erts-14.0.2/bin/erlexec
+erlexec: ELF 32-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /libx32/ld-linux-x32.so.2, BuildID[sha1]=013e32ef8c57686a59a812ca452f09d677ff8e37, for GNU/Linux 5.15.0, with debug_info, not stripped
+```
+
+Well, the build is correct. But I couldn't test this build in my machine.
+
+## Enabling Erlang for Yocto
+
+In the previous section we just build Erlang/OTP using a toolchain with x32
+support. Now, it's time to build Erlang/OTP inside the Yocto project and test
+the results using qemu instance.
 
 Enabling it for Yocto is simple, just adding the follow snippet in your
 local.conf file:
