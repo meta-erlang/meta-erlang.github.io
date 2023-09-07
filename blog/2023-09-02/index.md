@@ -50,8 +50,8 @@ bitbake erlang
 For those that want to check all configure and compiler flags, I'm including the
 links to those logs:
 
-- [Configure log output](log.do_configure)
-- [Compile log output](log.do_compile)
+- [Configure log output](pathname:///assets/log.do_configure)
+- [Compile log output](pathname:///assets/log.do_compile)
 
 :::
 
