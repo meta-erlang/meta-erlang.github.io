@@ -4,10 +4,23 @@
         <title>meta-erlang Blog</title>
         <link>https://meta-erlang.github.io/blog</link>
         <description>meta-erlang Blog</description>
-        <lastBuildDate>Thu, 02 Nov 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 25 Dec 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[New Erlang releases 24.3.4.15, 25.3.2.8, 26.2.1]]></title>
+            <link>https://meta-erlang.github.io/blog/2023/12/25/index</link>
+            <guid>https://meta-erlang.github.io/blog/2023/12/25/index</guid>
+            <pubDate>Mon, 25 Dec 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[We've added support for the following new Erlang/OTP releases:]]></description>
+            <content:encoded><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>dunfell</td><td>24.3.4.15</td></tr><tr><td>kirkstone</td><td>24.3.4.15, 25.3.2.8, 26.2.1</td></tr><tr><td>master</td><td>25.3.2.8, 26.2.1</td></tr></tbody></table><p>In additional to those new versions, now it's possible to read
+Erlang/OTP documentation in Erlang shell. The docs .chunk files get
+generated during build time and one could easily install it by adding
+the package <em>erlang-modules-dev</em>.</p>]]></content:encoded>
+            <category>meta-erlang</category>
+            <category>news</category>
+        </item>
         <item>
             <title><![CDATA[meta-erlang meets atomvm]]></title>
             <link>https://meta-erlang.github.io/blog/2023/11/02/index</link>
