@@ -53,8 +53,8 @@ script, like that:
 sh x86_64-beamtools-nativesdk-standalone-3.4.1-erlang-24.1.7-elixir-1.12.3.sh
 ```
 
-The installation script is going to ask the install destination path. You are
-free to use whatever path you like.
+The installation script is going to ask the destination path. You are
+free to use whatever path you need.
 
 When the installation has over, it is necessary to source the environment script
 which has all the definitions about where to find the tools:
@@ -67,8 +67,12 @@ The current shell has the environment variable setted to the correct Erlang and
 Elixir installation. And running: _erl_ or _iex_ gives you an Erlang and Elixir
 prompts.
 
-!> For each new shell, it will be necessary to source the
+:::note
+
+For each new shell, it will be necessary to source the
 environment-setup-x86_64-pokysdk-linux file.
+
+:::
 
 The follow lines show the full output for beamtools installation process:
 
@@ -92,21 +96,26 @@ with the following steps:
 
 1. Locate and download the \*.sh at
    https://github.com/meta-erlang/meta-erlang/releases
-2. Execute the installation script. Here is an example for the traditional
+1. Execute the installation script. Here is an example for the traditional
    installer:
 
-```bash
-    sh ~/Downloads/x86_64-beamtools-nativesdk-standalone-3.4.1-erlang-24.1.7-elixir-1.12.3.sh
-```
+   ```bash
+   sh ~/Downloads/x86_64-beamtools-nativesdk-standalone-3.4.1-erlang-24.1.7-elixir-1.12.3.sh
+   ```
 
-    During execution, a prompt appears that allows you to choose the installation directory. For example, you could choose the following: /home/your-username/beamtools
+   :::note
 
-3. Source the tools environment setup script by using a command like the
+    During execution, a prompt appears that allows you to choose the installation directory.
+    For example, you could choose the following: /home/your-username/beamtools
+
+   :::
+
+1. Source the tools environment setup script by using a command like the
    following:
 
-```bash
+    ```bash
     source /home/your_username/beamtools/environment-setup-x86_64-pokysdk-linux
-```
+    ```
 
 After you have sourced the setup script, the tools are added to PATH and any
 other environment variables required to run the tools are initialized. The
