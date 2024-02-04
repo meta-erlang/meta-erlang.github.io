@@ -29,6 +29,18 @@ PREFERRED_VERSION_elixir-native = "1.11.2"
 PREFERRED_VERSION_nativesdk-elixir = "1.11.2"
 ```
 
+:::info
+
+The default PACKAGECONFIG for erlang when nativesdk is to enable _wx_ and _observer_ tools. And
+if your distribution configuration disables (or removes) the _opengl_ configuration, you will need
+to add opengl in DISTRO_FEATURES_NATIVESDK variable (in or local.conf for instance). Like this:
+
+```
+DISTRO_FEATURES_NATIVESDK:append = " opengl"
+```
+
+:::
+
 Maybe your team have special version of Erlang or Elixir with some in-house
 patches, using a SDK created by YP is a good approach to follow. You will have
 total control from the build until development SDK installation.
@@ -43,11 +55,15 @@ is the main entry point when creating a generic toolchain with Erlang and
 Elixir. And comes with Erlang, Elixir development modules as well rebar3 build
 tool.
 
-!> The follow two sections are based on
+:::note
+
+The follow two sections are based on
 [Yocto Project Application Development and the Extensible Software Development Kit (eSDK)](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html)
 for Yocto Project 3.1.3 LTS "Dunfell". To get an up-to-date documentation,
 please, visit the
 [Yocto Project Documentation](https://docs.yoctoproject.org/index.html)
+
+:::
 
 ### Standard SDK
 
@@ -84,8 +100,12 @@ As the last sentence says, just source the file
 _environment-setup-armv7vet2hf-neon-poky-linux-gnueabi_ and we ready to use
 Erlang and Elixir.
 
-!> If you need to customize the toolchain, i.e: add or remove tools, YP supports
+:::tip
+
+If you need to customize the toolchain, i.e: add or remove tools, YP supports
 [customize the Standard SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-appendix-customizing-standard).
+
+:::
 
 ### Extensible SDK
 
@@ -128,9 +148,13 @@ Each time you wish to use the SDK in a new shell session, you need to source the
 Source the environment setup script for each new shell session that you want to
 use the SDK.
 
-!> Additional tools can also be included if needed, checkout the
+:::tip
+
+Additional tools can also be included if needed, checkout the
 [Customizing the Extensible SDK](https://www.yoctoproject.org/docs/3.1.3/sdk-manual/sdk-manual.html#sdk-appendix-customizing)
 documentation.
+
+:::
 
 ## Development session example
 
@@ -153,9 +177,13 @@ We are going to perform the following steps:
 
 One can use the same approach when working with a real hardware.
 
-!> This session is far from be generic steps in order to develop, build, test
+:::note
+
+This session is far from be generic steps in order to develop, build, test
 and deploy Erlang/Elixir projects using Yocto Project. The purpose here is just
 to demonstrate one of multiple workflows.
+
+:::
 
 Let's start loading the SDK setup environment:
 
