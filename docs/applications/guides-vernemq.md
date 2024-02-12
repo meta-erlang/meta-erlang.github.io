@@ -27,7 +27,7 @@ echo 'PREFERRED_VERSION_erlang-native = "24.3.3"' >> conf/local.conf
 echo 'PREFERRED_VERSION_nativesdk-erlang = "24.3.3"' >> conf/local.conf
 ```
 
-- Add `emqx` package to `IMAGE_INSTAL` in _conf/local.conf_
+- Add `vernemq` package to `IMAGE_INSTAL` in _conf/local.conf_
 
 ```bash
 echo 'IMAGE_INSTALL:append = " vernemq"' >> conf/local.conf
