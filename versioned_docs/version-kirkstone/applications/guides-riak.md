@@ -13,7 +13,7 @@ Recommended PREFERRED_VERSION for riak:
 
 | riak     | Erlang/OTP | Elixir |
 | ---------| ---------- | ------ |
-| 3.2.1    | 25.3%      | 1.14% |
+| 3.0.1    | -          | -      |
 
 :::
 

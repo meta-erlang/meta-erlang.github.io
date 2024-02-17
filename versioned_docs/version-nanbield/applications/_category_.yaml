@@ -1,0 +1,10 @@
+position: 4
+label: 'Applications'
+collapsible: true # make the category collapsible
+collapsed: false # keep the category open by default
+className: red
+link:
+  type: generated-index
+  title: Applications
+customProps:
+  description: Guides for supported applications.

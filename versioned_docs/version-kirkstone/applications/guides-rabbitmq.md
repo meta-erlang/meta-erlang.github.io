@@ -13,7 +13,8 @@ Recommended PREFERRED_VERSION for rabbitmq:
 
 | rabbitmq | Erlang/OTP | Elixir |
 | ---------| ---------- | ------ |
-| 3.11.28  | 25.3%      | 1.15%  |
+| 3.9.8    | 24.2%      | 1.13%  |
+| 3.10.25  | 25.3%      | 1.13%  |
 
 :::
 

@@ -36,22 +36,38 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         gtag: {
-	  trackingID: 'G-2N5Z9W349S',
-	},
+        trackingID: 'G-2N5Z9W349S',
+        },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/meta-erlang/meta-erlang.github.io/tree/master/',
-        },
+          lastVersion: 'nanbield',
+          versions: {
+            current: {
+              label: 'master',
+              path: ''
+            },
+            kirkstone: {
+              label: 'kirkstone',
+              path: 'kirkstone',
+	            banner: 'none'
+            },
+            nanbield: {
+              label: 'nanbield',
+              path: 'nanbield',
+              banner: 'none'
+            }
+          }},
         blog: {
           blogTitle: 'meta-erlang news',
           blogDescription: 'News from meta-erlang project',
           showReadingTime: true,
-	  postsPerPage: 'ALL',
-	  blogSidebarTitle: 'All posts',
-	  blogSidebarCount: 'ALL',
+          postsPerPage: 'ALL',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -73,22 +89,34 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
       navbar: {
         title: 'meta-erlang',
         items: [
           {to: '/beamtools', label: 'BEAM Tools', position: 'left'},
           {
             type: 'doc',
-            docId: 'intro',
             position: 'left',
-            label: 'Documentation',
+            docId: 'intro',
+            label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'docsVersionDropdown',
+            //docId: 'intro',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
+          },
           {
             href: 'https://github.com/meta-erlang/meta-erlang',
             label: 'GitHub',
             position: 'right',
-          },
+          }
         ],
       },
       footer: {
