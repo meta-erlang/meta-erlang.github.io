@@ -13,6 +13,7 @@ Recommended PREFERRED_VERSION for couchdb:
 
 | couchdb  | Erlang/OTP | Elixir |
 | ---------| ---------- | ------ |
+| 3.2.2    | 24%        | 1.13%  |
 | 3.3.3    | 25.3%      | 1.14%  |
 
 :::

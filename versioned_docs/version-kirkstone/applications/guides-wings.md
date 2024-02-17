@@ -13,7 +13,7 @@ Recommended PREFERRED_VERSION for wings:
 
 | wings    | Erlang/OTP | Elixir |
 | ---------| ---------- | ------ |
-| 2.2.9    | 25.3%      | -      |
+| 2.2.7    | 25.3%      | -      |
 
 :::
 
