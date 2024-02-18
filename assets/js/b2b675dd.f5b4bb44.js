@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmeta_erlang_github_io=self.webpackChunkmeta_erlang_github_io||[]).push([[6292],{6180:e=>{e.exports=JSON.parse('{"permalink":"/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":10,"blogDescription":"News from meta-erlang project","blogTitle":"meta-erlang news"}')}}]);

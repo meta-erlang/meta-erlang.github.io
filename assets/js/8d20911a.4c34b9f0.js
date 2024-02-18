@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmeta_erlang_github_io=self.webpackChunkmeta_erlang_github_io||[]).push([[9896],{8e3:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/atomvm","page":1,"postsPerPage":1,"totalPages":1,"totalCount":1,"blogDescription":"News from meta-erlang project","blogTitle":"meta-erlang news"}')}}]);
