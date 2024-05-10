@@ -17,6 +17,7 @@ tools:
 - [rebar3](http://rebar3.org/)
 - [erlfmt](https://github.com/WhatsApp/erlfmt)
 - [elvis](https://github.com/inaka/elvis)
+- [livebook](https://livebook.dev/)
 
 This tarball builds all the listed tools natively, wrapping them into a tarball
 self-installed script and ready to be shared. The _beamtools_ does not provides
@@ -120,3 +121,45 @@ with the following steps:
 After you have sourced the setup script, the tools are added to PATH and any
 other environment variables required to run the tools are initialized. The
 results are working versions versions of rebar3, Erlang/OTP and Elixir.
+
+## Start livebook from beamtools
+
+As livebook is included into standard beamtools SDK, it's possible to start a
+livebook session easily following the steps below:
+
+1. Source the beamtools SDK
+
+    ```bash
+    source /home/your_username/beamtools/nvironment-setup-x86_64-pokysdk-linux
+    ```
+
+1. Check if the livebook scripts exists in your environment:
+
+    ```bash
+    $ livebook
+    Usage: livebook COMMAND [ARGS]
+
+    The known commands are:
+
+    start          Starts the system
+    start_iex      Starts the system with IEx attached
+    daemon         Starts the system as a daemon
+    daemon_iex     Starts the system as a daemon with IEx attached
+    eval "EXPR"    Executes the given expression on a new, non-booted system
+    rpc "EXPR"     Executes the given expression remotely on the running system
+    remote         Connects to the running system via a remote shell
+    restart        Restarts the running system via a remote command
+    stop           Stops the running system via a remote command
+    pid            Prints the operating system PID of the running system via a remote command
+    version        Prints the release name and version to be booted
+
+    ```
+
+1. Start livebook system:
+
+    ```bash
+    $ livebook start
+    [Livebook] Application running at http://localhost:8080/?token=z4nrl62iqojkttdq3fuha7vm7ynkhwis
+    ```
+
+1. It's done, you can play with livebook locally without need to install anything else.
