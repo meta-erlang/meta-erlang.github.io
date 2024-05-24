@@ -4,10 +4,20 @@
         <title>meta-erlang Blog</title>
         <link>https://meta-erlang.github.io/blog</link>
         <description>meta-erlang Blog</description>
-        <lastBuildDate>Sun, 17 Mar 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 21 Apr 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[New Erlang releases 24.3.4.17, 25.3.2.12, 26.2.5, 27.0-rc3]]></title>
+            <link>https://meta-erlang.github.io/blog/2024/04/21/index</link>
+            <guid>https://meta-erlang.github.io/blog/2024/04/21/index</guid>
+            <pubDate>Sun, 21 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[We've added support for the following new Erlang/OTP releases:]]></description>
+            <content:encoded><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>kirkstone</td><td>24.3.4.17, 25.3.2.12, 26.2.5</td></tr><tr><td>master</td><td>25.3.2.12, 26.2.5, 27.0-rc3</td></tr></tbody></table>]]></content:encoded>
+            <category>meta-erlang</category>
+            <category>news</category>
+        </item>
         <item>
             <title><![CDATA[New Erlang releases 24.3.4.16, 25.3.2.10, 26.2.3]]></title>
             <link>https://meta-erlang.github.io/blog/2024/03/17/index</link>
