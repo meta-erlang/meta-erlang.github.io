@@ -2,11 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://meta-erlang.github.io/blog</id>
     <title>meta-erlang Blog</title>
-    <updated>2024-04-21T00:00:00.000Z</updated>
+    <updated>2024-05-31T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://meta-erlang.github.io/blog"/>
     <subtitle>meta-erlang Blog</subtitle>
     <icon>https://meta-erlang.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[New Erlang releases 27.0]]></title>
+        <id>https://meta-erlang.github.io/blog/2024/05/31/index</id>
+        <link href="https://meta-erlang.github.io/blog/2024/05/31/index"/>
+        <updated>2024-05-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We've added support for the following new Erlang/OTP releases:]]></summary>
+        <content type="html"><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>scarthgap</td><td>25.3.2.12, 26.2.5, 27.0</td></tr><tr><td>master</td><td>25.3.2.12, 26.2.5, 27.0</td></tr></tbody></table><p>And the following Elixir releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Elixir version</th></tr></thead><tbody><tr><td>scarthgap</td><td>1.13.4, 1.14.4, 1.15.7, 1.16.3</td></tr><tr><td>master</td><td>1.13.4, 1.14.4, 1.15.7, 1.16.3</td></tr></tbody></table><p>I was planing to also add Erlang/OTP 27.0 to LTS kirkstone release. However
+it is not feasible as Erlang/OTP 27 uses autoconf 2.72 and kirkstone uses 2.71. Thus,
+there is an incompatible related to build system.</p>]]></content>
+        <author>
+            <name>João Henrique Ferreira de Freitas</name>
+            <uri>https://github.com/joaohf</uri>
+        </author>
+        <category label="meta-erlang" term="meta-erlang"/>
+        <category label="news" term="news"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[New Erlang releases 24.3.4.17, 25.3.2.12, 26.2.5, 27.0-rc3]]></title>
         <id>https://meta-erlang.github.io/blog/2024/04/21/index</id>

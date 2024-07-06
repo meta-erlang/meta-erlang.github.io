@@ -4,10 +4,22 @@
         <title>meta-erlang Blog</title>
         <link>https://meta-erlang.github.io/blog</link>
         <description>meta-erlang Blog</description>
-        <lastBuildDate>Sun, 21 Apr 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 31 May 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[New Erlang releases 27.0]]></title>
+            <link>https://meta-erlang.github.io/blog/2024/05/31/index</link>
+            <guid>https://meta-erlang.github.io/blog/2024/05/31/index</guid>
+            <pubDate>Fri, 31 May 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[We've added support for the following new Erlang/OTP releases:]]></description>
+            <content:encoded><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>scarthgap</td><td>25.3.2.12, 26.2.5, 27.0</td></tr><tr><td>master</td><td>25.3.2.12, 26.2.5, 27.0</td></tr></tbody></table><p>And the following Elixir releases:</p><table><thead><tr><th>meta-erlang branch</th><th>Elixir version</th></tr></thead><tbody><tr><td>scarthgap</td><td>1.13.4, 1.14.4, 1.15.7, 1.16.3</td></tr><tr><td>master</td><td>1.13.4, 1.14.4, 1.15.7, 1.16.3</td></tr></tbody></table><p>I was planing to also add Erlang/OTP 27.0 to LTS kirkstone release. However
+it is not feasible as Erlang/OTP 27 uses autoconf 2.72 and kirkstone uses 2.71. Thus,
+there is an incompatible related to build system.</p>]]></content:encoded>
+            <category>meta-erlang</category>
+            <category>news</category>
+        </item>
         <item>
             <title><![CDATA[New Erlang releases 24.3.4.17, 25.3.2.12, 26.2.5, 27.0-rc3]]></title>
             <link>https://meta-erlang.github.io/blog/2024/04/21/index</link>
