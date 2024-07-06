@@ -44,7 +44,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/meta-erlang/meta-erlang.github.io/tree/master/',
-          lastVersion: 'nanbield',
+          lastVersion: 'scarthgap',
           versions: {
             current: {
               label: 'master',
@@ -58,6 +58,11 @@ const config = {
             nanbield: {
               label: 'nanbield',
               path: 'nanbield',
+              banner: 'none'
+            },
+            scarthgap: {
+              label: 'scarthgap',
+              path: 'scarthgap',
               banner: 'none'
             }
           }},

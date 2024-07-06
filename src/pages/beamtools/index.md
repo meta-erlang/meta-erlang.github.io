@@ -29,6 +29,7 @@ the latest Erlang/OTP and Elixir are used.
 | langdale           | [4.1.3 Erlang/OTP 25.2.3 Elixir 1.14.4-dev](https://github.com/meta-erlang/meta-erlang/releases/tag/beamtools-0.6.0) |
 | mickledore         | [4.2.1 Erlang/OTP 26.0.2 Elixir 1.15.2](https://github.com/meta-erlang/meta-erlang/releases/tag/beamtools-0.7.1)     |
 | nanbield           | [4.3.2 Erlang/OTP 26.2.1 Elixir 1.16.0](https://github.com/meta-erlang/meta-erlang/releases/tag/beamtools-0.8.1)     |
+| nanbield           | [5.0.1 Erlang/OTP 27.0 Elixir 1.16.3](https://github.com/meta-erlang/meta-erlang/releases/tag/beamtools-0.9.0)       |
 
 ## How to use
 
