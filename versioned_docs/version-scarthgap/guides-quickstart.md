@@ -12,22 +12,22 @@ This quickstart guide uses the same steps stated at
 with additional steps to get an erlang runtime up and running on the target
 device.
 
-Clone _meta-erlang_ and checkout branch _master_:
+Clone _meta-erlang_ and checkout branch _scarthgap_:
 
 ```bash
-git clone --branch master https://github.com/meta-erlang/meta-erlang.git
+git clone --branch scarthgap https://github.com/meta-erlang/meta-erlang.git
 ```
 
-Clone _poky_ and checkout branch _master_:
+Clone _poky_ and checkout branch _scarthgap_:
 
 ```bash
-git clone --branch master git://git.yoctoproject.org/poky
+git clone --branch scarthgap git://git.yoctoproject.org/poky
 ```
 
-Clone _meta-openembedded_ and checkout branch _master_:
+Clone _meta-openembedded_ and checkout branch _scarthgap_:
 
 ```bash
-git clone --branch master https://github.com/openembedded/meta-openembedded.git
+git clone --branch scarthgap https://github.com/openembedded/meta-openembedded.git
 ```
 
 Move to _poky_ directory:
