@@ -11,9 +11,9 @@ description: Shows how to set up and install vernemq.
 
 Recommended PREFERRED_VERSION for vernemq:
 
-| vernemq  | Erlang/OTP | Elixir |
-| ---------| ---------- | ------ |
-| 1.13.0   | 25.3%      | -      |
+| vernemq | Erlang/OTP | Elixir |
+| ------- | ---------- | ------ |
+| 1.13.0  | 25.3%      | -      |
 
 :::
 

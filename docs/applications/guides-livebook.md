@@ -12,7 +12,7 @@ description: Shows how to set up and install livebook.
 Recommended PREFERRED_VERSION for livebook:
 
 | livebook | Erlang/OTP | Elixir |
-| ---------| ---------- | ------ |
+| -------- | ---------- | ------ |
 | 0.10.0   | 26%        | 1.15%  |
 
 :::

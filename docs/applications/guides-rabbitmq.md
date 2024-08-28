@@ -12,7 +12,7 @@ description: Shows how to set up and install rabbitmq.
 Recommended PREFERRED_VERSION for rabbitmq:
 
 | rabbitmq | Erlang/OTP | Elixir |
-| ---------| ---------- | ------ |
+| -------- | ---------- | ------ |
 | 3.11.28  | 25.3%      | 1.15%  |
 
 :::

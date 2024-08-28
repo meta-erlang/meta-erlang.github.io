@@ -11,9 +11,9 @@ description: Shows how to set up and install wings3d.
 
 Recommended PREFERRED_VERSION for wings:
 
-| wings    | Erlang/OTP | Elixir |
-| ---------| ---------- | ------ |
-| 2.2.9    | 25.3%      | -      |
+| wings | Erlang/OTP | Elixir |
+| ----- | ---------- | ------ |
+| 2.2.9 | 25.3%      | -      |
 
 :::
 
