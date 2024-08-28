@@ -10,7 +10,8 @@ description: Shows how to set up and install couchdb.
 :::warning
 
 The couchdb recipe has been temporary removed from meta-erlang master branch.
-Please, see [PR couchdb: move to main branch and remove mozjs](https://github.com/meta-erlang/meta-erlang/pull/293)
+Please, see
+[PR couchdb: move to main branch and remove mozjs](https://github.com/meta-erlang/meta-erlang/pull/293)
 for more details.
 
 :::
@@ -19,9 +20,9 @@ for more details.
 
 Recommended PREFERRED_VERSION for couchdb:
 
-| couchdb  | Erlang/OTP | Elixir |
-| ---------| ---------- | ------ |
-| 3.3.3    | 25.3%      | 1.14%  |
+| couchdb | Erlang/OTP | Elixir |
+| ------- | ---------- | ------ |
+| 3.3.3   | 25.3%      | 1.14%  |
 
 :::
 

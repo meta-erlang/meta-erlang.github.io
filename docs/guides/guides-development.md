@@ -31,9 +31,10 @@ PREFERRED_VERSION_nativesdk-elixir = "1.11.2"
 
 :::info
 
-The default PACKAGECONFIG for erlang when nativesdk is to enable _wx_ and _observer_ tools. And
-if your distribution configuration disables (or removes) the _opengl_ configuration, you will need
-to add opengl in DISTRO_FEATURES_NATIVESDK variable (in or local.conf for instance). Like this:
+The default PACKAGECONFIG for erlang when nativesdk is to enable _wx_ and
+_observer_ tools. And if your distribution configuration disables (or removes)
+the _opengl_ configuration, you will need to add opengl in
+DISTRO_FEATURES_NATIVESDK variable (in or local.conf for instance). Like this:
 
 ```
 DISTRO_FEATURES_NATIVESDK:append = " opengl"
@@ -179,9 +180,9 @@ One can use the same approach when working with a real hardware.
 
 :::note
 
-This session is far from be generic steps in order to develop, build, test
-and deploy Erlang/Elixir projects using Yocto Project. The purpose here is just
-to demonstrate one of multiple workflows.
+This session is far from be generic steps in order to develop, build, test and
+deploy Erlang/Elixir projects using Yocto Project. The purpose here is just to
+demonstrate one of multiple workflows.
 
 :::
 

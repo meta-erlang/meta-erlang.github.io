@@ -54,8 +54,8 @@ script, like that:
 sh x86_64-beamtools-nativesdk-standalone-3.4.1-erlang-24.1.7-elixir-1.12.3.sh
 ```
 
-The installation script is going to ask the destination path. You are
-free to use whatever path you need.
+The installation script is going to ask the destination path. You are free to
+use whatever path you need.
 
 When the installation has over, it is necessary to source the environment script
 which has all the definitions about where to find the tools:
@@ -106,17 +106,18 @@ with the following steps:
 
    :::note
 
-    During execution, a prompt appears that allows you to choose the installation directory.
-    For example, you could choose the following: /home/your-username/beamtools
+   During execution, a prompt appears that allows you to choose the installation
+   directory. For example, you could choose the following:
+   /home/your-username/beamtools
 
    :::
 
 1. Source the tools environment setup script by using a command like the
    following:
 
-    ```bash
-    source /home/your_username/beamtools/environment-setup-x86_64-pokysdk-linux
-    ```
+   ```bash
+   source /home/your_username/beamtools/environment-setup-x86_64-pokysdk-linux
+   ```
 
 After you have sourced the setup script, the tools are added to PATH and any
 other environment variables required to run the tools are initialized. The
@@ -129,37 +130,38 @@ livebook session easily following the steps below:
 
 1. Source the beamtools SDK
 
-    ```bash
-    source /home/your_username/beamtools/nvironment-setup-x86_64-pokysdk-linux
-    ```
+   ```bash
+   source /home/your_username/beamtools/nvironment-setup-x86_64-pokysdk-linux
+   ```
 
 1. Check if the livebook scripts exists in your environment:
 
-    ```bash
-    $ livebook
-    Usage: livebook COMMAND [ARGS]
+   ```bash
+   $ livebook
+   Usage: livebook COMMAND [ARGS]
 
-    The known commands are:
+   The known commands are:
 
-    start          Starts the system
-    start_iex      Starts the system with IEx attached
-    daemon         Starts the system as a daemon
-    daemon_iex     Starts the system as a daemon with IEx attached
-    eval "EXPR"    Executes the given expression on a new, non-booted system
-    rpc "EXPR"     Executes the given expression remotely on the running system
-    remote         Connects to the running system via a remote shell
-    restart        Restarts the running system via a remote command
-    stop           Stops the running system via a remote command
-    pid            Prints the operating system PID of the running system via a remote command
-    version        Prints the release name and version to be booted
+   start          Starts the system
+   start_iex      Starts the system with IEx attached
+   daemon         Starts the system as a daemon
+   daemon_iex     Starts the system as a daemon with IEx attached
+   eval "EXPR"    Executes the given expression on a new, non-booted system
+   rpc "EXPR"     Executes the given expression remotely on the running system
+   remote         Connects to the running system via a remote shell
+   restart        Restarts the running system via a remote command
+   stop           Stops the running system via a remote command
+   pid            Prints the operating system PID of the running system via a remote command
+   version        Prints the release name and version to be booted
 
-    ```
+   ```
 
 1. Start livebook system:
 
-    ```bash
-    $ livebook start
-    [Livebook] Application running at http://localhost:8080/?token=z4nrl62iqojkttdq3fuha7vm7ynkhwis
-    ```
+   ```bash
+   $ livebook start
+   [Livebook] Application running at http://localhost:8080/?token=z4nrl62iqojkttdq3fuha7vm7ynkhwis
+   ```
 
-1. It's done, you can play with livebook locally without need to install anything else.
+1. It's done, you can play with livebook locally without need to install
+   anything else.

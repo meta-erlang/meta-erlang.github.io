@@ -11,9 +11,9 @@ description: Shows how to set up and install yaws.
 
 Recommended PREFERRED_VERSION for yaws:
 
-| yaws     | Erlang/OTP | Elixir |
-| ---------| ---------- | ------ |
-| 2.1.1    | 25.3%      | -      |
+| yaws  | Erlang/OTP | Elixir |
+| ----- | ---------- | ------ |
+| 2.1.1 | 25.3%      | -      |
 
 :::
 
