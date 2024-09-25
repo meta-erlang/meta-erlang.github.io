@@ -1,8 +1,11 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+const lightTheme = themes.github;
+const darkTheme = themes.dracula;
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -10,7 +13,7 @@ const config = {
   tagline: 'meta-erlang documentation',
   url: 'https://meta-erlang.github.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
@@ -25,21 +28,22 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
+//  i18n: {
+//    defaultLocale: 'en',
+//    locales: ['en'],
+//  },
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         gtag: {
         trackingID: 'G-2N5Z9W349S',
         },
+        debug: true,
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          //sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -48,12 +52,12 @@ const config = {
           versions: {
             current: {
               label: 'master',
-              path: ''
+              banner: 'unreleased'
             },
             kirkstone: {
               label: 'kirkstone',
               path: 'kirkstone',
-	            banner: 'none'
+              banner: 'none'
             },
             nanbield: {
               label: 'nanbield',
@@ -103,7 +107,7 @@ const config = {
       navbar: {
         title: 'meta-erlang',
         items: [
-          {to: '/beamtools', label: 'BEAM Tools', position: 'left'},
+          //{to: '/beamtools', label: 'BEAM Tools', position: 'left'},
           {
             type: 'doc',
             position: 'left',
@@ -132,7 +136,7 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: '/docs',
+                to: 'docs',
               },
             ],
           },
@@ -172,6 +176,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['bash', 'diff', 'json', 'erlang'],
       },
       metadata: [{name: 'keywords', content: 'erlang, elixir, yocto'}],
     }),

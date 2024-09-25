@@ -8,6 +8,8 @@ tags: [meta-erlang, livebook]
 
 From [livebook.dev](https://livebook.dev) website:
 
+<!-- truncate -->
+
 > Automate code & data workflows with interactive notebooks.
 
 Livebook is getting famous for modern notebooks. It helps a lot for several

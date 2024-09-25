@@ -8,6 +8,8 @@ tags: [meta-erlang, x32]
 
 According to [Wikipedia X32 ABI](https://en.wikipedia.org/wiki/X32_ABI) page:
 
+<!-- truncate -->
+
 > The x32 ABI is an application binary interface (ABI) and one of the interfaces
 > of the Linux kernel. The x32 ABI provides 32-bit integers, long and pointers
 > (ILP32) on Intel and AMD 64-bit hardware. The ABI allows programs to take

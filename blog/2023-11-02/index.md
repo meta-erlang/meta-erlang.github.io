@@ -8,6 +8,8 @@ tags: [meta-erlang, atomvm]
 
 From [atomvm.net](https://www.atomvm.net/) website, atomvm is:
 
+<!-- truncate -->
+
 > AtomVM is a lightweight implementation of the the Bogdan Erlang Abstract
 > Machine (aka, the BEAM), a virtual machine that can execute byte-code
 > instructions compiled from Erlang or Elixir source code. AtomVM supports a
