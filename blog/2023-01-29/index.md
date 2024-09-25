@@ -20,6 +20,8 @@ The [Yocto Project](https://www.yoctoproject.org/) has been made to create
 specific embedded Linux distributions. And still does a great job on this field
 making it possible to run softwares in a range of target architectures.
 
+<!-- truncate -->
+
 But, the term _embedded Linux distribution_ should be expanded a bit more; it's
 not only about creating tiny filesystem within cross-compiled software, scripts
 and configurations targeting platforms with small footprint, CPU and memory

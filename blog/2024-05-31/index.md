@@ -6,6 +6,8 @@ tags: [meta-erlang, news]
 
 We've added support for the following new Erlang/OTP releases:
 
+<!-- truncate -->
+
 | meta-erlang branch | Erlang/OTP version      |
 | ------------------ | ----------------------- |
 | scarthgap          | 25.3.2.12, 26.2.5, 27.0 |

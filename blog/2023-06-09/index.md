@@ -10,6 +10,8 @@ As consequence meta-erlang brings a new branch mickledore updating most of the
 recipes. mickledore release is not a LTS release and community support will be
 available until November 2023.
 
+<!-- truncate -->
+
 We've also upgraded to the latest Erlang/OTP and Elixir releases supporting the
 following new Erlang/OTP releases:
 
