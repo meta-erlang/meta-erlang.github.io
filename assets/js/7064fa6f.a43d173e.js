@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmeta_erlang_github_io=self.webpackChunkmeta_erlang_github_io||[]).push([[2008],{6744:a=>{a.exports=JSON.parse('{"label":"fwup","permalink":"/blog/tags/fwup","allTagsPath":"/blog/tags","count":1}')}}]);
