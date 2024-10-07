@@ -16,13 +16,13 @@ to offer a better composition when creating linux distributions with YP/OE.
 
 ## Environment setup
 
-1. Cloning all repositories for scarthgap release:
+1. Cloning all repositories for master branch:
 
    ```bash
-   git clone --branch scarthgap git://git.yoctoproject.org/poky
-   git clone --branch scarthgap https://github.com/openembedded/meta-openembedded.git
-   git clone --branch scarthgap https://github.com/meta-erlang/meta-erlang
-   git clone --branch scarthgap https://github.com/meta-erlang/meta-axon
+   git clone --branch master git://git.yoctoproject.org/poky
+   git clone --branch master https://github.com/openembedded/meta-openembedded.git
+   git clone --branch master https://github.com/meta-erlang/meta-erlang
+   git clone --branch master https://github.com/meta-erlang/meta-axon
    ```
 
 1. Source the init build environment script:
