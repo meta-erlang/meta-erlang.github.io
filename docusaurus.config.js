@@ -22,6 +22,12 @@ const config = {
   projectName: 'meta-erlang.github.io.git ', // Usually your repo name.
   deploymentBranch: 'deployment',
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ['@docusaurus/theme-mermaid'],
+
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -48,11 +54,12 @@ const config = {
           versions: {
             current: {
               label: 'master',
-              path: ''
+              path: 'master'
             },
             kirkstone: {
               label: 'kirkstone',
-              path: 'kirkstone',
+              // there is a bug if the path is 'kirkstone': Hook useDocsVersion is called outside the <DocsVersionProvider>.
+              path: 'kirkstone0',
 	            banner: 'none'
             },
             nanbield: {
@@ -103,14 +110,14 @@ const config = {
       navbar: {
         title: 'meta-erlang',
         items: [
-          {to: '/beamtools', label: 'BEAM Tools', position: 'left'},
+          {to: 'beamtools', label: 'BEAM Tools', position: 'left'},
           {
             type: 'doc',
             position: 'left',
             docId: 'intro',
             label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: 'blog', label: 'Blog', position: 'left'},
           {
             type: 'docsVersionDropdown',
             //docId: 'intro',
@@ -127,15 +134,6 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Documentation',
-                to: '/docs',
-              },
-            ],
-          },
           {
             title: 'Community',
             items: [
