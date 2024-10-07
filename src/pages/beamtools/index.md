@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 # BEAM Tools
 
-[Beam Tools](/docs/guides/guides-beamtools/) is a tarball having Erlang/OTP and Elixir plus
+[Beam Tools](../docs/master/guides/guides-beamtools) is a tarball having Erlang/OTP and Elixir plus
 rebar3, erlfmt, elvis, erlang_ls and wrangler; ready to run on any Linux host without 
 needed other software requirements (wxWidgets or ssl libraries).
 
