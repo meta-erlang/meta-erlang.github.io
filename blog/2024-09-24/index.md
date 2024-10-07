@@ -294,7 +294,8 @@ been installed into the image) passing some usual flags for this
 
 :::note
 
-The instructions for setting board's network stack using USB is not part of the scope of this tutorial.
+The instructions for setting board's network stack using USB is not part of the
+scope of this tutorial.
 
 :::
 
