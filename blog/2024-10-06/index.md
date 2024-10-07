@@ -337,7 +337,7 @@ config:
             titleColor: "#ff0000"
 ---
 xychart-beta
-    title "qemux86-64-x32-erlang-elixir (qemux86-64 x32 psABI)"
+    title "x86_64_x32-poky-linux-gnux32 (qemux86-64 x32 psABI)"
     x-axis "package name" [erts, kernel, stdlib, sasl]
     y-axis "package size in bytes"
     bar [4856803, 3421584, 7062547, 439445]
@@ -411,6 +411,7 @@ The following table summarizes the packages sizes per processor architecture.
 | ------------------------------------- | --------------------- |
 | core2-32-poky-linux (qemux86)         | 5760108               |
 | core2-64-poky-linux (qemux86-64)      | 5760368               |
+| qemux86-64-x32-erlang-elixir          | 5763392               |
 | cortexa57-poky-linux (qemuarm64)      | 5760476               |
 | cortexa15t2hf-neon-poky-linux-gnueabi | 5764076               |
 
