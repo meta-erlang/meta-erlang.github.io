@@ -135,9 +135,11 @@ buildhistory is a shortcut because we can inspect how files would be installed
 into the final image, without having to burn the image and boot it on a real (or
 virtual) target.
 
-:::note Check out the
+:::note
+Check out the
 [Enabling and Disabling Build History](https://docs.yoctoproject.org/5.0.3/dev-manual/build-quality.html?highlight=buildhistory#enabling-and-disabling-build-history)
-instructions for how to enable buildhistory. :::
+instructions for how to enable buildhistory.
+:::
 
 In this post we are interested in check the size of erlang and elixir packages.
 
@@ -248,10 +250,12 @@ automatically installed:
 
 These packages are the basic ones needed in order to run Erlang programs.
 
-:::note Actually, your application is in charge of making a proper Erlang/OTP
+:::note
+Actually, your application is in charge of making a proper Erlang/OTP
 release. Installing the package `erlang` is an option if you need it installed
 into standard locations. Otherwise, your application should produce a valide
-release with a builtin ERTS inside. :::
+release with a builtin ERTS inside.
+:::
 
 The following charts are listed below to get a view about the size of those
 basic erlang packages.
@@ -313,12 +317,14 @@ xychart-beta
 bitbake -c build multiconfig:x86_64_x32-poky-linux-gnux32:core-image-minimal
 ```
 
-:::note Enabling x32 psABI should be considered if your application needs to
+:::note
+Enabling x32 psABI should be considered if your application needs to
 handle 64-bit features, but you can't afford wasting space with addressing. See
 the blog post [Exploring x32 psABI for Erlang/OTP](/blog/2023/09/02/index).
 
 The package size difference in bytes between x32 build and a normal x86-64
-is 4615556. :::
+is 4615556.
+:::
 
 ```mermaid
 ---
@@ -394,8 +400,10 @@ automatically installed:
 That is because elixir package needs erlang (erts, kernel, stdlib and sasl)
 installed. And, the erlang compiler is also a requirement.
 
-:::note Again, your application should manage a release for best results.
-Installing the package `elixir` only makes sense for testing purposes. :::
+:::note
+Again, your application should manage a release for best results.
+Installing the package `elixir` only makes sense for testing purposes.
+:::
 
 The following table summarizes the packages sizes per processor architecture.
 
