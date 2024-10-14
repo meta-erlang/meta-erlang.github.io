@@ -24,6 +24,8 @@ post has shown the basic idea for how would be possible (and in fact it is
 possible) to build a custom Linux distribution and run it on Graviton AWS
 instances.
 
+<!-- truncate -->
+
 Now, it's time to refactor out the previous result. Removing what are not
 necessary in order to create a slim meta-erlang cloud ready image.
 

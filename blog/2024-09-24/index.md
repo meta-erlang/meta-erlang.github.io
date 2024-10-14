@@ -7,6 +7,8 @@ tags: [meta-erlang, fwup]
 This blog post is a tutorial about how to make A/B software updates with fwup
 tool and Yocto Project.
 
+<!-- truncate -->
+
 ## Objectives and Tools
 
 A short sentence as requirement for this tutorial is:

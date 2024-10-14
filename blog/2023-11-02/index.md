@@ -20,6 +20,8 @@ From [atomvm.net](https://www.atomvm.net/) website, atomvm is:
 One of the atomvm goals is the possibility to run BEAM code on really small
 systems like MCUs.
 
+<!-- truncate -->
+
 For a while, I was wondering what could be the benefits of integrating atomvm
 into meta-erlang recipes. It didn't look to make any sense for me. Then, I
 started playing with that just to see if I was able to run an atomvm program in
