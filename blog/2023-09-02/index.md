@@ -21,6 +21,8 @@ So, I'm wondering if it would be possible to enable x32 support in Erlang/OTP
 build. That way, I could make a Yocto image for x32 that runs on x86-64
 machines.
 
+<!-- truncate -->
+
 Here is some references about the subject:
 
 - [Yocto, Using x32 psABI](https://docs.yoctoproject.org/dev-manual/x32-psabi.html)

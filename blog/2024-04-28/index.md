@@ -13,6 +13,8 @@ From [livebook.dev](https://livebook.dev) website:
 Livebook is getting famous for modern notebooks. It helps a lot for several
 tasks and to solve issues where documentation and code have to walk together.
 
+<!-- truncate -->
+
 Live book has been added to the standard beamtools SDK. That is very handy
 because one can start livebook quickly and it will work with all SDK tools. That
 means, we don't need to install anything else. It's all integrated.
