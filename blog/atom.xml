@@ -2,11 +2,118 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://meta-erlang.github.io/blog/</id>
     <title>meta-erlang Blog</title>
-    <updated>2024-10-06T00:00:00.000Z</updated>
+    <updated>2024-10-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://meta-erlang.github.io/blog/"/>
     <subtitle>meta-erlang Blog</subtitle>
     <icon>https://meta-erlang.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Running Erlang/OTP test suite on target with ptest]]></title>
+        <id>https://meta-erlang.github.io/blog/2024/10/12/index/</id>
+        <link href="https://meta-erlang.github.io/blog/2024/10/12/index/"/>
+        <updated>2024-10-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[ptest (package test) means packaging and installing runtime tests that are]]></summary>
+        <content type="html"><![CDATA[<p>ptest (package test) means packaging and installing runtime tests that are
+included in many upstream packages. At the end of the day it runs Erlang/OTP
+cross compiled test suite on the target hardware. The aim is to detect a range
+of problems when running test suites on different combinations of architecture
+processors and libc.</p>
+<p>The Erlang/OTP howto about
+<a href="https://github.com/erlang/otp/blob/master/HOWTO/TESTING.md" target="_blank" rel="noopener noreferrer">TESTING.md</a>
+explains most of the details when running tests. While the Yocto's documentation
+about
+<a href="https://docs.yoctoproject.org/dev-manual/packages.html#testing-packages-with-ptest" target="_blank" rel="noopener noreferrer">Testing Packages With ptest</a>
+explains the ptest configuration.</p>
+<p>So, this post is about how to run those tests using ptest approach on Yocto
+builds.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-does-ptest-work-">How does ptest work ?<a href="https://meta-erlang.github.io/blog/2024/10/12/index/#how-does-ptest-work-" class="hash-link" aria-label="Direct link to How does ptest work ?" title="Direct link to How does ptest work ?">​</a></h2>
+<p>Recipes with ptest enabled includes a shell script called <em>run-ptest</em> with the
+steps necessary to start the test suite provided by the target software (e.g.:
+Erlang/OTP).</p>
+<p>The run-ptest script is responsible for starting the test suite and
+consolidating the test results into a single format. The format is the
+<a href="https://www.gnu.org/software/automake/manual/automake.html#Simple-Tests" target="_blank" rel="noopener noreferrer">automake simple test</a>
+format:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">result: testName</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Where: <em>result</em> is one of PASS, FAIL or SKIP and <em>testName</em> can be anything.</p>
+<p>The erlang recipe from meta-erlang layer supports ptest. And, when activated,
+the package erlang-ptest is installed into the final image. It has the erlang
+test suite cross compiled and ready to be executed.</p>
+<p>When ptest for erlang recipe gets executed, it finishes the erlang test suite
+configuration and starts to run each test configured in run-ptest script.</p>
+<p>The Erlang/OTP requires several hours to finish. Because of that, ptest for
+erlang just executes a small set of all tests available (currently only
+<em>emulator</em> and <em>kernel</em> tests are enabled).</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>To get a better idea about how to run Erlang/OTP test suites the documentation
+<a href="https://github.com/erlang/otp/blob/master/HOWTO/TESTING.md" target="_blank" rel="noopener noreferrer">TESTING.md</a>,
+specially the session Running the tests.</p></div></div>
+<p>The erlang-ptest package installs the test suite and also the run-ptest script
+at <em>/usr/lib/erlang/ptest</em> folder.</p>
+<p>One point very important is that Erlang/OTP test suites need some tools
+installed into the target image in order to execute some tests. For example, to
+run emulator and kernel tests the target OS needs tmux and openssh packages.
+However the erlang recipe takes care of these details.</p>
+<p>Each test suite might require additional packages. As there is no documentation
+describing all the requirements the best strategy is to inspect the test suite
+for each Erlang/OTP application
+(<a href="https://github.com/erlang/otp/tree/master/lib" target="_blank" rel="noopener noreferrer">lib/*/test</a> and
+<a href="https://github.com/erlang/otp/tree/master/erts/test" target="_blank" rel="noopener noreferrer">erts/test</a> folders).</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="running-erlangotp-ptest">Running Erlang/OTP ptest<a href="https://meta-erlang.github.io/blog/2024/10/12/index/#running-erlangotp-ptest" class="hash-link" aria-label="Direct link to Running Erlang/OTP ptest" title="Direct link to Running Erlang/OTP ptest">​</a></h2>
+<p>Yocto provides some configuration when enabling ptest. As it is only relevant
+for testing purposes.</p>
+<p>A specific image feature exists that enables ptest. So, in the local.conf
+configuration file:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># ptest image</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">EXTRA_IMAGE_FEATURES += "ptest-pkgs"</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>This is all that is necessary to do in order to enable ptest build.</p>
+<p>As we want to install erlang in the final image, we also need to add it to the
+final image. On build/local.conf configuration file:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># installing erlang and elixir</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">IMAGE_INSTALL:append:pn-core-image-minimal = " erlang erlang-modules-dev elixir elixir-modules-dev links"</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>The <em>links</em> package here is necessary to open HTML common test reports from
+console.</p></div></div>
+<p>It's ready to build the core-image-minimal image:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">bitbake core-image-minimal</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>And, for testing purposes, run the generated image using qemu emulator:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">runqemu slirp kvm nographic serialstdio core-image-minimal</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Logging into the running system and execute ptest for erlang:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Poky (Yocto Project Reference Distro) 5.1 qemux86-64 ttyS0</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">qemux86-64 login: root</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">WARNING: Poky is a reference Yocto Project distribution that should be used for</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">testing and development purposes only. It is recommended that you create your</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">own distribution for production use.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">root@qemux86-64:~# ptest-run erlang</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>The script /usr/lib/erlang/ptest/run-ptest starts execute controlled by the
+application called <a href="https://git.yoctoproject.org/ptest-runner2/" target="_blank" rel="noopener noreferrer">ptest runner</a>.
+After several hours we get the following results:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">START: ptest-runner</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">2024-10-14T17:15</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">BEGIN: /usr/lib/erlang/ptest</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">FAIL: emulator</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">... lots of console messages ...</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">FAIL: kernel</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">... lots of console messages ...</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">=== common test Summary ===</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Testing tests.emulator_test: TEST COMPLETE, 2112 ok, 4 failed, 82 skipped of 2198 test cases</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Testing tests.kernel_test: TEST COMPLETE, 1338 ok, 20 failed, 293 skipped of 1651 test cases</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">=== Test Summary ===</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">TOTAL: 2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">PASSED: 0</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">FAILED: 2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">DURATION: 5822</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">END: /usr/lib/erlang/ptest</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">2024-10-14T01:39</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">STOP: ptest-runner</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">TOTAL: 1 FAIL: 0</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Well, we got 4 fails for emulator tests and 20 fails for kernel tests. Not bad,
+but I don't know if it is also good.</p>
+<p>For further inspection, it's possible to also check output messages for each
+test. The run-ptest scripts writes a specific log console for each test
+executed:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">root@qemux86-64:~# ls /usr/lib/erlang/ptest/ -l</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">total 14680</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-rw-r--r--  1 root root   236964 Oct 14 00:40 erlang_ptest_emulator_20241014-000215.log</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-rw-r--r--  1 root root 14770546 Oct 14 01:39 erlang_ptest_kernel_20241014-004016.log</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-rwxr-xr-x  1 root root      807 Oct 14 00:01 run-ptest</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">drwxr-xr-x 39 root root     4096 Apr  5  2011 tests</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>As usual when running common tests (remember Erlang/OTP test suites are just
+common tests), the HTML reports were written at
+<em>/usr/lib/erlang/ptest/tests/test_server/index.html</em>. Opening it with links
+command to check the results:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">links /usr/lib/erlang/ptest/tests/test_server/index.html</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>ptest produces a lot of data to inspect.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-running-ptest-for-erlangotp-on-yocto-builds-is-important-">Why running ptest for Erlang/OTP on Yocto builds is important ?<a href="https://meta-erlang.github.io/blog/2024/10/12/index/#why-running-ptest-for-erlangotp-on-yocto-builds-is-important-" class="hash-link" aria-label="Direct link to Why running ptest for Erlang/OTP on Yocto builds is important ?" title="Direct link to Why running ptest for Erlang/OTP on Yocto builds is important ?">​</a></h2>
+<p>Now that we know what is ptest. Given the following question:</p>
+<blockquote>
+<p>How do we know that a cross compiled Erlang/OTP build really works on the
+target hardware ?</p>
+</blockquote>
+<p>The answer could be: testing it using tests provided by Erlang/OTP source code.</p>
+<p>So, ptest is great for detecting problems.</p>
+<p>As ptest has the ability of running Erlang/OTP test suites on the final image
+and reporting the results, we can get a baseline when comparing tests executed
+on different combinations of processor architectures and C standard libraries
+(libc) or any other aspect like different linux kernel versions. It's possible
+to detect regressions or find weak spots not covered by tests in a specific
+platform.</p>
+<p>Also, the mechanism of executing those tests is simple. The user does not need
+to be an Erlang expert to check that something is not ok on some platform.</p>]]></content>
+        <author>
+            <name>João Henrique Ferreira de Freitas</name>
+            <uri>https://github.com/joaohf</uri>
+        </author>
+        <category label="meta-erlang" term="meta-erlang"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Anatomy of erlang and elixir packages for YP/OE]]></title>
         <id>https://meta-erlang.github.io/blog/2024/10/06/index/</id>
