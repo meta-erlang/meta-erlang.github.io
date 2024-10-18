@@ -160,8 +160,7 @@ Well, we got 4 fails for emulator tests and 20 fails for kernel tests. Not bad,
 but I don't know if it is also good.
 
 For further inspection, it's possible to also check output messages for each
-test. The run-ptest scripts writes a specific log console for each test
-executed:
+test. The run-ptest script writes a specific log console for each test executed:
 
 ```
 root@qemux86-64:~# ls /usr/lib/erlang/ptest/ -l
@@ -183,6 +182,58 @@ links /usr/lib/erlang/ptest/tests/test_server/index.html
 ```
 
 ptest produces a lot of data to inspect.
+
+## Running Elixir ptest
+
+The steps for running elixir ptest are almost the same for erlang. We just call
+ptest-run with the argument elixir:
+
+```
+root@qemux86-64:~# ptest-run elixir
+```
+
+The above command runs elixir ptest and reports some results:
+
+```
+START: ptest-runner
+2024-10-18T02:27
+BEGIN: /usr/lib/elixir/ptest
+PASS: erlang
+FAIL: stdlib
+PASS: ex_unit
+FAIL: logger
+PASS: eex
+FAIL: mix
+FAIL: iex
+=== Test Summary ===
+TOTAL: 7
+PASSED: 3
+FAILED: 4
+DURATION: 148
+END: /usr/lib/elixir/ptest
+2024-10-18T02:30
+STOP: ptest-runner
+TOTAL: 1 FAIL: 0
+```
+
+For further inspection, it's possible to also check output messages for each
+test. The run-ptest script writes a specific log console for each test executed:
+
+```
+root@qemux86-64:~# ls /usr/lib/elixir/ptest/ -l
+total 64
+drwxr-xr-x 6 root root  4096 Apr  5  2011 elixir
+-rw-r--r-- 1 root root   840 Oct 18 02:28 elixir_ptest_eex_20241018-022812.log
+-rw-r--r-- 1 root root   323 Oct 18 02:27 elixir_ptest_erlang_20241018-022744.log
+-rw-r--r-- 1 root root  1156 Oct 18 02:28 elixir_ptest_ex_unit_20241018-022806.log
+-rw-r--r-- 1 root root  4230 Oct 18 02:30 elixir_ptest_iex_20241018-023005.log
+-rw-r--r-- 1 root root  2648 Oct 18 02:28 elixir_ptest_logger_20241018-022810.log
+-rw-r--r-- 1 root root 11243 Oct 18 02:30 elixir_ptest_mix_20241018-022814.log
+-rw-r--r-- 1 root root 16895 Oct 18 02:28 elixir_ptest_stdlib_20241018-022745.log
+-rwxr-xr-x 1 root root   950 Oct 18 02:27 run-ptest
+```
+
+Again, ptest produces a lot of data to inspect.
 
 ## Why running ptest for Erlang/OTP on Yocto builds is important ?
 
