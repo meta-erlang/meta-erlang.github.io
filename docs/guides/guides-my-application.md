@@ -5,8 +5,8 @@ description: How to integrate an application with meta-erlang.
 
 # My application example
 
-When making Erlang or Elixir releases, usually the application run inside an
-embedded
+When making Erlang, Elixir or Gleam releases, usually the application run inside
+an embedded
 [Erlang Run Time System](https://erlang.org/doc/apps/erts/users_guide.html)
 (ERTS). The ERTS will be copied from Yocto build environment to the target
 application.
@@ -136,3 +136,14 @@ to get the value of `MIX_TARGET_INCLUDE_ERTS` environment variable. Like this:
           ]
         ]
 ```
+
+## Gleam
+
+The gleam.bbclass was design to help out package gleam programs. The class
+fetches gleam dependencies, compile and installs a gleam release output. All
+that is necessary is to prepare a recipe and `inherit gleam` bitbake class.
+
+The recipe
+[hello-gleam-echo-server_0.1.0.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/hello-gleam-echo-server/hello-gleam-echo-server_0.1.0.bb)
+is a good start point as this recipe besides dealing with gleam installation,
+also provides a systemd script to start gleam program.
