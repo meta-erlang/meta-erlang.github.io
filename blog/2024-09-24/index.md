@@ -110,7 +110,7 @@ Next, we need to enable some raspberry features like UART and USB host support
 (it's important to get some network connectivity):
 
 ```bash
-tee -a <<EOF
+tee -a <<EOF conf/local.conf
 # https://meta-raspberrypi.readthedocs.io/en/latest/extra-build-config.html#enable-uart
 ENABLE_UART = "1"
 
@@ -126,7 +126,7 @@ As YP/OE supports many types of image outputs, we want to be specific here and
 pick only the _fwup_ type.
 
 ```bash
-tee -a <<EOF
+tee -a <<EOF conf/local.conf
 # enable support for making fwup images
 IMAGE_CLASSES += "image_types_fwup"
 IMAGE_FSTYPES = "fwup"
@@ -143,7 +143,7 @@ many versions, I recommend to stick with a specific one. In our case the latest
 1.17.x and 27.0.x are good:
 
 ```bash
-tee -a <<EOF
+tee -a <<EOF conf/local.conf
 # select specific elixir and erlang versions
 PREFERRED_VERSION_elixir = "1.17%"
 PREFERRED_VERSION_elixir-native = "1.17%"
@@ -157,7 +157,7 @@ EOF
 Finally, add erlang and elixir to the image:
 
 ```bash
-tee -a <<EOF
+tee -a <<EOF conf/local.conf
 # add erlang and elixir into image
 IMAGE_INSTALL:append = " erlang elixir"
 EOF
@@ -349,7 +349,7 @@ For testing purposes, let's change the Elixir preferred version from 1.17.x to
 `PREFERRED_VERSION_elixir*` variables:
 
 ```bash
-tee -a <<EOF
+tee -a <<EOF conf/local.conf
 # select specific elixir and erlang versions
 PREFERRED_VERSION_elixir = "1.16%"
 PREFERRED_VERSION_elixir-native = "1.16%"
