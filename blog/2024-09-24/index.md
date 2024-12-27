@@ -1,5 +1,5 @@
 ---
-title: fwup for A/B image upgrades
+title: fwup for A/B image upgrades, part I
 authors: [joaohf]
 tags: [meta-erlang, fwup]
 ---
@@ -68,6 +68,7 @@ One important point is to double check the
    git clone --branch scarthgap https://github.com/fwup-home/meta-fwup
    git clone --branch scarthgap https://github.com/meta-erlang/meta-erlang
    git clone --branch scarthgap https://github.com/meta-erlang/meta-axon
+   git clone --branch scarthgap https://github.com/agherzan/meta-raspberrypi
    ```
 
 1. Source the init build environment script:
@@ -84,9 +85,10 @@ One important point is to double check the
    bitbake-layers add-layer ../meta-erlang
    bitbake-layers add-layer ../meta-axon
    bitbake-layers add-layer ../meta-fwup
+   bitbake-layers add-layer ../meta-raspberrypi
    ```
 
-Why four layers are needed ? Because the YP/OE approach is to isolate components
+Why five layers are needed ? Because the YP/OE approach is to isolate components
 into layer in order to maximize the software reusability.
 
 ## Configuring the build environment
