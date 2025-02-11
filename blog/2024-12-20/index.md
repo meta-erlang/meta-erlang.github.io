@@ -1,5 +1,5 @@
 ---
-title: fwup for A/B image upgrades on QEMU machines, part II
+title: fwup for A/B image upgrades on QEMU machines with fwup, part II
 authors: [joaohf]
 tags: [meta-erlang, fwup]
 ---
@@ -31,8 +31,8 @@ tedious have to wait the test cycle which basically was:
 8. Get the results
 9. Go to step #1
 
-I've spent too much time waiting for feedback. Since then, I've been thinking how
-it would be possible to speed up my test cycle.
+I've spent too much time waiting for feedback. Since then, I've been thinking
+how it would be possible to speed up my test cycle.
 
 Maybe buying more target boards or reduce the final image footprint or buy a
 faster build machine. None of them would help much the situation.
@@ -281,9 +281,12 @@ That log above shows some very interesting points:
   Saving Environment to VIRTIO_BLK... OK
   ```
 
-:::note When logged on qemu instance, it's necessary to run the command:
+:::note
+
+When logged on qemu instance, it's necessary to run the command:
 `ifconfig eth0 192.168.7.2 netmask 255.255.255.0` to setup a IP address to eth0
 interface.
+
 :::
 
 ### Inspecting A partition
@@ -367,7 +370,8 @@ nerves_fw_validated=1
 nerves_fw_booted=1
 ```
 
-And they are ok. Not only still pointing to B partition as well validated and booted.
+And they are ok. Not only still pointing to B partition as well validated and
+booted.
 
 The lsblk output also proves that vda3 is mounted as root partition:
 
