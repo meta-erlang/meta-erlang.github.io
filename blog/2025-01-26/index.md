@@ -1,11 +1,11 @@
 ---
-title: fwup for A/B image upgrades on QEMU machines with Nerves Cloud, part III
+title: fwup for A/B image upgrades on QEMU machines with NervesCloud, part III
 authors: [joaohf]
 tags: [meta-erlang, fwup]
 ---
 
-This blog post shows how to use [Nerves Cloud](https://nervescloud.com/) in
-order to upgrade and manage linux images based on Yocto Project.
+This blog post shows how to use [NervesCloud](https://nervescloud.com/) in order
+to upgrade and manage linux images based on Yocto Project.
 
 <!-- truncate -->
 
@@ -19,32 +19,31 @@ We will run this demonstration with QEMU ARM based machine prepared as a result
 of previous blog post called
 [fwup for A/B image upgrades on QEMU machines with fwup, part II](/blog/2024/12/20/index/).
 
-## What is Nerves Cloud
+## What is NervesCloud
 
-[Nerves Cloud](https://nervescloud.com/) is an instance of
-[Nerves Hub](https://github.com/nerves-hub) based on cloud. It could be
-considered Nerves Cloud as a SaaS for Nerves Hub. In that way, instead you
-having to install and manage your own instance of Nerves Hub for
-[Nerves devices](https://nerves-project.org/) management, Nerves Cloud takes
-care of all the infrastructure and provides to you the benefits without worry
-with details.
+[NervesCloud](https://nervescloud.com/) is an instance of
+[NervesHub](https://github.com/nerves-hub) based on cloud. It could be
+considered NervesCloud as a SaaS for NervesHub. In that way, instead you having
+to install and manage your own instance of NervesHub for
+[Nerves devices](https://nerves-project.org/) management, NervesCloud takes care
+of all the infrastructure and provides to you the benefits without worry with
+details.
 
-In this demonstration, we will use Nerves Cloud with a development account
-called _Experiments_. As Nerves Cloud is a multi-tenant system, anyone can have
-an account for real or development purposes.
+In this demonstration, we will use NervesCloud with a development account called
+_Experiments_. As NervesCloud is a multi-tenant system, anyone can have an
+account for real or development purposes.
 
 :::note
 
-It's not part of this demonstration how to setup a Nerves Cloud account.
-However, I would like to say thank you to Nerves Cloud team to take care of
-these details.
+It's not part of this demonstration how to setup a NervesCloud account. However,
+I would like to say thank you to NervesCloud team to take care of these details.
 
 :::
 
 ### Preparing a key pair for firmware signing
 
-Nerves Cloud works with signed firmware images files. It's mandatory to signed
-these images before uploading into Nerves Cloud.
+NervesCloud works with signed firmware images files. It's mandatory to signed
+these images before uploading into NervesCloud.
 
 :::note
 
@@ -64,7 +63,7 @@ use:
 
 ```bash
 export NERVES_HUB_ORG=Experiments
-export NERVES_HUB_URI=https://manage.nervescloud.com
+export NERVES_HUB_URI=https://devices.nervescloud.com
 ```
 
 Next, we need to create a key pair for signed fw files later. For that, we use
@@ -72,7 +71,7 @@ the subcommand `nerves_hub.key create`:
 
 ```bash
 mix  nerves_hub.key create QemuMachines1
-NervesHub server: manage.nervescloud.com:443
+NervesHub server: devices.nervescloud.com:443
 NervesHub organization: Experiments
 Creating a firmware signing key pair named 'QemuMachines1'.
 
@@ -87,7 +86,7 @@ Password-protected firmware private key written to '/home/joaohf/.nerves-hub/key
 
 Registering the firmware signing public key 'QemuMachines1' with NervesHub.
 
-22:35:09.524 [info] POST https://manage.nervescloud.com/api/orgs/Experiments/keys -> 201 (578.459 ms)
+22:35:09.524 [info] POST https://devices.nervescloud.com/api/orgs/Experiments/keys -> 201 (578.459 ms)
 
 22:35:09.528 [debug]
 >>> REQUEST >>>
@@ -122,7 +121,7 @@ something that Yocto can read later. For that, we use the command
 
 ```bash
 mix nerves_hub.key export QemuMachines1
-NervesHub server: manage.nervescloud.com:443
+NervesHub server: devices.nervescloud.com:443
 NervesHub organization: Experiments
 Local signing key password for 'QemuMachines1':
 Fwup keys exported to: /home/joaohf/.nerves-hub/nerves_hub-fwup-keys-Experiments-QemuMachines1.tar.gz
@@ -151,7 +150,7 @@ configure Yocto in order to make fwup signed firmwares automatically.
 ## Upgrade/Downgrade demonstration
 
 As always, I like to describe all steps. In case someone wants to try it. My
-target here is to play with Nerves Cloud for upgrade -> downgrade -> upgrade
+target here is to play with NervesCloud for upgrade -> downgrade -> upgrade
 cycle.
 
 ### YP/OE Setup
@@ -226,15 +225,15 @@ IMAGE_FSTYPES = "fwup fwup.qcow2"
 EOF
 ```
 
-### Configure Nerves Cloud product name
+### Configure NervesCloud product name
 
 Edit the file _conf/local.conf_ and overwrite the variable `FWUP_META_PRODUCT`
-with the contents of Nerves Hub Cloud product. In my case the product name is
+with the contents of NervesHub Cloud product. In my case the product name is
 _YoctoFwup_:
 
 ```bash
 tee -a <<EOF conf/local.conf
-# Nerves Hub product name
+# NervesHub product name
 FWUP_META_PRODUCT = "YoctoFwup"
 EOF
 ```
@@ -319,7 +318,7 @@ Cloud.
 
 ### fwup firmware upload
 
-The procedures to upload the fwup image is very simple. Inside the Nerves Cloud
+The procedures to upload the fwup image is very simple. Inside the NervesCloud
 web interface, go to 'Firmware' menu and use the button 'Upload Firmware' to
 start uploading a new firmware file.
 
@@ -353,14 +352,14 @@ Inside QEMU instance, start nerves_cloud_link application:
 /usr/lib/nerves-hub-link/bin/nerves_hub_link start_iex
 ```
 
-In Nerves Cloud web interface, check with the device has listed there:
+In NervesCloud web interface, check with the device has listed there:
 
 ![alt Device up](nhc_device_10_connected.png 'Device up with 1.2.0 version')
 
 The 'Firmware' column should be pointing to '1.2.0' version (because this
 version was the latest build).
 
-For upgrade and downgrade using Nerves Cloud, there are some options like
+For upgrade and downgrade using NervesCloud, there are some options like
 creating a Deployment or send an update command to a specific device. In this
 experiment, let's send update command.
 
@@ -370,9 +369,11 @@ We want to test the following scenarios:
 
   Select the device that we want to work, in my case the device is '10'. And on
   device administration page, select the firmware version that we want to send.
-  In this case it will be the version 1.0.1. And click on "Send" button.
+  In this case it will be the version 1.0.1. And click on "Send update" button.
 
-  While Nerves Cloud is sending the new firmware to device, on QEMU console we
+  ![alt Sending firmware](nhc-send-update-to-1.0.1.png 'Sensing firmware 1.0.1')
+
+  While NervesCloud is sending the new firmware to device, on QEMU console we
   can check that nerves_hub_link is working as expected:
 
   ```bash
@@ -397,7 +398,7 @@ We want to test the following scenarios:
   ```
 
   The device will update and reboot. When QEMU instance is back, start
-  nerves_hub_link again and check the expected version in Nerves Cloud web
+  nerves_hub_link again and check the expected version in NervesCloud web
   interface:
 
   :::note
@@ -423,7 +424,7 @@ We want to test the following scenarios:
 
   ![alt Device updated](nhc_update_device_10_to_120.png 'Update to 1.2.0 version')
 
-  When QEMU is back, we can check which version Nerves Cloud will show:
+  When QEMU is back, we can check which version NervesCloud will show:
 
   ![alt Device updated](nhc_device_updated_to_120.png 'Device updated to 1.2.0 version')
 
@@ -436,7 +437,7 @@ as expected.
 
 [meta-nerves-hub](https://github.com/joaohf/meta-nerves-hub) layer is a new
 layer introduced to keep common application and configurations for
-[Nerves Hub](https://github.com/nerves-hub) and
+[NervesHub](https://github.com/nerves-hub) and
 [Nerves Project](https://github.com/nerves-project) working with Yocto Project.
 The purpose is to bring essential and base components for anyone that wants to
 use YP/Openembedded in your products.
@@ -463,15 +464,22 @@ to configure it with the correct
 To get quick results, I've extended
 [nerves-hub-link from meta-axon layer](https://github.com/meta-erlang/meta-axon/tree/master/dynamic-layers/meta-nerves-hub/recipes-extended/nerves-hub-link/nerves-hub-link_2.5.2.bbappend)
 with the correct shared secret credentials used by my development instance on
-Nerves Cloud.
+NervesCloud.
 
 For a real use of nerves-hub-link, the correct way would be creating a new
 Elixir application that has nerves-hub-link as dependency and make all the
 configuration needed.
 
+:::note
+
+The NervesCloud team are working on a pre-build agent
+model, which will simplify setup and configuration.
+
+:::
+
 ## Conclusions
 
-I am having so much fun playing with fwup and Nerves Cloud that I will keep
+I am having so much fun playing with fwup and NervesCloud that I will keep
 improving this environment. Just to recap the adventures so far:
 
 - [fwup for A/B image upgrades, part I](/blog/2024/09/24/index/)
