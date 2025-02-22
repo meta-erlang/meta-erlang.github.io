@@ -9,12 +9,6 @@ to upgrade and manage linux images based on Yocto Project.
 
 <!-- truncate -->
 
-:::warning
-
-This blog post is good enough for reading but I still need to make some adjusts.
-
-:::
-
 We will run this demonstration with QEMU ARM based machine prepared as a result
 of previous blog post called
 [fwup for A/B image upgrades on QEMU machines with fwup, part II](/blog/2024/12/20/index/).
