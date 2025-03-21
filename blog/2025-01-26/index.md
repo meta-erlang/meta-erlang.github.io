@@ -1,7 +1,7 @@
 ---
 title: fwup for A/B image upgrades on QEMU machines with NervesCloud, part III
 authors: [joaohf]
-tags: [meta-erlang, fwup]
+tags: [meta-erlang, fwup, qemu]
 ---
 
 This blog post shows how to use [NervesCloud](https://nervescloud.com/) in order
@@ -466,8 +466,8 @@ configuration needed.
 
 :::note
 
-The NervesCloud team are working on a pre-build agent
-model, which will simplify setup and configuration.
+The NervesCloud team are working on a pre-build agent model, which will simplify
+setup and configuration.
 
 :::
 
