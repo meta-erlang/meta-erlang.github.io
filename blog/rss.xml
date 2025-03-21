@@ -4,10 +4,108 @@
         <title>meta-erlang Blog</title>
         <link>https://meta-erlang.github.io/blog/</link>
         <description>meta-erlang Blog</description>
-        <lastBuildDate>Sun, 26 Jan 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 21 Mar 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[fwup for A/B image upgrades on raspberrypi machines with NervesCloud, part I]]></title>
+            <link>https://meta-erlang.github.io/blog/2025/03/21/index/</link>
+            <guid>https://meta-erlang.github.io/blog/2025/03/21/index/</guid>
+            <pubDate>Fri, 21 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[This blog post introduces nerves-hub-link running on raspberrypi machines in]]></description>
+            <content:encoded><![CDATA[<p>This blog post introduces nerves-hub-link running on raspberrypi machines in
+order to upgrade firmware via <a href="https://nervescloud.com/" target="_blank" rel="noopener noreferrer">NervesCloud</a>.</p>
+<p>On previous <a href="https://meta-erlang.github.io/blog/tags/fwup/">blog posts about fwup</a>, we have explored and
+tested using QEMU based machines. Now it's time to change the target and use a
+real machine.</p>
+<p>Nowadays, raspberrypi is an accessible development platform for prototyping and
+why not for real use cases too.</p>
+<p>On Yocto side, there is a stable layer called
+<a href="https://github.com/agherzan/meta-raspberrypi" target="_blank" rel="noopener noreferrer">meta-raspberrypi</a> which
+implements many of raspberrypi boards.</p>
+<p>The end goal is to update the target board using NervesCloud, the
+<a href="https://meta-erlang.github.io/blog/2025/01/26/index/">same way that was done using QEMU based machines</a>.</p>
+<p>The focus of this post is about how to prepare a working Yocto setup for
+raspberry context. I'll not show a demonstration this time, reserving it for the
+next blog posts ;)</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ypoe-setup">YP/OE Setup<a href="https://meta-erlang.github.io/blog/2025/03/21/index/#ypoe-setup" class="hash-link" aria-label="Direct link to YP/OE Setup" title="Direct link to YP/OE Setup">​</a></h3>
+<p>I'll try to simplify the YP/OE setup to just tree small steps:</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>This is the same steps taken for the previous blog post called
+<a href="https://meta-erlang.github.io/blog/2025/01/26/index/">fwup for A/B image upgrades on QEMU machines with NervesCloud, part III</a>.
+But now, with one additional layer called
+<a href="https://github.com/agherzan/meta-raspberrypi" target="_blank" rel="noopener noreferrer">meta-raspberrypi</a>.</p><p>Also, removing the meta-qemu-bsp.</p></div></div>
+<ol>
+<li>
+<p>Cloning all repositories for master release:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">git clone --branch master git://git.yoctoproject.org/poky</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git clone --branch master https://github.com/openembedded/meta-openembedded.git</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git clone --branch master https://github.com/fwup-home/meta-fwup</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git clone --branch master https://github.com/joaohf/meta-fwup-examples</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git clone --branch master https://github.com/meta-erlang/meta-erlang</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git clone --branch master https://github.com/meta-erlang/meta-axon</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git clone --branch master https://github.com/joaohf/meta-nerves-hub</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git clone --branch master https://github.com/agherzan/meta-raspberrypi</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+<li>
+<p>Source the init build environment script:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">cd poky</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">source oe-init-build-env ../build</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+<li>
+<p>Add the needed layers:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">bitbake-layers add-layer ../meta-openembedded/meta-oe</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bitbake-layers add-layer ../meta-fwup</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bitbake-layers add-layer ../meta-fwup-examples</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bitbake-layers add-layer ../meta-nerves-hub</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bitbake-layers add-layer ../meta-raspberrypi</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bitbake-layers add-layer ../meta-axon</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bitbake-layers add-layer ../meta-erlang</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="configuring-the-build-environment">Configuring the build environment<a href="https://meta-erlang.github.io/blog/2025/03/21/index/#configuring-the-build-environment" class="hash-link" aria-label="Direct link to Configuring the build environment" title="Direct link to Configuring the build environment">​</a></h3>
+<p>For this use case, the quickest way is edit and add the <em>conf/local.conf</em>
+configuration file.</p>
+<p>We start enabling some
+<a href="https://docs.yoctoproject.org/5.0.7/dev-manual/building.html#building-images-for-multiple-targets-using-multiple-configurations" target="_blank" rel="noopener noreferrer">multiconfig configurations</a>:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">BBMULTICONFIG ?= "\</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    raspberrypi0-wifi-nerves-hub-link \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    raspberrypi4-64-nerves-hub-link \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    raspberrypi5-nerves-hub-link \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   "</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>The layer meta-axon provides some samples for
+<a href="https://github.com/meta-erlang/meta-axon/tree/master/conf/multiconfig" target="_blank" rel="noopener noreferrer">raspberry configurations with nerves-hub enabled</a>.</p>
+<p>multiconfig is useful because it simplify bitbake configurations when we have
+many target boards. On my test setup I'm building for raspberrypi 0, 4 and 5.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="building-images">Building images<a href="https://meta-erlang.github.io/blog/2025/03/21/index/#building-images" class="hash-link" aria-label="Direct link to Building images" title="Direct link to Building images">​</a></h3>
+<p>Next, we need to build images:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">bitbake multiconfig:raspberrypi4-64-nerves-hub-link:core-image-base</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bitbake multiconfig:raspberrypi5-nerves-hub-link:core-image-base</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bitbake multiconfig:raspberrypi0-wifi-nerves-hub-link:core-image-base</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>core-image-base is being used here. It's suitable for raspberrypi.</p></div></div>
+<p>After the above commands, the result are the following files:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">tmp-raspberrypi0-wifi-glibc-nerves-hub-link/deploy/images/raspberrypi0-wifi/core-image-base-raspberrypi0-wifi.rootfs.fwup</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">tmp-raspberrypi4-64-glibc-nerves-hub-link/deploy/images/raspberrypi4-64/core-image-base-raspberrypi4-64.rootfs.fwup</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">tmp-raspberrypi5-glibc-nerves-hub-link/deploy/images/raspberrypi5/core-image-base-raspberrypi5.rootfs.fwup</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>And are ready to flash into a bootable device.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="flashing-image">Flashing image<a href="https://meta-erlang.github.io/blog/2025/03/21/index/#flashing-image" class="hash-link" aria-label="Direct link to Flashing image" title="Direct link to Flashing image">​</a></h3>
+<p>Before running fwup commands:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">bitbake fwup-native -caddto_recipe_sysroot</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>For each fwup image, and using <code>fwup</code> for flashing (one sdcard for each image):</p>
+<p>rpi0:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">oe-run-native fwup-native \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  fwup -a -d /dev/sdc \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -t complete \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -i tmp-raspberrypi0-wifi-glibc-nerves-hub-link/deploy/images/raspberrypi0-wifi/core-image-base-raspberrypi0-wifi.rootfs.fwup</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>rpi4:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">oe-run-native fwup-native \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  fwup -a -d /dev/sdc \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -t complete \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -i tmp-raspberrypi4-64-glibc-nerves-hub-link/deploy/images/raspberrypi4-64/core-image-base-raspberrypi4-64.rootfs.fwup</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>rpi5:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">oe-run-native fwup-native \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  fwup -a -d /dev/sdc \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -t complete \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -i tmp-raspberrypi5-glibc-nerves-hub-link/deploy/images/raspberrypi5/core-image-base-raspberrypi5.rootfs.fwup</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="and-booting">And booting<a href="https://meta-erlang.github.io/blog/2025/03/21/index/#and-booting" class="hash-link" aria-label="Direct link to And booting" title="Direct link to And booting">​</a></h3>
+<p>Just put the sdcard into raspiberrypi and boot. It should work as expected.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>I promised, for the next blog post I'll share a full demonstration</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="some-important-details-not-discussed-before">Some important details not discussed before<a href="https://meta-erlang.github.io/blog/2025/03/21/index/#some-important-details-not-discussed-before" class="hash-link" aria-label="Direct link to Some important details not discussed before" title="Direct link to Some important details not discussed before">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="meta-nerves-hub">meta-nerves-hub<a href="https://meta-erlang.github.io/blog/2025/03/21/index/#meta-nerves-hub" class="hash-link" aria-label="Direct link to meta-nerves-hub" title="Direct link to meta-nerves-hub">​</a></h3>
+<p>The <a href="https://github.com/joaohf/meta-nerves-hub" target="_blank" rel="noopener noreferrer">meta-nerves-hub</a> layer has a
+recipe for
+<a href="https://github.com/joaohf/meta-nerves-hub/tree/master/recipes-extended/nerves-hub-link_2.5.2.bb" target="_blank" rel="noopener noreferrer">nerves-hub-link_2.5.2.bb</a>.
+This recipe installs a standalone nerves-hub-link. I've tested the version 2.5.2
+and it works for my initial goals.</p>
+<p>However, the later nerves-hub-link versions are not prepared to run as
+standalone application anymore. It needs to be part of a BEAM application in
+order to be properly configured.</p>
+<p>I've tested recent versions and ended up with nerves-hub-link fighting with
+linux network stack; for instance trying to configure it where it should not or
+using others ways to detect configurations.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>It's up to you when design Yocto based linux distributions select what network
+manager best fits to your needs. Yocto gives to you many options as well a
+default one.</p></div></div>
+<p>So, the next organic step will be to implement a BEAM application that uses
+nerves-hub-link. That would be a kind of nerves-hub-link-agent. I just want to
+start it and play nice with linux network configuration stack.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusions">Conclusions<a href="https://meta-erlang.github.io/blog/2025/03/21/index/#conclusions" class="hash-link" aria-label="Direct link to Conclusions" title="Direct link to Conclusions">​</a></h2>
+<p>So, this blog post was more to make a milestone for this trip. And we are
+getting closer to get Yocto based linux distro full integrated with NervesCloud
+without thinking too much.</p>]]></content:encoded>
+            <category>meta-erlang</category>
+            <category>fwup</category>
+            <category>rpi</category>
+        </item>
         <item>
             <title><![CDATA[fwup for A/B image upgrades on QEMU machines with NervesCloud, part III]]></title>
             <link>https://meta-erlang.github.io/blog/2025/01/26/index/</link>
@@ -215,8 +313,8 @@ NervesCloud.</p>
 <p>For a real use of nerves-hub-link, the correct way would be creating a new
 Elixir application that has nerves-hub-link as dependency and make all the
 configuration needed.</p>
-<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>The NervesCloud team are working on a pre-build agent
-model, which will simplify setup and configuration.</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>The NervesCloud team are working on a pre-build agent model, which will simplify
+setup and configuration.</p></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusions">Conclusions<a href="https://meta-erlang.github.io/blog/2025/01/26/index/#conclusions" class="hash-link" aria-label="Direct link to Conclusions" title="Direct link to Conclusions">​</a></h2>
 <p>I am having so much fun playing with fwup and NervesCloud that I will keep
 improving this environment. Just to recap the adventures so far:</p>
@@ -236,6 +334,7 @@ all running on QEMU and Yocto Project. I will stay in this loop until get
 something stable.</p>]]></content:encoded>
             <category>meta-erlang</category>
             <category>fwup</category>
+            <category>qemu</category>
         </item>
         <item>
             <title><![CDATA[fwup for A/B image upgrades on QEMU machines with fwup, part II]]></title>
@@ -491,6 +590,7 @@ integration for A/B upgrades using <a href="https://www.nerves-hub.org/" target=
 <p>But that will be a topic for further blog posts.</p>]]></content:encoded>
             <category>meta-erlang</category>
             <category>fwup</category>
+            <category>qemu</category>
         </item>
         <item>
             <title><![CDATA[Introducing Gleam to meta-erlang layer]]></title>
@@ -1645,23 +1745,6 @@ Erlang/OTP 24 builds warns about: <em>packages contains reference to TMPDIR
 [buildpaths]</em>. There are two paths that we could get. One is to drop
 Erlang/OTP 24 support OR disable QA buildpaths checking.</li>
 </ul>]]></content:encoded>
-            <category>meta-erlang</category>
-            <category>news</category>
-        </item>
-        <item>
-            <title><![CDATA[Welcome]]></title>
-            <link>https://meta-erlang.github.io/blog/welcome/</link>
-            <guid>https://meta-erlang.github.io/blog/welcome/</guid>
-            <pubDate>Fri, 30 Dec 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[This new website is based on Docusaurus documentation]]></description>
-            <content:encoded><![CDATA[<p>This new website is based on <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a> documentation
-framework. The previous site was using <a href="https://docsify.js.org/#/" target="_blank" rel="noopener noreferrer">docsify</a>,
-which is also great. But Docusaurus address others concerns when writing
-documentation for open source project.</p>
-<p>So, the site has a new frontend page and a blog session where we want to add
-latest meta-erlang release highlights. The documentation session is pretty much
-the same plus some improvements on
-<a href="https://meta-erlang.github.io/docs/" target="_blank" rel="noopener noreferrer">Introduction</a> chapter.</p>]]></content:encoded>
             <category>meta-erlang</category>
             <category>news</category>
         </item>
