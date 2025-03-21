@@ -1,7 +1,7 @@
 ---
 title: fwup for A/B image upgrades on QEMU machines with fwup, part II
 authors: [joaohf]
-tags: [meta-erlang, fwup]
+tags: [meta-erlang, fwup, qemu]
 ---
 
 This blog post describes all parts involved in order to use QEMU machines with
