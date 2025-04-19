@@ -16,7 +16,7 @@ const FeatureList = [
   },
   {
     title: 'BEAM Ecosystem friendly',
-    Svg: require('@site/static/img/undraw_meta_erlang_conversation_re_c26v.svg').default,
+    Svg: require('@site/static/img/undraw_working-together_r43a.svg').default,
     description: (
       <>
         Not only the two biggest BEAM-based language (Elixir and Erlang) are
