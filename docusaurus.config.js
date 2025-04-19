@@ -28,6 +28,20 @@ const config = {
 
   themes: ['@docusaurus/theme-mermaid'],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'community',
+        path: 'community',
+        routeBasePath: 'community',
+        sidebarPath: './sidebarsCommunity.js',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      }
+    ],
+  ],
+
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -42,7 +56,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         gtag: {
-        trackingID: 'G-2N5Z9W349S',
+          trackingID: 'G-2N5Z9W349S',
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
@@ -119,6 +133,12 @@ const config = {
           },
           {to: 'blog', label: 'Blog', position: 'left'},
           {
+            to: '/community/support',
+            label: 'Community',
+            position: 'left',
+            activeBaseRegex: `/community/`,
+          },
+          {
             type: 'docsVersionDropdown',
             //docId: 'intro',
             position: 'right',
@@ -149,6 +169,10 @@ const config = {
                 label: 'EEF Embedded Working Group',
                 href: 'https://erlef.org/wg/embedded',
               },
+              {
+                label: 'Help',
+                to: '/community/support',
+              },
             ],
           },
           {
@@ -165,7 +189,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} meta-erlang`,
+        copyright: `Copyright © 2024-2025 meta-erlang`,
       },
       prism: {
         theme: lightCodeTheme,
