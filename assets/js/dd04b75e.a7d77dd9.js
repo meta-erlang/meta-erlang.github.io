@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmeta_erlang_github_io=self.webpackChunkmeta_erlang_github_io||[]).push([[1672],{33024:e=>{e.exports=JSON.parse('{"authors":[{"name":"Jo\xe3o Henrique Ferreira de Freitas","title":"Maintainer of meta-erlang","url":"https://github.com/joaohf","imageURL":"https://github.com/joaohf.png","key":"joaohf","page":null,"count":21}]}')}}]);
