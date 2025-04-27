@@ -40,6 +40,17 @@ const config = {
         showLastUpdateTime: true,
       }
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'beamtools',
+        path: 'beamtools',
+        routeBasePath: 'beamtools',
+        sidebarPath: './sidebarsBeamtools.js',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      }
+    ],
   ],
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -124,7 +135,12 @@ const config = {
       navbar: {
         title: 'meta-erlang',
         items: [
-          {to: 'beamtools', label: 'BEAM Tools', position: 'left'},
+          {
+            to: 'beamtools/intro',
+            label: 'BEAM Tools',
+            position: 'left',
+            activeBaseRegex: `/beamtools/`,
+          },
           {
             type: 'doc',
             position: 'left',
