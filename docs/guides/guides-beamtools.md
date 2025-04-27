@@ -1,33 +1,18 @@
 ---
 sidebar_position: 6
-description: BEAM Tools.
+description: Building BEAM Tools.
 ---
 
-# BEAM Tools
+# Building BEAM Tools
 
-Building and running your own Erlang and/or Elixir version could be an
-alternative when the host does not provide those packages or when additional
-tools are necessary and you want to provide a single installation source.
+The [beamtools user guide](/beamtools/intro) has more details about how to setup and usage modes.
 
-The meta-erlang layer is able to make a specific tarball having the following
-tools:
+This section is focused on how to build beamtools using meta-erlang.
 
-- Erlang
-- Elixir
-- [rebar3](http://rebar3.org/)
-- [erlfmt](https://github.com/WhatsApp/erlfmt)
-- [elvis](https://github.com/inaka/elvis)
-- [livebook](https://livebook.dev/)
-
-This tarball builds all the listed tools natively, wrapping them into a tarball
-self-installed script and ready to be shared. The _beamtools_ does not provides
-any way to cross-compile code. The aim is to provide a custom set of BEAM tools
-able to be run on any Linux machine.
-
-## Building beamtools
+## beamtools-tarball recipe
 
 The first step is to define which Erlang and Elixir versions the beamtools will
-build. This is done configuring the following variables in the file
+use. This is done configuring the following variables in the file
 [conf/local.conf or in the distro configuration file](https://docs.yoctoproject.org/ref-manual/terms.html?highlight=local%20conf#term-Configuration-File):
 
 ```
@@ -53,115 +38,3 @@ script, like that:
 ```bash
 sh x86_64-beamtools-nativesdk-standalone-3.4.1-erlang-24.1.7-elixir-1.12.3.sh
 ```
-
-The installation script is going to ask the destination path. You are free to
-use whatever path you need.
-
-When the installation has over, it is necessary to source the environment script
-which has all the definitions about where to find the tools:
-
-```bash
-source /opt/beamtools/3.4.1-erlang-24.1.7-elixir-1.12.3/environment-setup-x86_64-pokysdk-linux
-```
-
-The current shell has the environment variable setted to the correct Erlang and
-Elixir installation. And running: _erl_ or _iex_ gives you an Erlang and Elixir
-prompts.
-
-:::note
-
-For each new shell, it will be necessary to source the
-environment-setup-x86_64-pokysdk-linux file.
-
-:::
-
-The follow lines show the full output for beamtools installation process:
-
-```bash
-joaohf@porco:~/work/opensource/kas-meta-erlang$ honister/tmp/deploy/sdk/x86_64-beamtools-nativesdk-standalone-3.4.1-erlang-24.1.7-elixir-1.12.3.sh
-BEAM tools installer version 3.4.1-erlang-24.1.7-elixir-1.12.3
-==============================================================
-Enter target directory for SDK (default: /opt/beamtools/3.4.1-erlang-24.1.7-elixir-1.12.3): /home/joaohf/beamtools/3.4.1-erlang-24.1.7-elixir-1.12.3
-You are about to install the SDK to "/home/joaohf/beamtools/3.4.1-erlang-24.1.7-elixir-1.12.3". Proceed [Y/n]?
-Extracting SDK.....................................done
-Setting it up...done
-SDK has been successfully set up and is ready to be used.
-Each time you wish to use the SDK in a new shell session, you need to source the environment setup script e.g.
- $ . /home/joaohf/beamtools/3.4.1-erlang-24.1.7-elixir-1.12.3/environment-setup-x86_64-pokysdk-linux
-```
-
-## Downloading a pre-built beamtools tarball
-
-It is also possible to download and run a pre-built beamtools installer yourself
-with the following steps:
-
-1. Locate and download the \*.sh at
-   https://github.com/meta-erlang/meta-erlang/releases
-1. Execute the installation script. Here is an example for the traditional
-   installer:
-
-   ```bash
-   sh ~/Downloads/x86_64-beamtools-nativesdk-standalone-3.4.1-erlang-24.1.7-elixir-1.12.3.sh
-   ```
-
-   :::note
-
-   During execution, a prompt appears that allows you to choose the installation
-   directory. For example, you could choose the following:
-   /home/your-username/beamtools
-
-   :::
-
-1. Source the tools environment setup script by using a command like the
-   following:
-
-   ```bash
-   source /home/your_username/beamtools/environment-setup-x86_64-pokysdk-linux
-   ```
-
-After you have sourced the setup script, the tools are added to PATH and any
-other environment variables required to run the tools are initialized. The
-results are working versions versions of rebar3, Erlang/OTP and Elixir.
-
-## Start livebook from beamtools
-
-As livebook is included into standard beamtools SDK, it's possible to start a
-livebook session easily following the steps below:
-
-1. Source the beamtools SDK
-
-   ```bash
-   source /home/your_username/beamtools/nvironment-setup-x86_64-pokysdk-linux
-   ```
-
-1. Check if the livebook scripts exists in your environment:
-
-   ```bash
-   $ livebook
-   Usage: livebook COMMAND [ARGS]
-
-   The known commands are:
-
-   start          Starts the system
-   start_iex      Starts the system with IEx attached
-   daemon         Starts the system as a daemon
-   daemon_iex     Starts the system as a daemon with IEx attached
-   eval "EXPR"    Executes the given expression on a new, non-booted system
-   rpc "EXPR"     Executes the given expression remotely on the running system
-   remote         Connects to the running system via a remote shell
-   restart        Restarts the running system via a remote command
-   stop           Stops the running system via a remote command
-   pid            Prints the operating system PID of the running system via a remote command
-   version        Prints the release name and version to be booted
-
-   ```
-
-1. Start livebook system:
-
-   ```bash
-   $ livebook start
-   [Livebook] Application running at http://localhost:8080/?token=z4nrl62iqojkttdq3fuha7vm7ynkhwis
-   ```
-
-1. It's done, you can play with livebook locally without need to install
-   anything else.
