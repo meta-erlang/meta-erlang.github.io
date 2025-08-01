@@ -5,12 +5,14 @@ description: Building Erlang/OTP for debugging
 
 # Building SDKs
 
-
 [Debug emulator](https://www.erlang.org/doc/system/debugging.html)
 
 [How to Build a Debug Enabled Erlang RunTime System](https://www.erlang.org/doc/system/install#advanced-configuration-and-build-of-erlang-otp_building_how-to-build-a-debug-enabled-erlang-runtime-system)
 
-The erlang recipe from meta-erlang layer provides, via PACKAGECONFIG, a special way in order to build Erlang emulator for debugging purposes. The official Erlang/OTP has all the details about why a special build is necessary, [Debug emulator](https://www.erlang.org/doc/system/debugging.html). 
+The erlang recipe from meta-erlang layer provides, via PACKAGECONFIG, a special
+way in order to build Erlang emulator for debugging purposes. The official
+Erlang/OTP has all the details about why a special build is necessary,
+[Debug emulator](https://www.erlang.org/doc/system/debugging.html).
 
 Enable with:
 
@@ -50,5 +52,5 @@ A second one for attaching gdb:
 gdb --pid=19
 ```
 
-According to Erlang/OTP documentation, the emu-type debug is a special emulator tailored for
-debugging purposes.
+According to Erlang/OTP documentation, the emu-type debug is a special emulator
+tailored for debugging purposes.
