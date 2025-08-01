@@ -5,7 +5,8 @@ description: Building BEAM Tools.
 
 # Building BEAM Tools
 
-The [beamtools user guide](/beamtools/intro) has more details about how to setup and usage modes.
+The [beamtools user guide](/beamtools/intro) has more details about how to setup
+and usage modes.
 
 This section is focused on how to build beamtools using meta-erlang.
 
