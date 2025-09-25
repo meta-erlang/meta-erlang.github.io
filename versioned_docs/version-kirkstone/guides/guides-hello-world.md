@@ -28,5 +28,5 @@ Those examples are great to check how the build tool (rebar3, mix, Makefiles)
 were implemented in order to build successfuly in a cross-compile environment.
 However, bear in mind that the examples are very simple and does not do anything
 really useful. When trying the examples, make sure to use a recent YP/OE version
-as there is no guarantee that they will works with all Erlang, Elixir and YP/OE
+as there is no guarantee that they will work with all Erlang, Elixir and YP/OE
 version combinations.
