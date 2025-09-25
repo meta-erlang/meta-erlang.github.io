@@ -12,7 +12,7 @@ a few examples showing how application written in Erlang and Elixir could be
 implemented and integrated with YP/OE recipes.
 
 For each example there is a correspondent recipe. The following table sumarize
-the current examples:
+the current recipe examples:
 
 | Example Name                                                                                                          | Language | Description                                                                    | Recipe                                                                                                                                                                                 |
 | --------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -30,5 +30,18 @@ Those examples are great to check how the build tool (rebar3, mix, Makefiles)
 were implemented in order to build successfully in a cross-compile environment.
 However, bear in mind that the examples are very simple and does not do anything
 really useful. When trying the examples, make sure to use a recent YP/OE version
-as there is no guarantee that they will works with all Erlang, Elixir and YP/OE
+as there is no guarantee that they will work with all Erlang, Elixir and YP/OE
 version combinations.
+
+Not only examples for recipes are available but also some extra image recipes which
+install common Erlang and Elixir applications:
+
+| Image Name | Description | Recipe |
+| ---------- | ----------- | ------ |
+| erlang-red-image | | [erlang-red-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/erlang-red-image.bb) |
+| livebook-image | | [livebook-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/livebook-image.bb) |
+| yaws-image | | [yaws-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/yaws-image.bb) |
+| rabbitmq-image | | [rabbitmq-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/rabbitmq-image.bb) |
+| couchdb-image | | [couchdb-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/couchdb-image.bb) |
+| openriak-image | | [openriak-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/openriak-image.bb) |
+| beam-image | | [beam-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/beam-image.bb) |
