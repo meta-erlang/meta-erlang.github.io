@@ -33,15 +33,15 @@ really useful. When trying the examples, make sure to use a recent YP/OE version
 as there is no guarantee that they will work with all Erlang, Elixir and YP/OE
 version combinations.
 
-Not only examples for recipes are available but also some extra image recipes which
-install common Erlang and Elixir applications:
+Not only examples for recipes are available but also some extra image recipes
+which install common Erlang and Elixir applications:
 
-| Image Name | Description | Recipe |
-| ---------- | ----------- | ------ |
-| erlang-red-image | | [erlang-red-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/erlang-red-image.bb) |
-| livebook-image | | [livebook-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/livebook-image.bb) |
-| yaws-image | | [yaws-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/yaws-image.bb) |
-| rabbitmq-image | | [rabbitmq-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/rabbitmq-image.bb) |
-| couchdb-image | | [couchdb-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/couchdb-image.bb) |
-| openriak-image | | [openriak-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/openriak-image.bb) |
-| beam-image | | [beam-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/beam-image.bb) |
+| Image Name       | Description | Recipe                                                                                                                    |
+| ---------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------- |
+| erlang-red-image |             | [erlang-red-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/erlang-red-image.bb) |
+| livebook-image   |             | [livebook-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/livebook-image.bb)     |
+| yaws-image       |             | [yaws-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/yaws-image.bb)             |
+| rabbitmq-image   |             | [rabbitmq-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/rabbitmq-image.bb)     |
+| couchdb-image    |             | [couchdb-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/couchdb-image.bb)       |
+| openriak-image   |             | [openriak-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/openriak-image.bb)     |
+| beam-image       |             | [beam-image.bb](https://github.com/meta-erlang/meta-erlang/tree/master/recipes-examples/images/beam-image.bb)             |
