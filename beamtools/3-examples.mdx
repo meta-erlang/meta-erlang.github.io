@@ -1,0 +1,150 @@
+# Examples
+
+## Start livebook from beamtools
+
+As livebook is included into standard beamtools SDK, it's possible to start a
+livebook session easily following the steps below:
+
+1. Source the beamtools SDK
+
+   ```bash
+   source /home/your_username/beamtools/environment-setup-x86_64-pokysdk-linux
+   ```
+
+1. Check if the livebook scripts exists in your environment:
+
+   ```bash
+   $ livebook
+   Usage: livebook COMMAND [ARGS]
+
+   The known commands are:
+
+   start          Starts the system
+   start_iex      Starts the system with IEx attached
+   daemon         Starts the system as a daemon
+   daemon_iex     Starts the system as a daemon with IEx attached
+   eval "EXPR"    Executes the given expression on a new, non-booted system
+   rpc "EXPR"     Executes the given expression remotely on the running system
+   remote         Connects to the running system via a remote shell
+   restart        Restarts the running system via a remote command
+   stop           Stops the running system via a remote command
+   pid            Prints the operating system PID of the running system via a remote command
+   version        Prints the release name and version to be booted
+
+   ```
+
+1. Start livebook system:
+
+   ```bash
+   $ livebook start
+   [Livebook] Application running at http://localhost:8080/?token=z4nrl62iqojkttdq3fuha7vm7ynkhwis
+   ```
+
+1. It's done, you can play with livebook locally without need to install
+   anything else.
+
+## Building and starting erlang-red application
+
+Let's try erlang-red application building it from source code.
+
+1. Source the beamtools SDK
+
+   ```bash
+   source /home/your_username/beamtools/environment-setup-x86_64-pokysdk-linux
+   ```
+
+1. Fetch erlang-red source code:
+
+   ```bash
+   git clone https://github.com/gorenje/erlang-red
+   ```
+
+1. Next, it is time to build erlang-red which is a rebar3 project:
+
+   ```bash
+   cd erlang-red
+   export ERL_CFLAGS="-I${ERL_EI_INCLUDE_DIR} -I${ERL_ERTS_INCLUDE_DIR}"
+   rebar3 compile
+   ```
+
+   The _ERL\_CFLAGS_ exported variable is needed in order to indicate the right place where Erlang headers can be find.
+   For erlang-red context, the library circuits_i2c needs that includes. And beamtools already exports two variables (ERL_EI_INCLUDE_DIR and ERL_ERTS_INCLUDE_DIR) to help with this ERL_CFLAGS variable.
+
+
+1. Run erlang-red using rebar3 shell:
+
+   ```
+   rebar3 shell --apps erlang_red
+   ===> Verifying dependencies...
+   ===> Analyzing applications...
+   ===> Compiling erlang_red
+   Erlang/OTP 28 [erts-16.0.3] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns]
+
+   Eshell V16.0.3 (press Ctrl+G to abort, type help(). for help)
+   ===> Booted cowlib
+
+   ===> Booted ranch
+
+   ===> Booted cowboy
+
+   ===> Booted circuits_i2c
+
+   ===> Booted erlang_red_parsers
+
+   ===> Booted erlang_red
+
+   1>
+   ```
+
+   And check the results at http://localhost:8080/erlang-red
+
+   If you want to change the default 8080 tcp port, use the environment variable PORT to change it.
+
+1. As a last step, let's also make an erlang-red release:
+
+   ```bash
+   rebar3 release
+   ===> Verifying dependencies...
+   ===> Analyzing applications...
+   ===> Compiling erlang_red
+   ===> Assembling release erlang_red-0.3.4...
+   ===> There are missing function calls in the release.
+   ===> Make sure all applications needed at runtime are included in the release.
+   ===> ered_http_release_status:handle_get_response/2 calls undefined function status_tmpl:render/1
+   ===> Release successfully assembled: _build/default/rel/erlang_red
+   ```
+
+   The folder _build/default/rel/erlang_red has an erlang-red release with everything needed in order to run erlang-red.
+
+
+## Building observer_cli
+
+[observer_cli](https://github.com/zhongwencool/observer_cli) is an application for visualizing Erlang/Elixir nodes on the
+command line.
+
+1. Source the beamtools SDK
+
+   ```bash
+   source /home/your_username/beamtools/environment-setup-x86_64-pokysdk-linux
+   ```
+
+1. Fetch observer_cli source code:
+
+   ```bash
+   git clone https://github.com/zhongwencool/observer_cli
+   ```
+
+1. Build it:
+
+   ```bash
+   rebar3 escriptize
+   ```
+
+   Produces a escript file at `_build/default/bin/observer_cli`
+
+1. Try to run observer_cli:
+
+   ```bash
+   _build/default/bin/observer_cli
+   Usage: observer_cli TARGETNODE [TARGETCOOKIE REFRESHMS]
+   ```

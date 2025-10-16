@@ -1,0 +1,21 @@
+# Introduction
+
+beamruntime is also a tarball, self-installed and fuly relocated. Based on the same idea from [beamtools](/beamtools/intro). But targeting runtime execution and not for development.
+
+<!-- prettier-ignore-start -->
+:::note
+A deep introspection for beamruntime is available at [beamruntime blog post](/blog/2025/09/25/index/)
+:::
+<!-- prettier-ignore-end -->
+
+It provides the following components:
+
+- [Erlang](https://elixir-lang.org/)
+  Some extra applications are possible to be enabled for Erlang/OTP but beamruntime disables them. So, with beamruntime there is *no* support for:
+    * wx
+    * SCTP sockets
+    * odbc
+- [Elixir](https://elixir-lang.org/)
+
+As said before beamruntime targets the execution of Erlang/Elixir applications without worry about having Erlang/Elixir installed on linux target distribution.
+

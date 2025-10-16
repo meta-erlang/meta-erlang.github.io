@@ -51,6 +51,17 @@ const config = {
         showLastUpdateTime: true,
       }
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'beamruntime',
+        path: 'beamruntime',
+        routeBasePath: 'beamruntime',
+        sidebarPath: './sidebarsBeamruntime.js',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      }
+    ],
   ],
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -137,6 +148,12 @@ const config = {
             label: 'BEAM Tools',
             position: 'left',
             activeBaseRegex: `/beamtools/`,
+          },
+          {
+            to: 'beamruntime/intro',
+            label: 'BEAM Runtime',
+            position: 'left',
+            activeBaseRegex: `/beamruntime/`,
           },
           {
             type: 'doc',
