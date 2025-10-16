@@ -26,15 +26,32 @@ PREFERRED_VERSION_elixir-native = "1.12.3"
 PREFERRED_VERSION_nativesdk-elixir = "1.12.3"
 ```
 
+Then, make sure opengl feature is configured. By defaul beamtools enables wx
+Erlang application:
+
+```
+# opengl beamtools
+DISTRO_FEATURES:append = " opengl"
+DISTRO_FEATURES_NATIVESDK:append = " opengl"
+```
+
+As an additional step (and optional), if you want to enable support for odbc and
+SCTP sockets, the following configuration is needed:
+
+```
+PACKAGECONFIG:append:pn-nativesdk-erlang = " odbc"
+PACKAGECONFIG:append:pn-nativesdk-erlang = " sctp"
+```
+
 After that, the next step is to call bitbake to build the beamtools tarball:
 
 ```bash
 bitbake beamtools-tarball
 ```
 
-Once the build has finished, the results can be found in the _tmp/deploy/sdk_
-folder. You can copy it to the development machine and install running the .sh
-script, like that:
+Once the build has finished, the results can be found at _tmp/deploy/sdk_
+folder. You can copy it to the development machine. The installation is done
+executing the .sh script, like that:
 
 ```bash
 sh x86_64-beamtools-nativesdk-standalone-3.4.1-erlang-24.1.7-elixir-1.12.3.sh

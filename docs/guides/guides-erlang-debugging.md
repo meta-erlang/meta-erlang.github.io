@@ -3,7 +3,7 @@ sidebar_position: 7
 description: Building Erlang/OTP for debugging
 ---
 
-# Building SDKs
+# Building Erlang/OTP for debugging
 
 [Debug emulator](https://www.erlang.org/doc/system/debugging.html)
 

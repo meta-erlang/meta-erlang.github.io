@@ -1,0 +1,26 @@
+# Examples
+
+## Running observer_cli
+
+The example [Building observer_cli](/beamtools/examples/#building-observer_cli) was responsible for building observer_cli using beamtools.
+Here we are going to execute it using beamruntime.
+
+1. Use two shell and source the beamruntime for each one:
+
+   ```bash
+   source /home/your_username/beamruntime/environment-setup-x86_64-pokysdk-linux
+   ```
+
+1. In shell one, start an erlang node:
+
+   ```bash
+   erl -name foo@127.0.0.1 -setcookie mycookie
+   ```
+
+1. In shell two, run observer_cli and connect it to the _foo_ erlang node:
+
+   ```bash
+   _build/default/bin/observer_cli foo@127.0.0.1 mycookie 1000
+   ```
+
+1. It's done, you can play with observer_cli console interface and check stats from remote node.

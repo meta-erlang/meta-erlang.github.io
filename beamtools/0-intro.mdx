@@ -1,11 +1,19 @@
 # Introduction
 
-The meta-erlang layer is able to make a specific tarball having the following
-tools installed:
+The meta-erlang layer is able to make a specific tarball, through [beamtool-tarball recipe](https://github.com/meta-erlang/meta-erlang/blob/master/recipes-core/meta/beamtools-tarball.bb), with the following
+BEAM languages installed:
 
 - [Erlang](https://elixir-lang.org/)
-- [Elixir](https://www.erlang.org/)
+  Some extra applications are enabled for Erlang/OTP build provided by beamtools:
+    * wx, with wxWidgets
+    * enable SCTP sockets with lksctp-tools
+    * odbc, with libiodbc
+  All the above third party libraries are also installed as part of beamtools tarball.
+- [Elixir](https://elixir-lang.org/)
 - [Gleam](https://gleam.run/)
+
+And also with the tools:
+
 - [rebar3](http://rebar3.org/)
 - [erlfmt](https://github.com/WhatsApp/erlfmt)
 - [elvis](https://github.com/inaka/elvis)
@@ -13,20 +21,25 @@ tools installed:
 - [erlang-ls](https://github.com/erlang-ls/erlang_ls)
 - [concuerror](https://concuerror.com/)
 - [livebook](https://livebook.dev/)
+- [lux](https://github.com/hawk/lux/)
 
-We call this selected list of application as _beamtools_.
-
-The current beamtools approach is to install a full Erlang and Elixir version. That means all tools not only for running but
+We call this selected list of application as _beamtools_. The current beamtools approach is to install a full Erlang and Elixir version. That means all tools not only for running but
 also for developing BEAM application will be installed.
 
-Our focus with beamtools is to provide a safe environment for developing and running BEAM based applications without installing any OS package.
+The beamtools focus is to provide a safe environment for developing and running BEAM based applications without installing any OS package. However, the beamtools idea is more related for developing applications.
 
-It is more towards improving the development experience. Moreover, it is an alternative way for running Erlang and/or Elixir version on Linux hosts
+<!-- prettier-ignore-start -->
+:::note
+If the purpose is is *only* to run BEAM application, then the recommendation is to try [beamruntime](/beamruntime/intro) instead beamtools.
+:::
+<!-- prettier-ignore-end -->
+
+This approach is towards improving the development experience. Moreover, it is an alternative way for running Erlang and/or Elixir version on Linux hosts
 that does not have package management for installing Erlang and Elixir OS packages. 
 Or when the host does not provide the needed Erlang and Elixir versions.
 
-beamtools builds all the listed tools natively, wrapping them into a tarball
-self-installed script and ready to be shared. It does not provides
+beamtools builds all the listed tools natively, wrapping them into a tarball,
+self-installed script with relocated support when installed and ready to be shared. It does not provides
 any way to cross-compile code. The aim is to provide a custom set of BEAM tools
 able to be run on any Linux distribution.
 
