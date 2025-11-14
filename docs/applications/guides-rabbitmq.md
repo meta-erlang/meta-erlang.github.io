@@ -13,7 +13,7 @@ Recommended PREFERRED_VERSION for rabbitmq:
 
 | rabbitmq | Erlang/OTP | Elixir |
 | -------- | ---------- | ------ |
-| 3.11.28  | 25.3%      | 1.15%  |
+| 4.1.x    | 27%        | 1.18%  |
 
 :::
 
@@ -34,12 +34,12 @@ Follow the quickstart guide to get a basic working environment and then:
 - Add erlang and elixir preferred version _conf/local.conf_.
 
 ```bash
-PREFERRED_VERSION_elixir = "1.14%"
-PREFERRED_VERSION_elixir-native = "1.14%"
-PREFERRED_VERSION_nativesdk-elixir = "1.14%"
-PREFERRED_VERSION_erlang = "25.2.3"
-PREFERRED_VERSION_erlang-native = "25.2.3"
-PREFERRED_VERSION_nativesdk-erlang = "25.2.3"
+PREFERRED_VERSION_elixir = "1.18%"
+PREFERRED_VERSION_elixir-native = "1.18%"
+PREFERRED_VERSION_nativesdk-elixir = "1.18%"
+PREFERRED_VERSION_erlang = "27%"
+PREFERRED_VERSION_erlang-native = "27%"
+PREFERRED_VERSION_nativesdk-erlang = "27%"
 ```
 
 - Add `rabbitmq-server` package to `IMAGE_INSTAL` in _conf/local.conf_
