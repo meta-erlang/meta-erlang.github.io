@@ -1,8 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -10,8 +9,6 @@ const config = {
   tagline: 'meta-erlang documentation',
   url: 'https://meta-erlang.github.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
   trailingSlash: true,
@@ -24,6 +21,10 @@ const config = {
 
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+      onBrokenMarkdownImages: 'throw',
+    },
   },
 
   themes: ['@docusaurus/theme-mermaid'],
@@ -74,7 +75,7 @@ const config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
@@ -219,11 +220,12 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © 2024-2025 meta-erlang`,
+        copyright: `Copyright © 2024-2026 meta-erlang`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
+        additionalLanguages: ['bash', 'diff', 'json', 'erlang'],
       },
       metadata: [{name: 'keywords', content: 'erlang, elixir, yocto'}],
     }),
