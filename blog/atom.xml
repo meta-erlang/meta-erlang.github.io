@@ -2,11 +2,50 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://meta-erlang.github.io/blog/</id>
     <title>meta-erlang Blog</title>
-    <updated>2025-09-26T00:00:00.000Z</updated>
+    <updated>2026-01-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://meta-erlang.github.io/blog/"/>
     <subtitle>meta-erlang Blog</subtitle>
     <icon>https://meta-erlang.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[meta-erlang Yocto Project Compatible v3 Layers Accepted]]></title>
+        <id>https://meta-erlang.github.io/blog/2026/01/02/index/</id>
+        <link href="https://meta-erlang.github.io/blog/2026/01/02/index/"/>
+        <updated>2026-01-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This post is to inform that meta-erlang has been accepted as Yocto Project]]></summary>
+        <content type="html"><![CDATA[<p>This post is to inform that meta-erlang has been accepted as Yocto Project
+Compatible v3 Layer.</p>
+<p>The
+<a href="https://www.yoctoproject.org/development/yocto-project-compatible-layers/" target="_blank" rel="noopener noreferrer">Yocto Project Compatible Layers</a>
+is a program to evaluate and list all layers that follows
+<a href="https://docs.yoctoproject.org/current/overview-manual/yp-intro.html#the-yocto-project-layer-model" target="_blank" rel="noopener noreferrer">The Yocto Project Layer Model</a>.</p>
+<p>On last December/2025, I received an email from Yocto Project managers saying as
+follows:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Dear Yocto Layer Maintainer,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Congratulations! Your layer has been successfully reviewed and is now recognized as Yocto Project Compatible v3.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">As part of this recognition, you are granted the right to display the Yocto Project Compatible badge in association with your layer and related materials.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">What’s Included in This Email:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ✅ Your Rights: You may now publicly use the “Yocto Project Compatible” badge to promote your layer.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    🔗 Links to Entry: Your layer listing can be found on the Yocto Project Layer Index: https://layers.openembedded.org/layerindex/branch/master/layers/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    🧪 Layer Compatibility Check: Your layer has passed compatibility validation with the current Yocto Project release v3.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    📎 Attached:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        The official Yocto Project Compatible badge</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        Branding Guidelines to help you use the badge properly</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>In fact, I have applied meta-erlang through
+<a href="https://www.yoctoproject.org/compatible-registration/" target="_blank" rel="noopener noreferrer">Yocto Project Compatible Layer Registration</a>.
+And there was the final result.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-does-it-mean-">What does it mean ?<a href="https://meta-erlang.github.io/blog/2026/01/02/index/#what-does-it-mean-" class="hash-link" aria-label="Direct link to What does it mean ?" title="Direct link to What does it mean ?">​</a></h2>
+<p>The rights to officially promote meta-erlang as “Yocto Project Compatible” and
+publicly use a badge which informs the end user that meta-erlang has passed to
+all
+<a href="https://docs.yoctoproject.org/current/dev-manual/layers.html#making-sure-your-layer-is-compatible-with-yocto-project" target="_blank" rel="noopener noreferrer">compatibility checks</a>.
+This is the real value of the compatible layer program.</p>
+<p><img decoding="async" loading="lazy" alt="alt Yocto Project Compatible badge" src="https://meta-erlang.github.io/assets/images/YoctoCompatibleBadge-659b72e8ad5003e477c67b92cb445227.png" title="Yocto Project Compatible badge" width="720" height="580" class="img_ev3q"></p>
+<p>Also, meta-erlang is listed as compatible with a small badge on the Yocto
+Project Layer Index:
+<a href="https://layers.openembedded.org/layerindex/branch/master/layers/" target="_blank" rel="noopener noreferrer">https://layers.openembedded.org/layerindex/branch/master/layers/</a></p>
+<p>In practical terms, I also
+<a href="https://github.com/meta-erlang/kas-meta-erlang/blob/main/lux/test/yocto_layer_compatible_check.lux" target="_blank" rel="noopener noreferrer">added a new lux test</a>
+which executes the yocto-check-layer check script in order to verify if
+meta-erlang is compatible and keeps compatible,
+<a href="https://docs.yoctoproject.org/current/dev-manual/layers.html#making-sure-your-layer-is-compatible-with-yocto-project" target="_blank" rel="noopener noreferrer">Making Sure Your Layer is Compatible With Yocto Project</a>.</p>]]></content>
+        <author>
+            <name>João Henrique Ferreira de Freitas</name>
+            <uri>https://github.com/joaohf</uri>
+        </author>
+        <category label="meta-erlang" term="meta-erlang"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Testing meta-erlang with LuX]]></title>
         <id>https://meta-erlang.github.io/blog/2025/09/26/index/</id>
@@ -1965,27 +2004,5 @@ for x32 ?</li>
         </author>
         <category label="meta-erlang" term="meta-erlang"/>
         <category label="x32" term="x32"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[New Erlang releases 24.3.4.13, 25.3.2.3, 26.0.2]]></title>
-        <id>https://meta-erlang.github.io/blog/2023/07/01/index/</id>
-        <link href="https://meta-erlang.github.io/blog/2023/07/01/index/"/>
-        <updated>2023-07-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[We've added support for the following new Erlang/OTP releases:]]></summary>
-        <content type="html"><![CDATA[<p>We've added support for the following new Erlang/OTP releases:</p>
-<table><thead><tr><th>meta-erlang branch</th><th>Erlang/OTP version</th></tr></thead><tbody><tr><td>dunfell</td><td>24.3.4.13</td></tr><tr><td>kirkstone</td><td>24.3.4.13, 25.3.2.3, 26.0.2</td></tr><tr><td>mickledore</td><td>25.3.2.3, 26.0.2</td></tr></tbody></table>
-<p>In additional to those new versions, a new
-<a href="https://meta-erlang.github.io/docs/guides/guides-beamtools/" target="_blank" rel="noopener noreferrer">beamtools</a> is
-available
-<a href="https://github.com/meta-erlang/meta-erlang/releases/tag/beamtools-0.7.0" target="_blank" rel="noopener noreferrer">here</a>.</p>
-<p>This new version was made with
-<a href="https://docs.yoctoproject.org/dev/migration-guides/migration-4.2.html" target="_blank" rel="noopener noreferrer">Yocto mickledore</a>
-release and brings Erlang/OTP 26.0.2 and Elixir 1.15.2.</p>]]></content>
-        <author>
-            <name>João Henrique Ferreira de Freitas</name>
-            <uri>https://github.com/joaohf</uri>
-        </author>
-        <category label="meta-erlang" term="meta-erlang"/>
-        <category label="news" term="news"/>
     </entry>
 </feed>
