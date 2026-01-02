@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmeta_erlang_github_io=self.webpackChunkmeta_erlang_github_io||[]).push([[6366],{86366:(e,t,a)=>{a.d(t,{createArchitectureServices:()=>r.S});var r=a(38980);a(87960)}}]);
