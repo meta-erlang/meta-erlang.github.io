@@ -90,17 +90,6 @@ const config = {
               label: 'master',
               path: 'master'
             },
-            kirkstone: {
-              label: 'kirkstone',
-              // there is a bug if the path is 'kirkstone': Hook useDocsVersion is called outside the <DocsVersionProvider>.
-              path: 'kirkstone0',
-	            banner: 'none'
-            },
-            nanbield: {
-              label: 'nanbield',
-              path: 'nanbield',
-              banner: 'none'
-            },
             scarthgap: {
               label: 'scarthgap',
               path: 'scarthgap',
