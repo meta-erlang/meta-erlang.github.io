@@ -1,0 +1,10 @@
+position: 3
+label: 'Testing'
+collapsible: true # make the category collapsible
+collapsed: false # keep the category open by default
+className: red
+link:
+  type: generated-index
+  title: Testing
+customProps:
+  description: Learn how to test your applications effectively.
